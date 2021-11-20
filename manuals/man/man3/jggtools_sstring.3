@@ -28,19 +28,7 @@ Herencias string\&.
 .RI "\fBsstring\fP (const string &str, size_type pos, size_type n)"
 .br
 .ti -1c
-.RI "\fBsstring\fP & \fBltrim\fP ()"
-.br
-.ti -1c
 .RI "\fBsstring\fP & \fBrtrim\fP ()"
-.br
-.ti -1c
-.RI "\fBsstring\fP & \fBtrim\fP ()"
-.br
-.ti -1c
-.RI "\fBsstring\fP & \fBtoUpper\fP ()"
-.br
-.ti -1c
-.RI "\fBsstring\fP & \fBtoLower\fP ()"
 .br
 .ti -1c
 .RI "\fBsstring\fP * \fBtoString\fP ()"
@@ -54,9 +42,11 @@ Herencias string\&.
 .ti -1c
 .RI "bool \fBcontains\fP (const char *par)"
 .br
+.RI "Check if string contains the pattern\&. "
 .ti -1c
 .RI "bool \fBmakeBoolean\fP ()"
 .br
+.RI "Convert the string to boolean Evaluate any string according first character: False **: "
 .ti -1c
 .RI "vector< char * > \fBtokenize\fP (const char *pat)"
 .br
@@ -69,6 +59,43 @@ Herencias string\&.
 .ti -1c
 .RI "\fBsstring\fP \fBpaste\fP (const char *sep,\&.\&.\&.)"
 .br
+.RI "Generate a new string pasting \&.\&.\&. at end of current string\&. "
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBsstring\fP & \fBltrim\fP ()"
+.br
+.RI "remove spaces \fBinplace\fP from left 
+.br
+ "
+.ti -1c
+.RI "\fBsstring\fP & \fBtrim\fP ()"
+.br
+.RI "remove spaces \fBinplace\fP from left and right 
+.br
+ "
+.in -1c
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBsstring\fP & \fBtoUpper\fP ()"
+.br
+.RI "Put the string in upper case\&. "
+.ti -1c
+.RI "\fBsstring\fP & \fBtoLower\fP ()"
+.br
+.RI "Put the string in lower case\&. "
+.in -1c
 .in -1c
 .SS "Métodos públicos estáticos"
 
@@ -114,14 +141,150 @@ Definición en la línea \fB17\fP del archivo \fBsstring\&.hpp\fP\&.
 Definición en la línea \fB18\fP del archivo \fBsstring\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "\fBsstring\fP paste (const char * sep,  \&.\&.\&.)"
+.SS "contains (const char * pattern)"
+
+.PP
+Check if string contains the pattern\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIreg\fP exp to match
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+TRUE if found 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB90\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "ltrim ()"
+
+.PP
+remove spaces \fBinplace\fP from left 
+.br
+ remove spaces \fBinplace\fP from left and right 
+.br
+.PP
+\fBDevuelve\fP
+.RS 4
+reference to object 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB13\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "makeBoolean ()"
+
+.PP
+Convert the string to boolean Evaluate any string according first character: False **: 
+.IP "\(bu" 2
+N
+.IP "\(bu" 2
+F
+.IP "\(bu" 2
+0 True**: Other cases 
+.PP
+\fBDevuelve\fP
+.RS 4
+true or false 
+.RE
+.PP
+
+.PP
+
+.PP
+Definición en la línea \fB84\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "string paste (const char * sep,  \&.\&.\&.)"
+
+.PP
+Generate a new string pasting \&.\&.\&. at end of current string\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIsep\fP string to put between pieces 
+.br
+\fI\&.\&.\&.\fP strigns to append 
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+return a new string 
+.RE
+.PP
 
 .PP
 Definición en la línea \fB93\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & rtrim ()"
+
+.PP
+Definición en la línea \fB19\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "char * toArr ()"
+
+.PP
+Definición en la línea \fB49\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "const char * toChar ()"
+
+.PP
+Definición en la línea \fB60\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "vector< char * > tokenize (const char * pat)"
+
+.PP
+Definición en la línea \fB63\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "vector< \fBsstring\fP > tokenize (string pat)"
+
+.PP
+Definición en la línea \fB69\fP del archivo \fBsstring\&.cpp\fP\&.
 .SS "vector< int > tokenizeNumber (const char * pat)"
 
 .PP
 Definición en la línea \fB78\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "toLower ()"
+
+.PP
+Put the string in lower case\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+reference to object 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP * toString ()"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "toUpper ()"
+
+.PP
+Put the string in upper case\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+reference to object 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB38\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "trim ()"
+
+.PP
+remove spaces \fBinplace\fP from left and right 
+.br
+ 
+.PP
+\fBDevuelve\fP
+.RS 4
+reference to object 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB35\fP del archivo \fBsstring\&.cpp\fP\&.
 
 .SH "Autor"
 .PP 

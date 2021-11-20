@@ -40,289 +40,10 @@ unique_impl_ptr< T, Deleter >
 .ti -1c
 .RI "using \fBis_default_manageable\fP = \fBdetails::is_default_manageable\fP< T, deleter_type >"
 .br
-.ti -1c
-.RI "using \fBpointer\fP = T *"
-.br
-.ti -1c
-.RI "using \fBconst_pointer\fP = typename std::add_const< T >::type *"
-.br
-.ti -1c
-.RI "using \fBreference\fP = T &"
-.br
-.ti -1c
-.RI "using \fBconst_reference\fP = typename std::add_const< T >::type &"
-.br
-.ti -1c
-.RI "using \fBelement_type\fP = T"
-.br
-.ti -1c
-.RI "using \fBdeleter_type\fP = typename std::decay< Deleter >::type"
-.br
-.ti -1c
-.RI "using \fBunique_ptr_type\fP = std::unique_ptr< T, deleter_type >"
-.br
-.ti -1c
-.RI "using \fBis_default_manageable\fP = \fBdetails::is_default_manageable\fP< T, deleter_type >"
-.br
-.ti -1c
-.RI "using \fBpointer\fP = T *"
-.br
-.ti -1c
-.RI "using \fBconst_pointer\fP = typename std::add_const< T >::type *"
-.br
-.ti -1c
-.RI "using \fBreference\fP = T &"
-.br
-.ti -1c
-.RI "using \fBconst_reference\fP = typename std::add_const< T >::type &"
-.br
-.ti -1c
-.RI "using \fBelement_type\fP = T"
-.br
-.ti -1c
-.RI "using \fBdeleter_type\fP = typename std::decay< Deleter >::type"
-.br
-.ti -1c
-.RI "using \fBunique_ptr_type\fP = std::unique_ptr< T, deleter_type >"
-.br
-.ti -1c
-.RI "using \fBis_default_manageable\fP = \fBdetails::is_default_manageable\fP< T, deleter_type >"
-.br
-.ti -1c
-.RI "using \fBpointer\fP = T *"
-.br
-.ti -1c
-.RI "using \fBconst_pointer\fP = typename std::add_const< T >::type *"
-.br
-.ti -1c
-.RI "using \fBreference\fP = T &"
-.br
-.ti -1c
-.RI "using \fBconst_reference\fP = typename std::add_const< T >::type &"
-.br
-.ti -1c
-.RI "using \fBelement_type\fP = T"
-.br
-.ti -1c
-.RI "using \fBdeleter_type\fP = typename std::decay< Deleter >::type"
-.br
-.ti -1c
-.RI "using \fBunique_ptr_type\fP = std::unique_ptr< T, deleter_type >"
-.br
-.ti -1c
-.RI "using \fBis_default_manageable\fP = \fBdetails::is_default_manageable\fP< T, deleter_type >"
-.br
 .in -1c
 .SS "Métodos públicos"
 
 .in +1c
-.ti -1c
-.RI "constexpr \fBunique_impl_ptr\fP (std::nullptr_t) noexcept"
-.br
-.ti -1c
-.RI "template<class D > \fBunique_impl_ptr\fP (pointer p, D &&d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (U *u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (std::unique_ptr< U > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (std::unique_ptr< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP & \fBoperator=\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type \fBoperator=\fP (std::unique_ptr< U > &&u) noexcept"
-.br
-.ti -1c
-.RI "reference \fBoperator=\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "reference \fBoperator*\fP ()"
-.br
-.ti -1c
-.RI "const_reference \fBoperator*\fP () const"
-.br
-.ti -1c
-.RI "pointer \fBoperator\->\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBoperator\->\fP () const noexcept"
-.br
-.ti -1c
-.RI "pointer \fBget\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBget\fP () const noexcept"
-.br
-.ti -1c
-.RI "void \fBswap\fP (\fBunique_impl_ptr\fP &u) noexcept"
-.br
-.ti -1c
-.RI "pointer \fBrelease\fP () noexcept"
-.br
-.ti -1c
-.RI "unique_ptr_type \fBrelease_unique\fP () noexcept"
-.br
-.ti -1c
-.RI "\fBoperator bool\fP () const noexcept"
-.br
-.ti -1c
-.RI "std::remove_reference< deleter_type >::type & \fBget_deleter\fP () noexcept"
-.br
-.ti -1c
-.RI "const std::remove_reference< deleter_type >::type & \fBget_deleter\fP () const noexcept"
-.br
-.ti -1c
-.RI "constexpr \fBunique_impl_ptr\fP (std::nullptr_t) noexcept"
-.br
-.ti -1c
-.RI "template<class D > \fBunique_impl_ptr\fP (pointer p, D &&d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (U *u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (std::unique_ptr< U > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (std::unique_ptr< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP & \fBoperator=\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type \fBoperator=\fP (std::unique_ptr< U > &&u) noexcept"
-.br
-.ti -1c
-.RI "reference \fBoperator=\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "reference \fBoperator*\fP ()"
-.br
-.ti -1c
-.RI "const_reference \fBoperator*\fP () const"
-.br
-.ti -1c
-.RI "pointer \fBoperator\->\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBoperator\->\fP () const noexcept"
-.br
-.ti -1c
-.RI "pointer \fBget\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBget\fP () const noexcept"
-.br
-.ti -1c
-.RI "void \fBswap\fP (\fBunique_impl_ptr\fP &u) noexcept"
-.br
-.ti -1c
-.RI "pointer \fBrelease\fP () noexcept"
-.br
-.ti -1c
-.RI "unique_ptr_type \fBrelease_unique\fP () noexcept"
-.br
-.ti -1c
-.RI "\fBoperator bool\fP () const noexcept"
-.br
-.ti -1c
-.RI "std::remove_reference< deleter_type >::type & \fBget_deleter\fP () noexcept"
-.br
-.ti -1c
-.RI "const std::remove_reference< deleter_type >::type & \fBget_deleter\fP () const noexcept"
-.br
-.ti -1c
-.RI "constexpr \fBunique_impl_ptr\fP (std::nullptr_t) noexcept"
-.br
-.ti -1c
-.RI "template<class D > \fBunique_impl_ptr\fP (pointer p, D &&d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (U *u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > \fBunique_impl_ptr\fP (std::unique_ptr< U > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (std::unique_ptr< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "template<class U , class D > \fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > &&u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type=\fBdummy_t_\fP()) noexcept"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "\fBunique_impl_ptr\fP & \fBoperator=\fP (\fBunique_impl_ptr\fP &&r) noexcept=default"
-.br
-.ti -1c
-.RI "template<class U > std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type \fBoperator=\fP (std::unique_ptr< U > &&u) noexcept"
-.br
-.ti -1c
-.RI "reference \fBoperator=\fP (const \fBunique_impl_ptr\fP< T, Deleter > &)=delete"
-.br
-.ti -1c
-.RI "reference \fBoperator*\fP ()"
-.br
-.ti -1c
-.RI "const_reference \fBoperator*\fP () const"
-.br
-.ti -1c
-.RI "pointer \fBoperator\->\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBoperator\->\fP () const noexcept"
-.br
-.ti -1c
-.RI "pointer \fBget\fP () noexcept"
-.br
-.ti -1c
-.RI "const_pointer \fBget\fP () const noexcept"
-.br
-.ti -1c
-.RI "void \fBswap\fP (\fBunique_impl_ptr\fP &u) noexcept"
-.br
-.ti -1c
-.RI "pointer \fBrelease\fP () noexcept"
-.br
-.ti -1c
-.RI "unique_ptr_type \fBrelease_unique\fP () noexcept"
-.br
-.ti -1c
-.RI "\fBoperator bool\fP () const noexcept"
-.br
-.ti -1c
-.RI "std::remove_reference< deleter_type >::type & \fBget_deleter\fP () noexcept"
-.br
-.ti -1c
-.RI "const std::remove_reference< deleter_type >::type & \fBget_deleter\fP () const noexcept"
-.br
 .ti -1c
 .RI "constexpr \fBunique_impl_ptr\fP (std::nullptr_t) noexcept"
 .br
@@ -414,130 +135,34 @@ Definición en la línea \fB102\fP del archivo \fBsmimplm\&.hpp\fP\&.
 
 .PP
 Definición en la línea \fB110\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using const_pointer =  typename std::add_const<T>::type *"
-
-.PP
-Definición en la línea \fB110\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using const_pointer =  typename std::add_const<T>::type *"
-
-.PP
-Definición en la línea \fB110\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using const_pointer =  typename std::add_const<T>::type *"
-
-.PP
-Definición en la línea \fB110\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using const_reference =  typename std::add_const<T>::type &"
 
 .PP
 Definición en la línea \fB112\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using const_reference =  typename std::add_const<T>::type &"
-
-.PP
-Definición en la línea \fB112\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using const_reference =  typename std::add_const<T>::type &"
-
-.PP
-Definición en la línea \fB112\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using const_reference =  typename std::add_const<T>::type &"
-
-.PP
-Definición en la línea \fB112\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using deleter_type =  typename std::decay<Deleter>::type"
 
 .PP
 Definición en la línea \fB114\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using deleter_type =  typename std::decay<Deleter>::type"
-
-.PP
-Definición en la línea \fB114\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using deleter_type =  typename std::decay<Deleter>::type"
-
-.PP
-Definición en la línea \fB114\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using deleter_type =  typename std::decay<Deleter>::type"
-
-.PP
-Definición en la línea \fB114\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using element_type =  T"
 
 .PP
 Definición en la línea \fB113\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using element_type =  T"
-
-.PP
-Definición en la línea \fB113\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using element_type =  T"
-
-.PP
-Definición en la línea \fB113\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using element_type =  T"
-
-.PP
-Definición en la línea \fB113\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using \fBis_default_manageable\fP =  \fBdetails::is_default_manageable\fP<T, deleter_type>"
 
 .PP
 Definición en la línea \fB116\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using \fBis_default_manageable\fP =  \fBdetails::is_default_manageable\fP<T, deleter_type>"
-
-.PP
-Definición en la línea \fB116\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using \fBis_default_manageable\fP =  \fBdetails::is_default_manageable\fP<T, deleter_type>"
-
-.PP
-Definición en la línea \fB116\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using \fBis_default_manageable\fP =  \fBdetails::is_default_manageable\fP<T, deleter_type>"
-
-.PP
-Definición en la línea \fB116\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using pointer =  T*"
 
 .PP
 Definición en la línea \fB109\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using pointer =  T*"
-
-.PP
-Definición en la línea \fB109\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using pointer =  T*"
-
-.PP
-Definición en la línea \fB109\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using pointer =  T*"
-
-.PP
-Definición en la línea \fB109\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using reference =  T&"
 
 .PP
 Definición en la línea \fB111\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using reference =  T&"
-
-.PP
-Definición en la línea \fB111\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using reference =  T&"
-
-.PP
-Definición en la línea \fB111\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using reference =  T&"
-
-.PP
-Definición en la línea \fB111\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "using unique_ptr_type =  std::unique_ptr<T, deleter_type>"
 
 .PP
 Definición en la línea \fB115\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "using unique_ptr_type =  std::unique_ptr<T, deleter_type>"
-
-.PP
-Definición en la línea \fB115\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "using unique_ptr_type =  std::unique_ptr<T, deleter_type>"
-
-.PP
-Definición en la línea \fB115\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "using unique_ptr_type =  std::unique_ptr<T, deleter_type>"
-
-.PP
-Definición en la línea \fB115\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SH "Documentación del constructor y destructor"
 .PP 
 .SS "constexpr \fBunique_impl_ptr\fP ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
@@ -568,300 +193,60 @@ Definición en la línea \fB169\fP del archivo \fBsmimplm\&.hpp\fP\&.
 
 .PP
 Definición en la línea \fB178\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB118\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP (std::nullptr_t)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB121\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (pointer p, D && d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB125\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (U * u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB133\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB160\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB169\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB178\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB118\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP (std::nullptr_t)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB121\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (pointer p, D && d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB125\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (U * u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB133\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB160\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB169\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB178\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB118\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "constexpr \fBunique_impl_ptr\fP (std::nullptr_t)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB121\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (pointer p, D && d, typename std::enable_if< std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB125\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (U * u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB133\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB160\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (std::unique_ptr< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB169\fP del archivo \fBspimplmc\&.hpp\fP\&.
-.SS "\fBunique_impl_ptr\fP (\fBunique_impl_ptr\fP< U, D > && u, typename std::enable_if< std::is_convertible< U *, pointer >::value &&std::is_convertible< D, deleter_type >::value, \fBdummy_t_\fP >::type = \fC\fBdummy_t_\fP()\fP)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB178\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
 .SS "const_pointer get () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB228\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "const_pointer get () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB228\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "const_pointer get () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB228\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "const_pointer get () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB228\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "pointer get ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB227\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "pointer get ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB227\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "pointer get ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB227\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "pointer get ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB227\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "const std::remove_reference< deleter_type >::type & get_deleter () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB243\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "const std::remove_reference< deleter_type >::type & get_deleter () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB243\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "const std::remove_reference< deleter_type >::type & get_deleter () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB243\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "const std::remove_reference< deleter_type >::type & get_deleter () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB243\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "std::remove_reference< deleter_type >::type & get_deleter ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB242\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "std::remove_reference< deleter_type >::type & get_deleter ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB242\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "std::remove_reference< deleter_type >::type & get_deleter ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB242\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "std::remove_reference< deleter_type >::type & get_deleter ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB242\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "operator bool () const\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB240\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "operator bool () const\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB240\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "operator bool () const\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB240\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "operator bool () const\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB240\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "reference operator* ()\fC [inline]\fP"
 
 .PP
 Definición en la línea \fB221\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "reference operator* ()\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB221\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "reference operator* ()\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB221\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "reference operator* ()\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB221\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "const_reference operator* () const\fC [inline]\fP"
 
 .PP
 Definición en la línea \fB222\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "const_reference operator* () const\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB222\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "const_reference operator* () const\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB222\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "const_reference operator* () const\fC [inline]\fP"
-
-.PP
-Definición en la línea \fB222\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "const_pointer operator\-> () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB225\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "const_pointer operator\-> () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB225\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "const_pointer operator\-> () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB225\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "const_pointer operator\-> () const\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB225\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "pointer operator\-> ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB224\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "pointer operator\-> ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB224\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "pointer operator\-> ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB224\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "pointer operator\-> ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB224\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type operator= (std::unique_ptr< U > && u)\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB214\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type operator= (std::unique_ptr< U > && u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB214\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type operator= (std::unique_ptr< U > && u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB214\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "std::enable_if< std::is_convertible< U *, pointer >::value &&is_default_manageable::value, \fBunique_impl_ptr\fP & >::type operator= (std::unique_ptr< U > && u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB214\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "pointer release ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB236\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "pointer release ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB236\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "pointer release ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB236\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "pointer release ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB236\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "unique_ptr_type release_unique ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB238\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "unique_ptr_type release_unique ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB238\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "unique_ptr_type release_unique ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB238\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "unique_ptr_type release_unique ()\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB238\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SS "void swap (\fBunique_impl_ptr\fP< T, Deleter > & u)\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
 Definición en la línea \fB230\fP del archivo \fBsmimplm\&.hpp\fP\&.
-.SS "void swap (\fBunique_impl_ptr\fP< T, Deleter > & u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB230\fP del archivo \fBspimpl\&.hpp\fP\&.
-.SS "void swap (\fBunique_impl_ptr\fP< T, Deleter > & u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB230\fP del archivo \fBspimplc\&.hpp\fP\&.
-.SS "void swap (\fBunique_impl_ptr\fP< T, Deleter > & u)\fC [inline]\fP, \fC [noexcept]\fP"
-
-.PP
-Definición en la línea \fB230\fP del archivo \fBspimplmc\&.hpp\fP\&.
 .SH "Documentación de los datos miembro"
 .PP 
 .SS "unique_ptr_type ptr_\fC [protected]\fP"

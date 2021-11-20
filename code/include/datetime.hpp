@@ -10,6 +10,12 @@ namespace NST {
       DateTime(sstring str);
       DateTime(const char *str);
       ~DateTime();
+      int getYear   ();
+      int getMonth  ();
+      int getDay    ();
+      int getHour   ();
+      int getMin    ();
+      int getSecond ();
       sstring     toString();
       const char* toChar();
    private:

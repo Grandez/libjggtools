@@ -16,6 +16,15 @@
     <Filter Include="Include Files">
       <UniqueIdentifier>{38c813b8-b28b-4edd-a442-8f42bc6ac889}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Document Files">
+      <UniqueIdentifier>{058d828b-7c7e-4711-b27c-82f4f49e745e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Document Files\Doxygen Files">
+      <UniqueIdentifier>{c5de9668-14bb-4d1a-9f32-6dbfa6ab8353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Document Files\Markdown Files">
+      <UniqueIdentifier>{7286ffc6-1949-4a41-a5a0-722570ee04d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="code\src\exceptions.cpp">
@@ -120,6 +129,9 @@
   <ItemGroup>
     <None Include="code\include\cpp.hint">
       <Filter>Header Files</Filter>
+    </None>
+    <None Include="doc\doxygen\jggtools.dox">
+      <Filter>Document Files\Doxygen Files</Filter>
     </None>
   </ItemGroup>
 </Project>

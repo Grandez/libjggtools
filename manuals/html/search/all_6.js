@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['impl_5fptr_0',['impl_ptr',['../d3/dbd/classspimpl_1_1impl__ptr.html',1,'spimpl']]],
-  ['integer_1',['Integer',['../d2/d35/classjggtools_1_1_integer.html#a62b905a3a2a180fc2952af3300bc81d6',1,'jggtools::Integer::Integer(sstring value)'],['../d2/d35/classjggtools_1_1_integer.html#a8e79ba89dfbb58548d2c39e27f2e5572',1,'jggtools::Integer::Integer(const char *value)'],['../d2/d35/classjggtools_1_1_integer.html#ab4d4a0f9d4489e8e3dcf854511f58f14',1,'jggtools::Integer::Integer(short value)'],['../d2/d35/classjggtools_1_1_integer.html#a4baae9bd4a6e3754f26dd65cf2f7453c',1,'jggtools::Integer::Integer(int value)'],['../d2/d35/classjggtools_1_1_integer.html#a3e9a67b674ede4f696432be3fc5f99ff',1,'jggtools::Integer::Integer(long value)'],['../d2/d35/classjggtools_1_1_integer.html#a0285ed5ae8cec5e5519ef3fc75429031',1,'jggtools::Integer::Integer(long long value)'],['../d2/d35/classjggtools_1_1_integer.html',1,'Integer']]],
-  ['is_5fdefault_5fmanageable_2',['is_default_manageable',['../de/d67/structspimpl_1_1details_1_1is__default__manageable.html',1,'spimpl::details']]],
-  ['islong_3',['isLong',['../d2/d35/classjggtools_1_1_integer.html#a03f1ef0bd405fefa72cbefb0d8ff71d2',1,'jggtools::Integer::isLong()'],['../dd/d09/classjggtools_1_1_natural.html#a03f1ef0bd405fefa72cbefb0d8ff71d2',1,'jggtools::Natural::isLong()']]],
-  ['islonglong_4',['isLongLong',['../d2/d35/classjggtools_1_1_integer.html#a3f6460eba6d05ccf726ebe871c289dbf',1,'jggtools::Integer::isLongLong()'],['../dd/d09/classjggtools_1_1_natural.html#a3f6460eba6d05ccf726ebe871c289dbf',1,'jggtools::Natural::isLongLong()']]],
-  ['isshort_5',['isShort',['../d2/d35/classjggtools_1_1_integer.html#aeebc6a4c9b7bc00899f3ffd028fea256',1,'jggtools::Integer::isShort()'],['../dd/d09/classjggtools_1_1_natural.html#aeebc6a4c9b7bc00899f3ffd028fea256',1,'jggtools::Natural::isShort()']]]
+  ['ltrim_0',['ltrim',['../d2/dc2/classjggtools_1_1sstring.html#a4b147c580cdfaa29489e4595dbffeaa4',1,'jggtools::sstring']]]
 ];

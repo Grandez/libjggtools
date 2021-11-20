@@ -98,12 +98,12 @@ $(document).ready(function(){initNavTree('dd/d47/decimal_8cpp_source.html','../.
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>NST {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>   Decimal::Decimal(<span class="keyword">const</span> <span class="keywordtype">char</span>* value)  {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a14704e63d11388f1b7db157221e49a86">   14</a></span>   Decimal::Decimal(<span class="keyword">const</span> <span class="keywordtype">char</span>* value)  {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        regex pat{<span class="stringliteral">&quot;^[+-]?[0-9]*[\\.,]?[0-9]*$&quot;</span>};</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">bool</span> match = regex_search(value, pat);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span> (!match) <span class="keywordflow">throw</span> <span class="keyword">new</span> ToolsValueException(BAD_DECIMAL, value);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        vector&lt;char *&gt; data = (sstring(value)).tokenize(<span class="stringliteral">&quot;[\\.,]&quot;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span> (data.size() &gt; 2 || data.size() == 0) <span class="keywordflow">throw</span> <span class="keyword">new</span> ToolsValueException(BAD_DECIMAL, value);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span> (!match) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../d3/d95/classjggtools_1_1_tools_value_exception.html">ToolsValueException</a>(BAD_DECIMAL, value);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        vector&lt;char *&gt; data = (<a class="code hl_class" href="../../d2/dc2/classjggtools_1_1sstring.html">sstring</a>(value)).tokenize(<span class="stringliteral">&quot;[\\.,]&quot;</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span> (data.size() &gt; 2 || data.size() == 0) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../d3/d95/classjggtools_1_1_tools_value_exception.html">ToolsValueException</a>(BAD_DECIMAL, value);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        number = atoll(data[0]);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        scale = 0;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (data.size() == 2) {</div>
@@ -114,30 +114,30 @@ $(document).ready(function(){initNavTree('dd/d47/decimal_8cpp_source.html','../.
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// When using char *, those are allocated</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; data.size(); i++) free(data[i]);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>   }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>   Decimal::Decimal(<span class="keywordtype">float</span>       value) { </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#aabf3e99a74e7ff8d1d18f717a9a66080">   30</a></span>   Decimal::Decimal(<span class="keywordtype">float</span>       value) { </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>       sprintf(buffer, <span class="stringliteral">&quot;%f&quot;</span>, value); </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>       setValues();</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>   }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>   Decimal::Decimal(<span class="keywordtype">double</span>      value) { </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a06a7d1a8f1d96fd90c1becb8006a1d10">   34</a></span>   Decimal::Decimal(<span class="keywordtype">double</span>      value) { </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>       sprintf(buffer, <span class="stringliteral">&quot;%lf&quot;</span>, value); </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>       setValues();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>   }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>   Decimal::Decimal(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) { </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a9ab3af90f84650f67a299a80f1067d80">   38</a></span>   Decimal::Decimal(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value) { </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>       sprintf(buffer, <span class="stringliteral">&quot;%Lf&quot;</span>, value); </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>       setValues();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>   Decimal::Decimal(<span class="keywordtype">int</span> value)         { </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a9c420bfa3d41aba6b6d21d00ea091016">   42</a></span>   Decimal::Decimal(<span class="keywordtype">int</span> value)         { </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>this-&gt;number = value;            }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>   Decimal::Decimal(<span class="keywordtype">long</span> value)        { </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#aa311ac1f70a805648058806d08c4bc85">   44</a></span>   Decimal::Decimal(<span class="keywordtype">long</span> value)        { </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>this-&gt;number = value;            }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>   Decimal::Decimal(<span class="keywordtype">long</span> <span class="keywordtype">long</span> value)   { </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a64b9b886404fe7d77c26645b10c6c377">   46</a></span>   Decimal::Decimal(<span class="keywordtype">long</span> <span class="keywordtype">long</span> value)   { </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>this-&gt;number = value;            }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   Decimal::Decimal(<span class="keywordtype">long</span> <span class="keywordtype">long</span> value, <span class="keywordtype">int</span> scale) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>         this-&gt;number = value;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>         this-&gt;scale  = scale;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>   }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>   sstring Decimal::toString() {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a5558c5d549f41597377fa1ea8a1cefa3">   53</a></span>   <a class="code hl_class" href="../../d2/dc2/classjggtools_1_1sstring.html">sstring</a> Decimal::toString() {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>       <span class="keywordtype">string</span> str = to_string(number);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>       <span class="keywordtype">int</span> len = str.length();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>       <span class="keywordtype">int</span> diff = len - scale;</div>
@@ -148,98 +148,98 @@ $(document).ready(function(){initNavTree('dd/d47/decimal_8cpp_source.html','../.
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>       <span class="keywordflow">if</span> (str2.length() == 0) <span class="keywordflow">return</span> str1;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>       <span class="keywordflow">return</span> str1.append(<span class="stringliteral">&quot;.&quot;</span>).append(str2);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>   }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   <span class="keywordtype">char</span>* Decimal::toChar() {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#afb977ca37c48167fa894aeae4aa646ae">   64</a></span>   <span class="keywordtype">char</span>* Decimal::toChar() {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">return</span> strdup(this-&gt;toString().toChar());</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   sstring  Decimal::toStringRounded(<span class="keywordtype">int</span> scale) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>       Decimal dec = round(scale);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>       <span class="keywordflow">return</span> dec.toString();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a15a64a29fe4a0ddf7cb681e2b82d809b">   67</a></span>   <a class="code hl_class" href="../../d2/dc2/classjggtools_1_1sstring.html">sstring</a>  Decimal::toStringRounded(<span class="keywordtype">int</span> scale) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>       <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> dec = round(scale);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>       <span class="keywordflow">return</span> dec.<a class="code hl_function" href="../../d8/d8a/classjggtools_1_1_decimal.html#a5558c5d549f41597377fa1ea8a1cefa3">toString</a>();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   <span class="keywordtype">char</span>* Decimal::toCharRounded(<span class="keywordtype">int</span> scale) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#aad4d39c1200eb09c1ea34950387466eb">   71</a></span>   <span class="keywordtype">char</span>* Decimal::toCharRounded(<span class="keywordtype">int</span> scale) {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>       <span class="keywordflow">return</span> strdup(toStringRounded(scale).toChar());</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>   <span class="keywordtype">float</span> Decimal::toFloat() {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a3774efe5a19fbbc82f1206fbd6f6dd4b">   74</a></span>   <span class="keywordtype">float</span> Decimal::toFloat() {</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>         <span class="keywordtype">float</span> f = number;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>         <span class="keywordflow">return</span> f / (10 ^ scale);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   <span class="keywordtype">double</span>  Decimal::toDouble() {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#af8622ea32bfd911ebd71ed567912b646">   78</a></span>   <span class="keywordtype">double</span>  Decimal::toDouble() {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>         <span class="keywordtype">double</span> d = number;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>         <span class="keywordflow">return</span> d / (10 ^ scale);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   <span class="keywordtype">long</span> <span class="keywordtype">double</span> Decimal::toLongDouble() {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#af83b831491d659a64a1f51e375fdf610">   82</a></span>   <span class="keywordtype">long</span> <span class="keywordtype">double</span> Decimal::toLongDouble() {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>         <span class="keywordtype">long</span> <span class="keywordtype">double</span> ld = number;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>         <span class="keywordflow">return</span> ld / (10 ^ scale);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>   }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>   <span class="keywordtype">long</span> Decimal::toFloor() {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a5531d52fcc9c190850e4733341e7d4d1">   86</a></span>   <span class="keywordtype">long</span> Decimal::toFloor() {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordtype">long</span> value = number / (10 ^ scale);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> value + 1;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>   }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   <span class="keywordtype">long</span> Decimal::toCeil() {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a34bb9554b1102e6574eac35b5e9f1958">   90</a></span>   <span class="keywordtype">long</span> Decimal::toCeil() {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> number / (10 ^ scale);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>   Decimal Decimal::round(<span class="keywordtype">int</span> scale) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a5ad0c55dbb4a9e5a3fbe64d940c220de">   93</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::round(<span class="keywordtype">int</span> scale) {</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>       <span class="keywordtype">int</span> remove = this-&gt;scale - scale;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>       <span class="keywordtype">long</span> p =  pow(10, remove - 1);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>       p *= 5;  </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>       <span class="keywordflow">if</span> (number &lt; 0) p *= -1;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>       <span class="keywordtype">long</span> <span class="keywordtype">long</span> value = number + p;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>       <span class="keywordtype">long</span> p2 = pow(10, this-&gt;scale - scale);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>       <span class="keywordflow">return</span> Decimal(value / p2, scale);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>       <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>(value / p2, scale);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>   }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>   Decimal Decimal::operator+  (<span class="keyword">const</span> Decimal&amp; b) { <span class="keywordflow">return</span> add(*<span class="keyword">this</span>, b); }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>   Decimal Decimal::operator+= (<span class="keyword">const</span> Decimal&amp; b) {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      Decimal res = add(*<span class="keyword">this</span>, b); </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a1df4ca0cb4d3c546689dcbfff25d8e40">  102</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator+  (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) { <span class="keywordflow">return</span> add(*<span class="keyword">this</span>, b); }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a1f89f2569d3279ffa919515418214368">  103</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator+= (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> res = add(*<span class="keyword">this</span>, b); </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      this-&gt;number = res.number;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      this-&gt;scale  = res.scale;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>   }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>   Decimal Decimal::operator-  (<span class="keyword">const</span> Decimal&amp; b) { <span class="keywordflow">return</span> subtract(*<span class="keyword">this</span>, b); }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>   Decimal Decimal::operator-= (<span class="keyword">const</span> Decimal&amp; b) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      Decimal res = add(*<span class="keyword">this</span>, b); </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#ad9d332352715c10151c5f4e3d959a98d">  109</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator-  (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) { <span class="keywordflow">return</span> subtract(*<span class="keyword">this</span>, b); }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator-= (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> res = add(*<span class="keyword">this</span>, b); </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      this-&gt;number = res.number;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      this-&gt;scale  = res.scale;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>   }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>   Decimal Decimal::operator*  (<span class="keyword">const</span> Decimal&amp; b) { <span class="keywordflow">return</span> multiply(*<span class="keyword">this</span>, b); }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>   Decimal Decimal::operator*= (<span class="keyword">const</span> Decimal&amp; b) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      Decimal res  = multiply(*<span class="keyword">this</span>, b); </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a012978b4e5be27731ffa2a4844957eb9">  116</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator*  (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) { <span class="keywordflow">return</span> multiply(*<span class="keyword">this</span>, b); }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a513971035ae4527ce49a7aa8a3c5f957">  117</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator*= (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> res  = multiply(*<span class="keyword">this</span>, b); </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      this-&gt;number = res.number;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      this-&gt;scale  = res.scale;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>   }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>   Decimal Decimal::operator/  (<span class="keyword">const</span> Decimal&amp; b) { <span class="keywordflow">return</span> divide(*<span class="keyword">this</span>, b); }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>   Decimal Decimal::operator/= (<span class="keyword">const</span> Decimal&amp; b) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      Decimal res  = divide(*<span class="keyword">this</span>, b); </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#aac6eaad2624a033919383327e2ca86de">  123</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator/  (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) { <span class="keywordflow">return</span> divide(*<span class="keyword">this</span>, b); }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a91800dfd5d952c1b512ebb49495ae138">  124</a></span>   <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> Decimal::operator/= (<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a> res  = divide(*<span class="keyword">this</span>, b); </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      this-&gt;number = res.number;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      this-&gt;scale  = res.scale;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>   }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>   <span class="keywordtype">bool</span> Decimal::operator==(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a685dcd4f5b3027255ff8bc523f1b68da">  130</a></span>   <span class="keywordtype">bool</span> Decimal::operator==(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <span class="keywordflow">return</span> beg.number1 == beg.number2;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>   }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>   <span class="keywordtype">bool</span> Decimal::operator!=(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#aa1c1990c4a471f4db66c3ed19bff2c3a">  135</a></span>   <span class="keywordtype">bool</span> Decimal::operator!=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="keywordflow">return</span> beg.number1 != beg.number2;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>   }</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>   <span class="keywordtype">bool</span> Decimal::operator&lt;(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a58a682d4587457e4999ae34a6bc2e5bd">  140</a></span>   <span class="keywordtype">bool</span> Decimal::operator&lt;(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <span class="keywordflow">return</span> beg.number1 &lt; beg.number2;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>   }</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>   <span class="keywordtype">bool</span> Decimal::operator&lt;=(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#ab9d68ed2cf917144e33351499d54afe8">  145</a></span>   <span class="keywordtype">bool</span> Decimal::operator&lt;=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keywordflow">return</span> beg.number1 &lt;= beg.number2;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>   }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordtype">bool</span> Decimal::operator&gt;(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a636d6e5070378096672c51e68c63aa73">  150</a></span>  <span class="keywordtype">bool</span> Decimal::operator&gt;(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      <span class="keywordflow">return</span> beg.number1 &gt; beg.number2;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  }</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">bool</span> Decimal::operator&gt;=(<span class="keyword">const</span> Decimal&amp; b) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="../../d8/d8a/classjggtools_1_1_decimal.html#a1a3975f3b4b5e212bda23a05dfc2d402">  155</a></span>  <span class="keywordtype">bool</span> Decimal::operator&gt;=(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d8a/classjggtools_1_1_decimal.html">Decimal</a>&amp; b) {</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keyword">struct </span>opers beg = {this-&gt;number, b.number, this-&gt;scale, b.scale};</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      adjustScales(&amp;beg);</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordflow">return</span> beg.number1 &gt;= beg.number2;</div>
@@ -307,6 +307,10 @@ $(document).ready(function(){initNavTree('dd/d47/decimal_8cpp_source.html','../.
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>   }</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>   <span class="comment">//TODO Check when number fit in float, double or not</span></div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
+<div class="ttc" id="aclassjggtools_1_1_decimal_html"><div class="ttname"><a href="../../d8/d8a/classjggtools_1_1_decimal.html">jggtools::Decimal</a></div><div class="ttdoc">Decimal numbers.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd2/decimal_8hpp_source.html#l00009">decimal.hpp:9</a></div></div>
+<div class="ttc" id="aclassjggtools_1_1_decimal_html_a5558c5d549f41597377fa1ea8a1cefa3"><div class="ttname"><a href="../../d8/d8a/classjggtools_1_1_decimal.html#a5558c5d549f41597377fa1ea8a1cefa3">jggtools::Decimal::toString</a></div><div class="ttdeci">sstring toString()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d47/decimal_8cpp_source.html#l00053">decimal.cpp:53</a></div></div>
+<div class="ttc" id="aclassjggtools_1_1_tools_value_exception_html"><div class="ttname"><a href="../../d3/d95/classjggtools_1_1_tools_value_exception.html">jggtools::ToolsValueException</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d49/exceptions_8hpp_source.html#l00020">exceptions.hpp:20</a></div></div>
+<div class="ttc" id="aclassjggtools_1_1sstring_html"><div class="ttname"><a href="../../d2/dc2/classjggtools_1_1sstring.html">jggtools::sstring</a></div><div class="ttdoc">Subclsase de string con metoos auxiliares.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d2c/sstring_8hpp_source.html#l00010">sstring.hpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

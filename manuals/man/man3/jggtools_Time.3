@@ -14,15 +14,31 @@ Time \- Clase \fBTime\fP\&.
 .RI "\fBTime\fP (const \fBTime\fP &src)"
 .br
 .ti -1c
-.RI "\fBTime\fP (string str)"
-.br
-.ti -1c
 .RI "\fBTime\fP (const char *str)"
 .br
 .ti -1c
 .RI "struct tm * \fBgetTM\fP ()"
 .br
 .RI "Return a pointer to an struct tm when time pieces are associated with the object\&. "
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBTime\fP (string str)"
+.br
+.RI "Constructor from an string\&. "
+.in -1c
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
 .ti -1c
 .RI "\fBsstring\fP \fBtoString\fP (const char *fmt='%X')"
 .br
@@ -31,6 +47,7 @@ Time \- Clase \fBTime\fP\&.
 .RI "const char * \fBtoChar\fP (const char *fmt='%X')"
 .br
 .RI "Return a representation of \fBTime\fP as H:M:S\&. "
+.in -1c
 .in -1c
 .SH "Descripción detallada"
 .PP 
@@ -46,6 +63,15 @@ Definición en la línea \fB14\fP del archivo \fBtime\&.hpp\fP\&.
 .PP
 Definición en la línea \fB16\fP del archivo \fBtime\&.cpp\fP\&.
 .SS "\fBTime\fP (string str)"
+
+.PP
+Constructor from an string\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIstr\fP An string according one of allowed formats 
+.RE
+.PP
 
 .PP
 Definición en la línea \fB14\fP del archivo \fBtime\&.cpp\fP\&.

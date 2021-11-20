@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('de/d5c/real_8cpp_source.html','../../'
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>   Real::Real(<span class="keyword">const</span> <span class="keywordtype">char</span>* value)  {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        regex pat{<span class="stringliteral">&quot;^[+-]?[0-9][.]?[0-9]*+$&quot;</span>};</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">bool</span> match = regex_search(value, pat);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (!match) <span class="keywordflow">throw</span> <span class="keyword">new</span> ToolsValueException(BAD_REAL, value);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (!match) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d6d/class_tools_value_exception_1_1_tools_value_exception.html">ToolsValueException</a>(BAD_REAL, value);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> dec = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">int</span>  scale = 0;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">long</span> <span class="keywordtype">double</span> res = 0.0;</div>
@@ -124,6 +124,7 @@ $(document).ready(function(){initNavTree('de/d5c/real_8cpp_source.html','../../'
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keywordflow">if</span> (value &gt; FLT_MAX || value &lt; FLT_MIN) mask |= 0x02;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>   }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="ttc" id="aclass_tools_value_exception_1_1_tools_value_exception_html"><div class="ttname"><a href="../../d4/d6d/class_tools_value_exception_1_1_tools_value_exception.html">ToolsValueException</a></div><div class="ttdoc">Exception when data not fit the range of values.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

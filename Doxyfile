@@ -963,7 +963,9 @@ RECURSIVE              = YES
 
 EXCLUDE                = packages/** \
                          docs/user_manual \
-                         include
+                         include \
+                         Date::DateImpl \
+                         DateTime::DateTimeImpl
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -981,7 +983,9 @@ EXCLUDE_SYMLINKS       = NO
 
 EXCLUDE_PATTERNS       = *Test.cpp \
                          */testcmdline/* \
-                         */packages/*
+                         */packages/* \
+                         */spimpl* \
+                         datetimebase.*
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the

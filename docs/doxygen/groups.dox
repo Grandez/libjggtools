@@ -7,15 +7,15 @@
     Classes related to date and times
 */
 
-/** @defgroup number
+/** @defgroup number Numbers
    Classes related to numbers
 */
 
-/** @defgroup filesystem
+/** @defgroup filesystem Filesystem
    Classes related to paths and files
 */
 
-/** @defgroup exceptions
+/** @defgroup exceptions Exceptions
    Exceptions throwed 
    
    Main target of these tools is check when some string can be casted to another type.

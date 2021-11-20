@@ -13,7 +13,7 @@ namespace NST {
 class Date {
 public:
    Date() = default;
-   // Date(const Date& src);
+   Date(const Date& src);
    Date(sstring str     , int fmt = -1);
    Date(const char *str, int fmt = -1);
    ~Date();

@@ -26,7 +26,7 @@
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00022}00022    \}}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00023}00023    DateTimeImpl(sstring str) \{}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00024}00024       vector<sstring> toks = str.tokenize(sstring(\textcolor{stringliteral}{"{}[ \(\backslash\)t]\{1\}"{}}));}
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00025}00025       \textcolor{keywordflow}{if} (toks.size() > 2) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATETIME, str.c\_str());}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00025}00025       \textcolor{keywordflow}{if} (toks.size() > 2) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{class_tools_value_exception_1_1_tools_value_exception}{ToolsValueException}}(BAD\_DATETIME, str.c\_str());}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00026}00026       \textcolor{keywordflow}{if} (toks.size() == 2) \{}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00027}00027           mDate = \textcolor{keyword}{new} Date(toks[0], time\_base::dateorder::ymd);}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00028}00028           mTime = \textcolor{keyword}{new} Time(toks[1]);}
@@ -34,8 +34,8 @@
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00030}00030    \}}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00031}00031    \string~DateTimeImpl() \{}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00032}00032    \};}
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00033}00033    sstring     toString() \{ \textcolor{keywordflow}{return} dtb.format(\textcolor{stringliteral}{"{}\%F \%X"{}});         \}}
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00034}00034    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* toChar()   \{ \textcolor{keywordflow}{return} strdup((dtb.format(\textcolor{stringliteral}{"{}\%F \%X"{}})).c\_str()); \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00033}00033    DateTimeBase *getDTB() \{ \textcolor{keywordflow}{return} \&dtb; \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00034}00034    sstring     toString() \{ \textcolor{keywordflow}{return} dtb.format(\textcolor{stringliteral}{"{}\%F \%X"{}});         \}}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00035}00035 \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00036}00036     DateTimeBase dtb = DateTimeBase();}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00037}00037     Date *mDate = \textcolor{keyword}{nullptr};}
@@ -47,8 +47,17 @@
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00043}00043    sstring     DateTime::toString() \{ \textcolor{keywordflow}{return} impl\_-\/>toString(); \} \textcolor{comment}{// dtb.format("{}\%F \%X"{});         \}}}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00044}00044    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* DateTime::toChar()   \{ \textcolor{keywordflow}{return} impl\_-\/>toChar(); \}    \textcolor{comment}{// strdup((dtb.format("{}\%F \%X"{})).c\_str()); \}}}
 \DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00045}00045    DateTime::\string~DateTime() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00046}00046 \}}
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00047}00047 }
-\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00046}00046    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* toChar()   \{ \textcolor{keywordflow}{return} strdup((dtb.format(\textcolor{stringliteral}{"{}\%F \%X"{}})).c\_str()); \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00047}00047 \textcolor{keywordtype}{int} DateTime::getYear   () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_year + 1900; \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00048}00048 \textcolor{keywordtype}{int} DateTime::getMonth  () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_mon  +    1; \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00049}00049 \textcolor{keywordtype}{int} DateTime::getDay    () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_mday;        \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00050}00050 \textcolor{keywordtype}{int} DateTime::getHour   () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_hour;        \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00051}00051 \textcolor{keywordtype}{int} DateTime::getMin    () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_min;         \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00052}00052 \textcolor{keywordtype}{int} DateTime::getSecond () \{ \textcolor{keywordflow}{return} impl\_-\/>getDTB()-\/>getTM()-\/>tm\_sec;         \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{datetime_8cpp_source_l00057}00057 }
 
 \end{DoxyCode}

@@ -8,6 +8,8 @@
   
 */
 
+///@{
+
 /** 
    @fn Time::Time();
    \brief Default constructor for a time
@@ -17,22 +19,25 @@
 */
 
 /** 
-    @fn Time::Time(Time&);
+    @fn Time::Time(const Time&);
     \brief Copy constructor
 */
 
 /** 
-   @fn Time::Time(sstring str);
+   @fn Time::Time(string str);
    \brief Constructor from an string
    \param[in] str An string according one of allowed formats
  */
 
 /**
-   @fn Time::Time(cnst *char str);
+   @fn Time::Time(const *char str);
    \brief Constructor from an char *
    \param[in] str An array according one of allowed formats
  */
 
+///@}
+
+///@{
 /** 
     @fn int Time::getHour();
    \brief Returns the hour associated with the object
@@ -51,6 +56,8 @@
    \return Seconds
 */
 
+///@}
+
 /** 
   @fn int struct tm *Time::getTM();
  \brief Return a pointer to an struct tm when time pieces are associated with the object
@@ -59,6 +66,8 @@
  
   \return a poinetr to struct tm
 */
+
+///@{
 
 /** 
     @fn sstring Time::toString ();
@@ -74,4 +83,4 @@
     \return A **new copy** as %H:%M:%S
  */
 
- 
+///@} 

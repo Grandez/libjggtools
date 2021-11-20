@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['date_0',['Date',['../d4/d3f/classjggtools_1_1_date.html',1,'jggtools']]],
+  ['date_0',['Date',['../d4/d3f/classjggtools_1_1_date.html#a30cc3fd09c0d187ebcf7ec530033acaa',1,'jggtools::Date::Date()'],['../d4/d3f/classjggtools_1_1_date.html',1,'Date']]],
   ['datetime_1',['DateTime',['../d9/df2/classjggtools_1_1_date_time.html#a3e93cd7baeb8b4448482a450df21ab20',1,'jggtools::DateTime::DateTime()'],['../d9/df2/classjggtools_1_1_date_time.html#a6d51cb8597f5d077199dac68b33ed355',1,'jggtools::DateTime::DateTime(sstring str)'],['../d9/df2/classjggtools_1_1_date_time.html',1,'DateTime']]],
-  ['datetimebase_2',['DateTimeBase',['../db/d54/classjggtools_1_1_date_time_base.html',1,'jggtools']]],
-  ['decimal_3',['Decimal',['../d8/d8a/classjggtools_1_1_decimal.html',1,'jggtools']]],
-  ['default_5fcopier_4',['default_copier',['../da/d1b/structspimpl_1_1details_1_1default__copier.html',1,'spimpl::details']]],
-  ['default_5fdeleter_5',['default_deleter',['../d3/d10/structspimpl_1_1details_1_1default__deleter.html',1,'spimpl::details']]],
-  ['dummy_5ft_5f_6',['dummy_t_',['../da/d19/structspimpl_1_1unique__impl__ptr_1_1dummy__t__.html',1,'spimpl::unique_impl_ptr']]]
+  ['decimal_2',['Decimal',['../d8/d8a/classjggtools_1_1_decimal.html#a957e07229bf6a4b6ee32d52a50195589',1,'jggtools::Decimal::Decimal(sstring value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a14704e63d11388f1b7db157221e49a86',1,'jggtools::Decimal::Decimal(const char *value)'],['../d8/d8a/classjggtools_1_1_decimal.html#aabf3e99a74e7ff8d1d18f717a9a66080',1,'jggtools::Decimal::Decimal(float value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a06a7d1a8f1d96fd90c1becb8006a1d10',1,'jggtools::Decimal::Decimal(double value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a9ab3af90f84650f67a299a80f1067d80',1,'jggtools::Decimal::Decimal(long double value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a9c420bfa3d41aba6b6d21d00ea091016',1,'jggtools::Decimal::Decimal(int value)'],['../d8/d8a/classjggtools_1_1_decimal.html#aa311ac1f70a805648058806d08c4bc85',1,'jggtools::Decimal::Decimal(long value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a64b9b886404fe7d77c26645b10c6c377',1,'jggtools::Decimal::Decimal(long long value)'],['../d8/d8a/classjggtools_1_1_decimal.html',1,'Decimal']]]
 ];

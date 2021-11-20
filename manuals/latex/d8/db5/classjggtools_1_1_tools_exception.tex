@@ -7,8 +7,7 @@ Base clase for exception into the library.
 
 
 
-Diagrama de herencias de Tools\+Exception
-\nopagebreak
+Diagrama de herencias de Tools\+Exception\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Diagrama de herencias de Tools\+Exception
 \end{figure}
 
 
-Diagrama de colaboración para Tools\+Exception\+:
-\nopagebreak
+Diagrama de colaboración para Tools\+Exception\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,13 +27,8 @@ Diagrama de colaboración para Tools\+Exception\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classjggtools_1_1_tools_exception_a41cd500adef1b18f3ee20562e4d59d22}{Tools\+Exception}} (const char $\ast$fmt,...)
-\item 
-const char $\ast$ \mbox{\hyperlink{classjggtools_1_1_tools_exception_a8486cf06cf9453ac17838843643fd941}{what}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Métodos protegidos}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classjggtools_1_1_tools_exception_a275ac35b8111cc2380460e39247e15de}{mount\+Message}} (const char $\ast$fmt, va\+\_\+list list)
+\begin{DoxyCompactList}\small\item\em Constructor for the exception. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classjggtools_1_1_tools_exception_afbbe72f435d7b3e1889c50433221b242}{what}} ()
 \end{DoxyCompactItemize}
 
 
@@ -57,28 +50,32 @@ Definición en la línea \mbox{\hyperlink{exceptions_8hpp_source_l00009}{9}} del
 
 
 
-Definición en la línea \mbox{\hyperlink{code_2src_2exceptions_8cpp_source_l00014}{14}} del archivo \mbox{\hyperlink{code_2src_2exceptions_8cpp_source}{exceptions.\+cpp}}.
+Constructor for the exception. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fmt} & Pattern to mount the message used in what \\
+\hline
+{\em ...} & values for pattern \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{exceptions_8cpp_source_l00014}{14}} del archivo \mbox{\hyperlink{exceptions_8cpp_source}{exceptions.\+cpp}}.
 
 
 
 \doxysubsection{Documentación de las funciones miembro}
-\mbox{\Hypertarget{classjggtools_1_1_tools_exception_a275ac35b8111cc2380460e39247e15de}\label{classjggtools_1_1_tools_exception_a275ac35b8111cc2380460e39247e15de}} 
-\index{ToolsException@{ToolsException}!mountMessage@{mountMessage}}
-\index{mountMessage@{mountMessage}!ToolsException@{ToolsException}}
-\doxysubsubsection{\texorpdfstring{mountMessage()}{mountMessage()}}
-{\footnotesize\ttfamily void mount\+Message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{va\+\_\+list}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definición en la línea \mbox{\hyperlink{code_2src_2exceptions_8cpp_source_l00024}{24}} del archivo \mbox{\hyperlink{code_2src_2exceptions_8cpp_source}{exceptions.\+cpp}}.
-
-\mbox{\Hypertarget{classjggtools_1_1_tools_exception_a8486cf06cf9453ac17838843643fd941}\label{classjggtools_1_1_tools_exception_a8486cf06cf9453ac17838843643fd941}} 
+\mbox{\Hypertarget{classjggtools_1_1_tools_exception_afbbe72f435d7b3e1889c50433221b242}\label{classjggtools_1_1_tools_exception_afbbe72f435d7b3e1889c50433221b242}} 
 \index{ToolsException@{ToolsException}!what@{what}}
 \index{what@{what}!ToolsException@{ToolsException}}
 \doxysubsubsection{\texorpdfstring{what()}{what()}}
-{\footnotesize\ttfamily const char $\ast$ what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily string what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+The message associate to exception 
+\end{DoxyReturn}
 
 
-
-Definición en la línea \mbox{\hyperlink{code_2src_2exceptions_8cpp_source_l00020}{20}} del archivo \mbox{\hyperlink{code_2src_2exceptions_8cpp_source}{exceptions.\+cpp}}.
+Definición en la línea \mbox{\hyperlink{exceptions_8cpp_source_l00020}{20}} del archivo \mbox{\hyperlink{exceptions_8cpp_source}{exceptions.\+cpp}}.
 

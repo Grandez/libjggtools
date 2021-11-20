@@ -11,7 +11,9 @@ namespace NST {
          ToolsException(const char *fmt, ...);
          const char* what();
       protected:   
+/// \cond DO_NOT_DOCUMENT
          void mountMessage(const char* fmt, va_list list);
+/// \endcond
       private:
          std::string message;
    };

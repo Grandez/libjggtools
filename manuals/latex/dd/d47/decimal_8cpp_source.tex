@@ -15,12 +15,12 @@
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00011}00011 \textcolor{keyword}{using namespace }std;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00012}00012 }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00013}00013 \textcolor{keyword}{namespace }NST \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00014}00014    Decimal::Decimal(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value)  \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00014}\mbox{\hyperlink{classjggtools_1_1_decimal_a14704e63d11388f1b7db157221e49a86}{00014}}    Decimal::Decimal(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value)  \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00015}00015         regex pat\{\textcolor{stringliteral}{"{}\string^[+-\/]?[0-\/9]*[\(\backslash\)\(\backslash\).,]?[0-\/9]*\$"{}}\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00016}00016         \textcolor{keywordtype}{bool} match = regex\_search(value, pat);}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00017}00017         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DECIMAL, value);}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00018}00018         vector<char *> data = (sstring(value)).tokenize(\textcolor{stringliteral}{"{}[\(\backslash\)\(\backslash\).,]"{}});}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00019}00019         \textcolor{keywordflow}{if} (data.size() > 2 || data.size() == 0) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DECIMAL, value);}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00017}00017         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{classjggtools_1_1_tools_value_exception}{ToolsValueException}}(BAD\_DECIMAL, value);}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00018}00018         vector<char *> data = (\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}(value)).tokenize(\textcolor{stringliteral}{"{}[\(\backslash\)\(\backslash\).,]"{}});}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00019}00019         \textcolor{keywordflow}{if} (data.size() > 2 || data.size() == 0) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{classjggtools_1_1_tools_value_exception}{ToolsValueException}}(BAD\_DECIMAL, value);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00020}00020         number = atoll(data[0]);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00021}00021         scale = 0;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00022}00022         \textcolor{keywordflow}{if} (data.size() == 2) \{}
@@ -31,30 +31,30 @@
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00027}00027         \textcolor{comment}{// When using char *, those are allocated}}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00028}00028         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < data.size(); i++) free(data[i]);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00029}00029    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00030}00030    Decimal::Decimal(\textcolor{keywordtype}{float}       value) \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00030}\mbox{\hyperlink{classjggtools_1_1_decimal_aabf3e99a74e7ff8d1d18f717a9a66080}{00030}}    Decimal::Decimal(\textcolor{keywordtype}{float}       value) \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00031}00031        sprintf(buffer, \textcolor{stringliteral}{"{}\%f"{}}, value); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00032}00032        setValues();}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00033}00033    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00034}00034    Decimal::Decimal(\textcolor{keywordtype}{double}      value) \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00034}\mbox{\hyperlink{classjggtools_1_1_decimal_a06a7d1a8f1d96fd90c1becb8006a1d10}{00034}}    Decimal::Decimal(\textcolor{keywordtype}{double}      value) \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00035}00035        sprintf(buffer, \textcolor{stringliteral}{"{}\%lf"{}}, value); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00036}00036        setValues();}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00037}00037    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00038}00038    Decimal::Decimal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} value) \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00038}\mbox{\hyperlink{classjggtools_1_1_decimal_a9ab3af90f84650f67a299a80f1067d80}{00038}}    Decimal::Decimal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} value) \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00039}00039        sprintf(buffer, \textcolor{stringliteral}{"{}\%Lf"{}}, value); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00040}00040        setValues();}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00041}00041     \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00042}00042    Decimal::Decimal(\textcolor{keywordtype}{int} value)         \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00042}\mbox{\hyperlink{classjggtools_1_1_decimal_a9c420bfa3d41aba6b6d21d00ea091016}{00042}}    Decimal::Decimal(\textcolor{keywordtype}{int} value)         \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00043}00043 this-\/>number = value;            \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00044}00044    Decimal::Decimal(\textcolor{keywordtype}{long} value)        \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00044}\mbox{\hyperlink{classjggtools_1_1_decimal_aa311ac1f70a805648058806d08c4bc85}{00044}}    Decimal::Decimal(\textcolor{keywordtype}{long} value)        \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00045}00045 this-\/>number = value;            \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00046}00046    Decimal::Decimal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value)   \{ }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00046}\mbox{\hyperlink{classjggtools_1_1_decimal_a64b9b886404fe7d77c26645b10c6c377}{00046}}    Decimal::Decimal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value)   \{ }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00047}00047 this-\/>number = value;            \}}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00048}00048 }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00049}00049    Decimal::Decimal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value, \textcolor{keywordtype}{int} scale) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00050}00050          this-\/>number = value;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00051}00051          this-\/>scale  = scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00052}00052    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00053}00053    sstring Decimal::toString() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00053}\mbox{\hyperlink{classjggtools_1_1_decimal_a5558c5d549f41597377fa1ea8a1cefa3}{00053}}    \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} Decimal::toString() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00054}00054        \textcolor{keywordtype}{string} str = to\_string(number);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00055}00055        \textcolor{keywordtype}{int} len = str.length();}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00056}00056        \textcolor{keywordtype}{int} diff = len -\/ scale;}
@@ -65,98 +65,98 @@
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00061}00061        \textcolor{keywordflow}{if} (str2.length() == 0) \textcolor{keywordflow}{return} str1;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00062}00062        \textcolor{keywordflow}{return} str1.append(\textcolor{stringliteral}{"{}."{}}).append(str2);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00063}00063    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00064}00064    \textcolor{keywordtype}{char}* Decimal::toChar() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00064}\mbox{\hyperlink{classjggtools_1_1_decimal_afb977ca37c48167fa894aeae4aa646ae}{00064}}    \textcolor{keywordtype}{char}* Decimal::toChar() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00065}00065       \textcolor{keywordflow}{return} strdup(this-\/>toString().toChar());}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00066}00066    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00067}00067    sstring  Decimal::toStringRounded(\textcolor{keywordtype}{int} scale) \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00068}00068        Decimal dec = round(scale);}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00069}00069        \textcolor{keywordflow}{return} dec.toString();}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00067}\mbox{\hyperlink{classjggtools_1_1_decimal_a15a64a29fe4a0ddf7cb681e2b82d809b}{00067}}    \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}  Decimal::toStringRounded(\textcolor{keywordtype}{int} scale) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00068}00068        \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} dec = round(scale);}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00069}00069        \textcolor{keywordflow}{return} dec.\mbox{\hyperlink{classjggtools_1_1_decimal_a5558c5d549f41597377fa1ea8a1cefa3}{toString}}();}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00070}00070    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00071}00071    \textcolor{keywordtype}{char}* Decimal::toCharRounded(\textcolor{keywordtype}{int} scale) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00071}\mbox{\hyperlink{classjggtools_1_1_decimal_aad4d39c1200eb09c1ea34950387466eb}{00071}}    \textcolor{keywordtype}{char}* Decimal::toCharRounded(\textcolor{keywordtype}{int} scale) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00072}00072        \textcolor{keywordflow}{return} strdup(toStringRounded(scale).toChar());}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00073}00073    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00074}00074    \textcolor{keywordtype}{float} Decimal::toFloat() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00074}\mbox{\hyperlink{classjggtools_1_1_decimal_a3774efe5a19fbbc82f1206fbd6f6dd4b}{00074}}    \textcolor{keywordtype}{float} Decimal::toFloat() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00075}00075          \textcolor{keywordtype}{float} f = number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00076}00076          \textcolor{keywordflow}{return} f / (10 \string^ scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00077}00077    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00078}00078    \textcolor{keywordtype}{double}  Decimal::toDouble() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00078}\mbox{\hyperlink{classjggtools_1_1_decimal_af8622ea32bfd911ebd71ed567912b646}{00078}}    \textcolor{keywordtype}{double}  Decimal::toDouble() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00079}00079          \textcolor{keywordtype}{double} d = number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00080}00080          \textcolor{keywordflow}{return} d / (10 \string^ scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00081}00081    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00082}00082    \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} Decimal::toLongDouble() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00082}\mbox{\hyperlink{classjggtools_1_1_decimal_af83b831491d659a64a1f51e375fdf610}{00082}}    \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} Decimal::toLongDouble() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00083}00083          \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} ld = number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00084}00084          \textcolor{keywordflow}{return} ld / (10 \string^ scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00085}00085    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00086}00086    \textcolor{keywordtype}{long} Decimal::toFloor() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00086}\mbox{\hyperlink{classjggtools_1_1_decimal_a5531d52fcc9c190850e4733341e7d4d1}{00086}}    \textcolor{keywordtype}{long} Decimal::toFloor() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00087}00087         \textcolor{keywordtype}{long} value = number / (10 \string^ scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00088}00088         \textcolor{keywordflow}{return} value + 1;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00089}00089    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00090}00090    \textcolor{keywordtype}{long} Decimal::toCeil() \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00090}\mbox{\hyperlink{classjggtools_1_1_decimal_a34bb9554b1102e6574eac35b5e9f1958}{00090}}    \textcolor{keywordtype}{long} Decimal::toCeil() \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00091}00091         \textcolor{keywordflow}{return} number / (10 \string^ scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00092}00092    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00093}00093    Decimal Decimal::round(\textcolor{keywordtype}{int} scale) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00093}\mbox{\hyperlink{classjggtools_1_1_decimal_a5ad0c55dbb4a9e5a3fbe64d940c220de}{00093}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::round(\textcolor{keywordtype}{int} scale) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00094}00094        \textcolor{keywordtype}{int} remove = this-\/>scale -\/ scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00095}00095        \textcolor{keywordtype}{long} p =  pow(10, remove -\/ 1);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00096}00096        p *= 5;  }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00097}00097        \textcolor{keywordflow}{if} (number < 0) p *= -\/1;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00098}00098        \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value = number + p;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00099}00099        \textcolor{keywordtype}{long} p2 = pow(10, this-\/>scale -\/ scale);}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00100}00100        \textcolor{keywordflow}{return} Decimal(value / p2, scale);}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00100}00100        \textcolor{keywordflow}{return} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}(value / p2, scale);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00101}00101    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00102}00102    Decimal Decimal::operator+  (\textcolor{keyword}{const} Decimal\& b) \{ \textcolor{keywordflow}{return} add(*\textcolor{keyword}{this}, b); \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00103}00103    Decimal Decimal::operator+= (\textcolor{keyword}{const} Decimal\& b) \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00104}00104       Decimal res = add(*\textcolor{keyword}{this}, b); }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00102}\mbox{\hyperlink{classjggtools_1_1_decimal_a1df4ca0cb4d3c546689dcbfff25d8e40}{00102}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator+  (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{ \textcolor{keywordflow}{return} add(*\textcolor{keyword}{this}, b); \}}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00103}\mbox{\hyperlink{classjggtools_1_1_decimal_a1f89f2569d3279ffa919515418214368}{00103}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator+= (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00104}00104       \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} res = add(*\textcolor{keyword}{this}, b); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00105}00105       this-\/>number = res.number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00106}00106       this-\/>scale  = res.scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00107}00107       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00108}00108    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00109}00109    Decimal Decimal::operator-\/  (\textcolor{keyword}{const} Decimal\& b) \{ \textcolor{keywordflow}{return} subtract(*\textcolor{keyword}{this}, b); \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00110}00110    Decimal Decimal::operator-\/= (\textcolor{keyword}{const} Decimal\& b) \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00111}00111       Decimal res = add(*\textcolor{keyword}{this}, b); }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00109}\mbox{\hyperlink{classjggtools_1_1_decimal_ad9d332352715c10151c5f4e3d959a98d}{00109}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator-\/  (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{ \textcolor{keywordflow}{return} subtract(*\textcolor{keyword}{this}, b); \}}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00110}00110    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator-\/= (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00111}00111       \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} res = add(*\textcolor{keyword}{this}, b); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00112}00112       this-\/>number = res.number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00113}00113       this-\/>scale  = res.scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00114}00114       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00115}00115    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00116}00116    Decimal Decimal::operator*  (\textcolor{keyword}{const} Decimal\& b) \{ \textcolor{keywordflow}{return} multiply(*\textcolor{keyword}{this}, b); \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00117}00117    Decimal Decimal::operator*= (\textcolor{keyword}{const} Decimal\& b) \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00118}00118       Decimal res  = multiply(*\textcolor{keyword}{this}, b); }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00116}\mbox{\hyperlink{classjggtools_1_1_decimal_a012978b4e5be27731ffa2a4844957eb9}{00116}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator*  (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{ \textcolor{keywordflow}{return} multiply(*\textcolor{keyword}{this}, b); \}}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00117}\mbox{\hyperlink{classjggtools_1_1_decimal_a513971035ae4527ce49a7aa8a3c5f957}{00117}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator*= (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00118}00118       \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} res  = multiply(*\textcolor{keyword}{this}, b); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00119}00119       this-\/>number = res.number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00120}00120       this-\/>scale  = res.scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00121}00121       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00122}00122    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00123}00123    Decimal Decimal::operator/  (\textcolor{keyword}{const} Decimal\& b) \{ \textcolor{keywordflow}{return} divide(*\textcolor{keyword}{this}, b); \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00124}00124    Decimal Decimal::operator/= (\textcolor{keyword}{const} Decimal\& b) \{}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00125}00125       Decimal res  = divide(*\textcolor{keyword}{this}, b); }
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00123}\mbox{\hyperlink{classjggtools_1_1_decimal_aac6eaad2624a033919383327e2ca86de}{00123}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator/  (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{ \textcolor{keywordflow}{return} divide(*\textcolor{keyword}{this}, b); \}}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00124}\mbox{\hyperlink{classjggtools_1_1_decimal_a91800dfd5d952c1b512ebb49495ae138}{00124}}    \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} Decimal::operator/= (\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00125}00125       \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}} res  = divide(*\textcolor{keyword}{this}, b); }
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00126}00126       this-\/>number = res.number;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00127}00127       this-\/>scale  = res.scale;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00128}00128       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00129}00129    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00130}00130    \textcolor{keywordtype}{bool} Decimal::operator==(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00130}\mbox{\hyperlink{classjggtools_1_1_decimal_a685dcd4f5b3027255ff8bc523f1b68da}{00130}}    \textcolor{keywordtype}{bool} Decimal::operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00131}00131       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00132}00132       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00133}00133       \textcolor{keywordflow}{return} beg.number1 == beg.number2;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00134}00134    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00135}00135    \textcolor{keywordtype}{bool} Decimal::operator!=(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00135}\mbox{\hyperlink{classjggtools_1_1_decimal_aa1c1990c4a471f4db66c3ed19bff2c3a}{00135}}    \textcolor{keywordtype}{bool} Decimal::operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00136}00136       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00137}00137       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00138}00138       \textcolor{keywordflow}{return} beg.number1 != beg.number2;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00139}00139    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00140}00140    \textcolor{keywordtype}{bool} Decimal::operator<(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00140}\mbox{\hyperlink{classjggtools_1_1_decimal_a58a682d4587457e4999ae34a6bc2e5bd}{00140}}    \textcolor{keywordtype}{bool} Decimal::operator<(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00141}00141       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00142}00142       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00143}00143       \textcolor{keywordflow}{return} beg.number1 < beg.number2;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00144}00144    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00145}00145    \textcolor{keywordtype}{bool} Decimal::operator<=(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00145}\mbox{\hyperlink{classjggtools_1_1_decimal_ab9d68ed2cf917144e33351499d54afe8}{00145}}    \textcolor{keywordtype}{bool} Decimal::operator<=(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00146}00146       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00147}00147       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00148}00148       \textcolor{keywordflow}{return} beg.number1 <= beg.number2;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00149}00149    \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00150}00150   \textcolor{keywordtype}{bool} Decimal::operator>(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00150}\mbox{\hyperlink{classjggtools_1_1_decimal_a636d6e5070378096672c51e68c63aa73}{00150}}   \textcolor{keywordtype}{bool} Decimal::operator>(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00151}00151       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00152}00152       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00153}00153       \textcolor{keywordflow}{return} beg.number1 > beg.number2;}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00154}00154   \}}
-\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00155}00155   \textcolor{keywordtype}{bool} Decimal::operator>=(\textcolor{keyword}{const} Decimal\& b) \{}
+\DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00155}\mbox{\hyperlink{classjggtools_1_1_decimal_a1a3975f3b4b5e212bda23a05dfc2d402}{00155}}   \textcolor{keywordtype}{bool} Decimal::operator>=(\textcolor{keyword}{const} \mbox{\hyperlink{classjggtools_1_1_decimal}{Decimal}}\& b) \{}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00156}00156       \textcolor{keyword}{struct }opers beg = \{this-\/>number, b.number, this-\/>scale, b.scale\};}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00157}00157       adjustScales(\&beg);}
 \DoxyCodeLine{\Hypertarget{decimal_8cpp_source_l00158}00158       \textcolor{keywordflow}{return} beg.number1 >= beg.number2;}

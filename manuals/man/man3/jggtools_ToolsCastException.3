@@ -2,8 +2,7 @@
 .ad l
 .nh
 .SH NAME
-ToolsCastException \- Exception when it is not possible construct the object using data passed to constructor\&.  
-
+ToolsCastException
 .SH SYNOPSIS
 .br
 .PP
@@ -15,16 +14,25 @@ Herencias \fBToolsException\fP\&.
 .ti -1c
 .RI "\fBToolsCastException\fP (const char *fmt,\&.\&.\&.)"
 .br
+.RI "Constructor for the exception\&. "
 .in -1c
-.SS "Otros miembros heredados"
 .SH "Descripción detallada"
 .PP 
-Exception when it is not possible construct the object using data passed to constructor\&. 
-.PP
-Definición en la línea \fB22\fP del archivo \fBexceptions\&.hpp\fP\&.
+Definición en la línea \fB24\fP del archivo \fBexceptions\&.hpp\fP\&.
 .SH "Documentación del constructor y destructor"
 .PP 
 .SS "\fBToolsCastException\fP (const char * fmt,  \&.\&.\&.)"
+
+.PP
+Constructor for the exception\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIfmt\fP Pattern to mount the message used in what 
+.br
+\fI\&.\&.\&.\fP values for pattern 
+.RE
+.PP
 
 .PP
 Definición en la línea \fB45\fP del archivo \fBexceptions\&.cpp\fP\&.

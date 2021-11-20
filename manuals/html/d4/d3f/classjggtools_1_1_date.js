@@ -1,5 +1,6 @@
 var classjggtools_1_1_date =
 [
+    [ "Date", "d4/d3f/classjggtools_1_1_date.html#a30cc3fd09c0d187ebcf7ec530033acaa", null ],
     [ "getDay", "d4/d3f/classjggtools_1_1_date.html#ac9321b3a445ce663d24b8776baafd0f9", null ],
     [ "getMonth", "d4/d3f/classjggtools_1_1_date.html#a7dc6a999739b4b5e9f7b37fc780707fb", null ],
     [ "getTM", "d4/d3f/classjggtools_1_1_date.html#a7e77cba85979e17cfdd9f466f4585967", null ],

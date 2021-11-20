@@ -17,14 +17,27 @@
 */
 
 /**
-   \class jggtools::ToolsValueException()
+   \class ToolsValueException::ToolsValueException
    \ingroup exceptions              
    \brief Exception when data not fit the range of values
+   
+*/
+/**
+   \fn ToolsException::ToolsException(const char *fmt, ...)
+   \brief Constructor for the exception
+   \param fmt Pattern to mount the message used in what
+   \param ... values for pattern
 */
 
 /**
-   \class jggtools::ToolsCastException()
+   \class ToolsCastException::ToolsCastException
    \ingroup exceptions              
    \brief Exception when it is not possible construct the object using data passed to constructor
+*/
+/**
+   \fn ToolsCastException::ToolsCastException(const char *fmt, ...)
+   \brief Constructor for the exception
+   \param fmt Pattern to mount the message used in what
+   \param ... values for pattern
 */
 

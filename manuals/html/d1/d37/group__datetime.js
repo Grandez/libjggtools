@@ -1,6 +1,7 @@
 var group__datetime =
 [
     [ "Date", "d4/d3f/classjggtools_1_1_date.html", [
+      [ "Date", "d4/d3f/classjggtools_1_1_date.html#a30cc3fd09c0d187ebcf7ec530033acaa", null ],
       [ "getDay", "d4/d3f/classjggtools_1_1_date.html#ac9321b3a445ce663d24b8776baafd0f9", null ],
       [ "getMonth", "d4/d3f/classjggtools_1_1_date.html#a7dc6a999739b4b5e9f7b37fc780707fb", null ],
       [ "getTM", "d4/d3f/classjggtools_1_1_date.html#a7e77cba85979e17cfdd9f466f4585967", null ],
@@ -11,10 +12,17 @@ var group__datetime =
     [ "DateTime", "d9/df2/classjggtools_1_1_date_time.html", [
       [ "DateTime", "d9/df2/classjggtools_1_1_date_time.html#a3e93cd7baeb8b4448482a450df21ab20", null ],
       [ "DateTime", "d9/df2/classjggtools_1_1_date_time.html#a6d51cb8597f5d077199dac68b33ed355", null ],
+      [ "getDay", "d9/df2/classjggtools_1_1_date_time.html#ac9321b3a445ce663d24b8776baafd0f9", null ],
+      [ "getHour", "d9/df2/classjggtools_1_1_date_time.html#a0967267e214bd955511a7c637d185e9e", null ],
+      [ "getMin", "d9/df2/classjggtools_1_1_date_time.html#a51f5173282f478ea52841f6d8a77312b", null ],
+      [ "getMonth", "d9/df2/classjggtools_1_1_date_time.html#a7dc6a999739b4b5e9f7b37fc780707fb", null ],
+      [ "getSecond", "d9/df2/classjggtools_1_1_date_time.html#a38fd2228e2bbaab19c04532b93d058cc", null ],
+      [ "getYear", "d9/df2/classjggtools_1_1_date_time.html#a53172a43145522837b888b7d7f7117ea", null ],
       [ "toChar", "d9/df2/classjggtools_1_1_date_time.html#a4a7e17a00771d068f6be4e6047b707cf", null ],
       [ "toString", "d9/df2/classjggtools_1_1_date_time.html#aebfb4291101b96084b58e606ea057a22", null ]
     ] ],
     [ "Time", "dd/d6d/classjggtools_1_1_time.html", [
+      [ "Time", "dd/d6d/classjggtools_1_1_time.html#a08d41381124b9f63aca64b6cfbe78a0b", null ],
       [ "getTM", "dd/d6d/classjggtools_1_1_time.html#a7e77cba85979e17cfdd9f466f4585967", null ],
       [ "toChar", "dd/d6d/classjggtools_1_1_time.html#abfa6f47ef68d634b0fef7604a4fd3ae7", null ],
       [ "toString", "dd/d6d/classjggtools_1_1_time.html#af147b7b4a7b34134807f2be4e3824536", null ]

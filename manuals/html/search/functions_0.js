@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datetime_0',['DateTime',['../d9/df2/classjggtools_1_1_date_time.html#a3e93cd7baeb8b4448482a450df21ab20',1,'jggtools::DateTime::DateTime()'],['../d9/df2/classjggtools_1_1_date_time.html#a6d51cb8597f5d077199dac68b33ed355',1,'jggtools::DateTime::DateTime(sstring str)']]]
+  ['contains_0',['contains',['../d2/dc2/classjggtools_1_1sstring.html#a35f78a731a64c2743aac140fd5a83351',1,'jggtools::sstring']]]
 ];

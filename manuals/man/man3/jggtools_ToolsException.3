@@ -17,15 +17,9 @@ Heredado por \fBToolsCastException\fP y \fBToolsValueException\fP\&.
 .ti -1c
 .RI "\fBToolsException\fP (const char *fmt,\&.\&.\&.)"
 .br
+.RI "Constructor for the exception\&. "
 .ti -1c
 .RI "const char * \fBwhat\fP ()"
-.br
-.in -1c
-.SS "Métodos protegidos"
-
-.in +1c
-.ti -1c
-.RI "void \fBmountMessage\fP (const char *fmt, va_list list)"
 .br
 .in -1c
 .SH "Descripción detallada"
@@ -40,14 +34,28 @@ Definición en la línea \fB9\fP del archivo \fBexceptions\&.hpp\fP\&.
 .SS "\fBToolsException\fP (const char * fmt,  \&.\&.\&.)"
 
 .PP
+Constructor for the exception\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIfmt\fP Pattern to mount the message used in what 
+.br
+\fI\&.\&.\&.\fP values for pattern 
+.RE
+.PP
+
+.PP
 Definición en la línea \fB14\fP del archivo \fBexceptions\&.cpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "void mountMessage (const char * fmt, va_list list)\fC [protected]\fP"
+.SS "string what ()"
 
 .PP
-Definición en la línea \fB24\fP del archivo \fBexceptions\&.cpp\fP\&.
-.SS "const char * what ()"
+\fBDevuelve\fP
+.RS 4
+The message associate to exception 
+.RE
+.PP
 
 .PP
 Definición en la línea \fB20\fP del archivo \fBexceptions\&.cpp\fP\&.

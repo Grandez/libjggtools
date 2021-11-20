@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('d7/d14/datetime_8cpp_source.html','../
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>   }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>   DateTimeImpl(sstring str) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      vector&lt;sstring&gt; toks = str.tokenize(sstring(<span class="stringliteral">&quot;[ \t]{1}&quot;</span>));</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">if</span> (toks.size() &gt; 2) <span class="keywordflow">throw</span> <span class="keyword">new</span> ToolsValueException(BAD_DATETIME, str.c_str());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">if</span> (toks.size() &gt; 2) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d6d/class_tools_value_exception_1_1_tools_value_exception.html">ToolsValueException</a>(BAD_DATETIME, str.c_str());</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">if</span> (toks.size() == 2) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>          mDate = <span class="keyword">new</span> Date(toks[0], time_base::dateorder::ymd);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>          mTime = <span class="keyword">new</span> Time(toks[1]);</div>
@@ -117,8 +117,8 @@ $(document).ready(function(){initNavTree('d7/d14/datetime_8cpp_source.html','../
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>   }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>   ~DateTimeImpl() {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>   };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>   sstring     toString() { <span class="keywordflow">return</span> dtb.format(<span class="stringliteral">&quot;%F %X&quot;</span>);         }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>   <span class="keyword">const</span> <span class="keywordtype">char</span>* toChar()   { <span class="keywordflow">return</span> strdup((dtb.format(<span class="stringliteral">&quot;%F %X&quot;</span>)).c_str()); }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>   DateTimeBase *getDTB() { <span class="keywordflow">return</span> &amp;dtb; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>   sstring     toString() { <span class="keywordflow">return</span> dtb.format(<span class="stringliteral">&quot;%F %X&quot;</span>);         }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    DateTimeBase dtb = DateTimeBase();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    Date *mDate = <span class="keyword">nullptr</span>;</div>
@@ -130,9 +130,19 @@ $(document).ready(function(){initNavTree('d7/d14/datetime_8cpp_source.html','../
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   sstring     DateTime::toString() { <span class="keywordflow">return</span> impl_-&gt;toString(); } <span class="comment">// dtb.format(&quot;%F %X&quot;);         }</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>   <span class="keyword">const</span> <span class="keywordtype">char</span>* DateTime::toChar()   { <span class="keywordflow">return</span> impl_-&gt;toChar(); }    <span class="comment">// strdup((dtb.format(&quot;%F %X&quot;)).c_str()); }</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>   DateTime::~DateTime() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>   <span class="keyword">const</span> <span class="keywordtype">char</span>* toChar()   { <span class="keywordflow">return</span> strdup((dtb.format(<span class="stringliteral">&quot;%F %X&quot;</span>)).c_str()); }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">int</span> DateTime::getYear   () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_year + 1900; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">int</span> DateTime::getMonth  () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_mon  +    1; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">int</span> DateTime::getDay    () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_mday;        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">int</span> DateTime::getHour   () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_hour;        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">int</span> DateTime::getMin    () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_min;         }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">int</span> DateTime::getSecond () { <span class="keywordflow">return</span> impl_-&gt;getDTB()-&gt;getTM()-&gt;tm_sec;         }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="ttc" id="aclass_tools_value_exception_1_1_tools_value_exception_html"><div class="ttname"><a href="../../d4/d6d/class_tools_value_exception_1_1_tools_value_exception.html">ToolsValueException</a></div><div class="ttdoc">Exception when data not fit the range of values.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

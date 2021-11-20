@@ -15,6 +15,7 @@
    
 */
 
+///@{
 /** 
    @fn Timestamp::Timestamp();
    \brief Default constructor for a Timestamp
@@ -35,11 +36,13 @@
  */
 
 /**
-   @fn Timestamp::Timestamp(cnst *char str);
+   @fn Timestamp::Timestamp(const *char str);
    \brief Constructor from an char *
    \param[in] str An array according timestamp format
  */
+///@}
 
+///@{
 /** 
     @fn int Timestamp::getYear();
    \brief Returns year associated with the object
@@ -77,10 +80,11 @@
 */
 
 /** 
-   @fn int Timestamp::getSecond();
+   @fn int Timestamp::getMicroSeconds();
    \brief Returns the microseconds associated with the object
    \return Microseconds
 */
+///@}
 
 /** 
   @fn int struct tm *Timestamp::getTM();

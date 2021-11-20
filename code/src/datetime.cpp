@@ -30,8 +30,8 @@ public:
    }
    ~DateTimeImpl() {
    };
+   DateTimeBase *getDTB() { return &dtb; }
    sstring     toString() { return dtb.format("%F %X");         }
-   const char* toChar()   { return strdup((dtb.format("%F %X")).c_str()); }
 private:
     DateTimeBase dtb = DateTimeBase();
     Date *mDate = nullptr;
@@ -43,6 +43,15 @@ private:
    sstring     DateTime::toString() { return impl_->toString(); } // dtb.format("%F %X");         }
    const char* DateTime::toChar()   { return impl_->toChar(); }    // strdup((dtb.format("%F %X")).c_str()); }
    DateTime::~DateTime() = default;
+   const char* toChar()   { return strdup((dtb.format("%F %X")).c_str()); }
+int DateTime::getYear   () { return impl_->getDTB()->getTM()->tm_year + 1900; }
+int DateTime::getMonth  () { return impl_->getDTB()->getTM()->tm_mon  +    1; }
+int DateTime::getDay    () { return impl_->getDTB()->getTM()->tm_mday;        }
+int DateTime::getHour   () { return impl_->getDTB()->getTM()->tm_hour;        }
+int DateTime::getMin    () { return impl_->getDTB()->getTM()->tm_min;         }
+int DateTime::getSecond () { return impl_->getDTB()->getTM()->tm_sec;         }
+
+
 }
 
 

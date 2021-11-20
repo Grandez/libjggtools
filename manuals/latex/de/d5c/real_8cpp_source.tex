@@ -21,7 +21,7 @@
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00017}00017    Real::Real(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value)  \{}
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00018}00018         regex pat\{\textcolor{stringliteral}{"{}\string^[+-\/]?[0-\/9][.]?[0-\/9]*+\$"{}}\};}
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00019}00019         \textcolor{keywordtype}{bool} match = regex\_search(value, pat);}
-\DoxyCodeLine{\Hypertarget{real_8cpp_source_l00020}00020         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_REAL, value);}
+\DoxyCodeLine{\Hypertarget{real_8cpp_source_l00020}00020         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{class_tools_value_exception_1_1_tools_value_exception}{ToolsValueException}}(BAD\_REAL, value);}
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00021}00021         \textcolor{keywordtype}{bool} dec = \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00022}00022         \textcolor{keywordtype}{int}  scale = 0;}
 \DoxyCodeLine{\Hypertarget{real_8cpp_source_l00023}00023         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} res = 0.0;}

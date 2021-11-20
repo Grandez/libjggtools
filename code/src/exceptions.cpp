@@ -20,7 +20,7 @@ namespace NST {
 const char* ToolsException::what() {
     return message.c_str();
 }
-
+/// \cond DO_NOT_DOCUMENT
 void ToolsException::mountMessage(const char* fmt, va_list list) {
         int szSize = 0;
         int count = 1;
@@ -35,7 +35,7 @@ void ToolsException::mountMessage(const char* fmt, va_list list) {
         free(szWhat);
 //        addPointer(std::addressof(szWhat)); 
     }
-
+/// \endcond
 ToolsValueException::ToolsValueException(const char* fmt, ...) : ToolsException(fmt) {
 	va_list args;
 	va_start(args, fmt);

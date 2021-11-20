@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['path_0',['Path',['../de/d80/classjggtools_1_1_path.html',1,'jggtools']]]
+  ['sstring_0',['sstring',['../d2/dc2/classjggtools_1_1sstring.html',1,'jggtools']]]
 ];

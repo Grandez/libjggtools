@@ -1,6 +1,6 @@
 <map id="ToolsException" name="ToolsException">
 <area shape="rect" id="node1" title="Base clase for exception into the library." alt="" coords="102,80,213,107"/>
-<area shape="rect" id="node3" href="$d8/de8/classjggtools_1_1_tools_cast_exception.html" title="Exception when it is not possible construct the object using data passed to constructor." alt="" coords="5,155,144,181"/>
-<area shape="rect" id="node4" href="$d3/d95/classjggtools_1_1_tools_value_exception.html" title="Exception when data not fit the range of values." alt="" coords="168,155,312,181"/>
+<area shape="rect" id="node3" href="$d8/de8/classjggtools_1_1_tools_cast_exception.html" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node4" href="$d3/d95/classjggtools_1_1_tools_value_exception.html" title=" " alt="" coords="168,155,312,181"/>
 <area shape="rect" id="node2" title=" " alt="" coords="109,5,206,32"/>
 </map>

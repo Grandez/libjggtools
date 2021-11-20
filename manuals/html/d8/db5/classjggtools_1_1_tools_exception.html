@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('d8/db5/classjggtools_1_1_tools_excepti
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pro-methods">Métodos protegidos</a> &#124;
 <a href="../../d6/df4/classjggtools_1_1_tools_exception-members.html">Lista de todos los miembros</a>  </div>
   <div class="headertitle"><div class="title">Referencia de la Clase ToolsException<div class="ingroups"><a class="el" href="../../df/d17/group__exceptions.html">Exceptions</a></div></div></div>
 </div><!--header-->
@@ -98,8 +97,8 @@ Diagrama de herencias de ToolsException</div>
 <div class="center"><img src="../../d5/df8/classjggtools_1_1_tools_exception__inherit__graph.png" border="0" usemap="#a_tools_exception_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_tools_exception_inherit__map" id="a_tools_exception_inherit__map">
 <area shape="rect" title="Base clase for exception into the library." alt="" coords="102,80,213,107"/>
-<area shape="rect" href="../../d8/de8/classjggtools_1_1_tools_cast_exception.html" title="Exception when it is not possible construct the object using data passed to constructor." alt="" coords="5,155,144,181"/>
-<area shape="rect" href="../../d3/d95/classjggtools_1_1_tools_value_exception.html" title="Exception when data not fit the range of values." alt="" coords="168,155,312,181"/>
+<area shape="rect" href="../../d8/de8/classjggtools_1_1_tools_cast_exception.html" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" href="../../d3/d95/classjggtools_1_1_tools_value_exception.html" title=" " alt="" coords="168,155,312,181"/>
 <area shape="rect" title=" " alt="" coords="109,5,206,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
@@ -116,14 +115,10 @@ Diagrama de colaboración para ToolsException:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a41cd500adef1b18f3ee20562e4d59d22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db5/classjggtools_1_1_tools_exception.html#a41cd500adef1b18f3ee20562e4d59d22">ToolsException</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a41cd500adef1b18f3ee20562e4d59d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the exception.  <a href="../../d8/db5/classjggtools_1_1_tools_exception.html#a41cd500adef1b18f3ee20562e4d59d22">Más...</a><br /></td></tr>
 <tr class="separator:a41cd500adef1b18f3ee20562e4d59d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8486cf06cf9453ac17838843643fd941"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db5/classjggtools_1_1_tools_exception.html#a8486cf06cf9453ac17838843643fd941">what</a> ()</td></tr>
-<tr class="separator:a8486cf06cf9453ac17838843643fd941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Métodos protegidos</h2></td></tr>
-<tr class="memitem:a275ac35b8111cc2380460e39247e15de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db5/classjggtools_1_1_tools_exception.html#a275ac35b8111cc2380460e39247e15de">mountMessage</a> (const char *fmt, va_list list)</td></tr>
-<tr class="separator:a275ac35b8111cc2380460e39247e15de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbe72f435d7b3e1889c50433221b242"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db5/classjggtools_1_1_tools_exception.html#afbbe72f435d7b3e1889c50433221b242">what</a> ()</td></tr>
+<tr class="separator:afbbe72f435d7b3e1889c50433221b242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p >Base clase for exception into the library. </p>
@@ -157,65 +152,37 @@ Métodos protegidos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html#l00014">14</a> del archivo <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html">exceptions.cpp</a>.</p>
+<p>Constructor for the exception. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Pattern to mount the message used in what </td></tr>
+    <tr><td class="paramname">...</td><td>values for pattern </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00014">14</a> del archivo <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
-<a id="a275ac35b8111cc2380460e39247e15de" name="a275ac35b8111cc2380460e39247e15de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a275ac35b8111cc2380460e39247e15de">&#9670;&nbsp;</a></span>mountMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mountMessage </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">va_list&#160;</td>
-          <td class="paramname"><em>list</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definición en la línea <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html#l00024">24</a> del archivo <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html">exceptions.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8486cf06cf9453ac17838843643fd941" name="a8486cf06cf9453ac17838843643fd941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8486cf06cf9453ac17838843643fd941">&#9670;&nbsp;</a></span>what()</h2>
+<a id="afbbe72f435d7b3e1889c50433221b242" name="afbbe72f435d7b3e1889c50433221b242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbbe72f435d7b3e1889c50433221b242">&#9670;&nbsp;</a></span>what()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * what </td>
+          <td class="memname">string what </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>The message associate to exception </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html#l00020">20</a> del archivo <a class="el" href="../../d0/d55/code_2src_2exceptions_8cpp_source.html">exceptions.cpp</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00020">20</a> del archivo <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a>.</p>
 
 </div>
 </div>

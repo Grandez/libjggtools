@@ -19,6 +19,8 @@ namespace NST {
       bool isInt     () { return mask & 2; }
       bool isLong    () { return mask & 4; }
       bool isLongLong() { return mask & 8; }
+      sstring toString();
+      char *  toChar(); 
    private:
       long long value;
       char mask = 0x01;

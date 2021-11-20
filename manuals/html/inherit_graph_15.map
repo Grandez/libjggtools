@@ -1,3 +1,6 @@
 <map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
-<area shape="rect" id="node1" href="$dd/d6d/classjggtools_1_1_time.html" title="Clase Time." alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,103,57"/>
+<area shape="rect" id="node2" href="$d8/db5/classjggtools_1_1_tools_exception.html" title="Base clase for exception into the library." alt="" coords="151,31,261,57"/>
+<area shape="rect" id="node3" href="$d8/de8/classjggtools_1_1_tools_cast_exception.html" title="Exception when it is not possible construct the object using data passed to constructor." alt="" coords="312,5,451,32"/>
+<area shape="rect" id="node4" href="$d3/d95/classjggtools_1_1_tools_value_exception.html" title="Exception when data not fit the range of values." alt="" coords="309,56,453,83"/>
 </map>

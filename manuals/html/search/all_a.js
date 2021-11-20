@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sstring_0',['sstring',['../d2/dc2/classjggtools_1_1sstring.html',1,'sstring'],['../d2/d8d/classjggtoools_1_1sstring.html',1,'sstring']]]
+  ['paste_0',['paste',['../d2/dc2/classjggtools_1_1sstring.html#a2bdcd77fd75c9905aefc54a5ef89de01',1,'jggtools::sstring']]],
+  ['path_1',['Path',['../de/d80/classjggtools_1_1_path.html',1,'jggtools']]]
 ];

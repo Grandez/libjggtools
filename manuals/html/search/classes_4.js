@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['natural_0',['Natural',['../dd/d09/classjggtools_1_1_natural.html',1,'jggtools']]]
+  ['real_0',['Real',['../d8/d8b/classjggtools_1_1_real.html',1,'jggtools']]]
 ];

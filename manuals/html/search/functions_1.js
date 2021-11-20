@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['getday_0',['getDay',['../d4/d3f/classjggtools_1_1_date.html#ac9321b3a445ce663d24b8776baafd0f9',1,'jggtools::Date']]],
-  ['getmonth_1',['getMonth',['../d4/d3f/classjggtools_1_1_date.html#a7dc6a999739b4b5e9f7b37fc780707fb',1,'jggtools::Date']]],
-  ['gettm_2',['getTM',['../d4/d3f/classjggtools_1_1_date.html#a7e77cba85979e17cfdd9f466f4585967',1,'jggtools::Date::getTM()'],['../dd/d6d/classjggtools_1_1_time.html#a7e77cba85979e17cfdd9f466f4585967',1,'jggtools::Time::getTM()']]],
-  ['getyear_3',['getYear',['../d4/d3f/classjggtools_1_1_date.html#a53172a43145522837b888b7d7f7117ea',1,'jggtools::Date']]]
+  ['date_0',['Date',['../d4/d3f/classjggtools_1_1_date.html#a30cc3fd09c0d187ebcf7ec530033acaa',1,'jggtools::Date']]],
+  ['datetime_1',['DateTime',['../d9/df2/classjggtools_1_1_date_time.html#a3e93cd7baeb8b4448482a450df21ab20',1,'jggtools::DateTime::DateTime()'],['../d9/df2/classjggtools_1_1_date_time.html#a6d51cb8597f5d077199dac68b33ed355',1,'jggtools::DateTime::DateTime(sstring str)']]],
+  ['decimal_2',['Decimal',['../d8/d8a/classjggtools_1_1_decimal.html#a957e07229bf6a4b6ee32d52a50195589',1,'jggtools::Decimal::Decimal(sstring value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a14704e63d11388f1b7db157221e49a86',1,'jggtools::Decimal::Decimal(const char *value)'],['../d8/d8a/classjggtools_1_1_decimal.html#aabf3e99a74e7ff8d1d18f717a9a66080',1,'jggtools::Decimal::Decimal(float value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a06a7d1a8f1d96fd90c1becb8006a1d10',1,'jggtools::Decimal::Decimal(double value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a9ab3af90f84650f67a299a80f1067d80',1,'jggtools::Decimal::Decimal(long double value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a9c420bfa3d41aba6b6d21d00ea091016',1,'jggtools::Decimal::Decimal(int value)'],['../d8/d8a/classjggtools_1_1_decimal.html#aa311ac1f70a805648058806d08c4bc85',1,'jggtools::Decimal::Decimal(long value)'],['../d8/d8a/classjggtools_1_1_decimal.html#a64b9b886404fe7d77c26645b10c6c377',1,'jggtools::Decimal::Decimal(long long value)']]]
 ];

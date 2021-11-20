@@ -1,0 +1,132 @@
+.TH "Date" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Date \- Clase \fBDate\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP (\fBsstring\fP str, int fmt=\-1)"
+.br
+.ti -1c
+.RI "\fBDate\fP (const char *str, int fmt=\-1)"
+.br
+.ti -1c
+.RI "struct tm * \fBgetTM\fP ()"
+.br
+.RI "Return a pointer to an struct tm when date pieces are associated with the object\&. "
+.ti -1c
+.RI "int \fBgetYear\fP ()"
+.br
+.RI "Returns year associated with the object\&. "
+.ti -1c
+.RI "int \fBgetMonth\fP ()"
+.br
+.RI "Returns month associated with the object\&. "
+.ti -1c
+.RI "int \fBgetDay\fP ()"
+.br
+.RI "Returns Day associated with the object\&. "
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP (const char *fmt='%F')"
+.br
+.RI "Return a representation of \fBDate\fP as String\&. "
+.ti -1c
+.RI "const char * \fBtoChar\fP (const char *fmt='%F')"
+.br
+.RI "Return a char array representign the \fBDate\fP\&. "
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Clase \fBDate\fP\&. 
+
+Abstrae el concepto de fecha
+.PP
+Metodos**
+.PP
+int getMonth ();
+.PP
+int getDay ();
+.PP
+sstring toString (const char *fmt = '%F');
+.PP
+const char * toChar (const char *fmt = '%F'); 
+.PP
+Definición en la línea \fB13\fP del archivo \fBdate\&.hpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "int getDay ()"
+
+.PP
+Returns Day associated with the object\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+Day 
+.RE
+.PP
+
+.SS "int getMonth ()"
+
+.PP
+Returns month associated with the object\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+Month 
+.RE
+.PP
+
+.SS "int struct tm * getTM ()"
+
+.PP
+Return a pointer to an struct tm when date pieces are associated with the object\&. Other fields at struct can be associated with current date time
+.PP
+\fBDevuelve\fP
+.RS 4
+a poinetr to struct tm 
+.RE
+.PP
+
+.SS "int getYear ()"
+
+.PP
+Returns year associated with the object\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+Year 
+.RE
+.PP
+
+.SS "const char * toChar (const char * fmt = \fC'%F'\fP)"
+
+.PP
+Return a char array representign the \fBDate\fP\&. \\fmt[in] Format of string\&. By default: Current locale 
+.PP
+\fBDevuelve\fP
+.RS 4
+A \fBnew copy\fP of array 
+.RE
+.PP
+
+.SS "\fBsstring\fP toString (const char * fmt = \fC'%F'\fP)"
+
+.PP
+Return a representation of \fBDate\fP as String\&. \\fmt[in] Format of string\&. By default: Current locale 
+.PP
+\fBDevuelve\fP
+.RS 4
+An string with the date 
+.RE
+.PP
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

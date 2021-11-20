@@ -1,0 +1,90 @@
+.TH "Timestamp" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Timestamp \- Clase \fBTimestamp\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Herencias \fBDateTime\fP\&.
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBTimestamp\fP ()"
+.br
+.RI "Default constructor for a \fBTimestamp\fP\&. "
+.ti -1c
+.RI "\fBTimestamp\fP (\fBsstring\fP str)"
+.br
+.RI "Constructor from an string\&. "
+.ti -1c
+.RI "\fBTimestamp\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP ()"
+.br
+.RI "Return a representation of \fBTimestamp\fP as string\&. "
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Clase \fBTimestamp\fP\&. 
+
+A timestamp is a date time structure containing:
+.PP
+\fBDate\fP: Year, Month, Day \fBTime\fP: Hout, minutes, seconds microseconds
+.PP
+Format is always an string:
+.PP
+.IP "\(bu" 2
+'%Y-%m-%d-%H:%M:%S\&.nnnnnn' 
+.PP
+
+.PP
+Definición en la línea \fB16\fP del archivo \fBtimestamp\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBTimestamp\fP ()"
+
+.PP
+Default constructor for a \fBTimestamp\fP\&. Initialize the instance to current \fBTimestamp\fP 
+.PP
+Definición en la línea \fB18\fP del archivo \fBtimestamp\&.cpp\fP\&.
+.SS "\fBTimestamp\fP (\fBsstring\fP str)"
+
+.PP
+Constructor from an string\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIstr\fP An string according timestamp format 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB26\fP del archivo \fBtimestamp\&.cpp\fP\&.
+.SS "\fBTimestamp\fP (const char * str)"
+
+.PP
+Definición en la línea \fB27\fP del archivo \fBtimestamp\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "\fBsstring\fP toString ()"
+
+.PP
+Return a representation of \fBTimestamp\fP as string\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+An string as Y/m/D H:M:S 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB28\fP del archivo \fBtimestamp\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

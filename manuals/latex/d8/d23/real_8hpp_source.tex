@@ -1,0 +1,31 @@
+\hypertarget{real_8hpp_source}{}\doxysection{real.\+hpp}
+\label{real_8hpp_source}\index{code/include/real.hpp@{code/include/real.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00006}00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00008}00008 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00009}\mbox{\hyperlink{classjggtools_1_1_real}{00009}}    \textcolor{keyword}{class }\mbox{\hyperlink{classjggtools_1_1_real}{Real}} \{}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00010}00010    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00011}00011       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00012}00012       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} value) \{ \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(value.c\_str()); \}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00013}00013       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value);}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00014}00014       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00015}00015       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00016}00016       \mbox{\hyperlink{classjggtools_1_1_real}{Real}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00017}00017       \textcolor{keywordtype}{bool} isFloat   () \{ \textcolor{keywordflow}{return} mask \& 1; \}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00018}00018       \textcolor{keywordtype}{bool} isDouble     () \{ \textcolor{keywordflow}{return} mask \& 2; \}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00019}00019       \textcolor{keywordtype}{bool} isLongDouble    () \{ \textcolor{keywordflow}{return} mask \& 4; \}}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00020}00020    \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00021}00021       \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value;}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00022}00022       \textcolor{keywordtype}{char} mask = 0x01;}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00023}00023       \textcolor{keywordtype}{void} validateReal(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value);}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00024}00024    \};}
+\DoxyCodeLine{\Hypertarget{real_8hpp_source_l00025}00025 \}}
+
+\end{DoxyCode}

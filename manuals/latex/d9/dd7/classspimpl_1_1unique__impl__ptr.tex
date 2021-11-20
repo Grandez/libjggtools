@@ -1,0 +1,1433 @@
+\hypertarget{classspimpl_1_1unique__impl__ptr}{}\doxysection{Referencia de la plantilla de la Clase unique\+\_\+impl\+\_\+ptr\texorpdfstring{$<$}{<} T, Deleter \texorpdfstring{$>$}{>}}
+\label{classspimpl_1_1unique__impl__ptr}\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}{const\+\_\+pointer}} = typename std\+::add\+\_\+const$<$ T $>$\+::type $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}{const\+\_\+reference}} = typename std\+::add\+\_\+const$<$ T $>$\+::type \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}{element\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}{deleter\+\_\+type}} = typename std\+::decay$<$ Deleter $>$\+::type
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}{unique\+\_\+ptr\+\_\+type}} = std\+::unique\+\_\+ptr$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}{is\+\_\+default\+\_\+manageable}} = \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}{const\+\_\+pointer}} = typename std\+::add\+\_\+const$<$ T $>$\+::type $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}{const\+\_\+reference}} = typename std\+::add\+\_\+const$<$ T $>$\+::type \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}{element\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}{deleter\+\_\+type}} = typename std\+::decay$<$ Deleter $>$\+::type
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}{unique\+\_\+ptr\+\_\+type}} = std\+::unique\+\_\+ptr$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}{is\+\_\+default\+\_\+manageable}} = \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}{const\+\_\+pointer}} = typename std\+::add\+\_\+const$<$ T $>$\+::type $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}{const\+\_\+reference}} = typename std\+::add\+\_\+const$<$ T $>$\+::type \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}{element\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}{deleter\+\_\+type}} = typename std\+::decay$<$ Deleter $>$\+::type
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}{unique\+\_\+ptr\+\_\+type}} = std\+::unique\+\_\+ptr$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}{is\+\_\+default\+\_\+manageable}} = \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}{const\+\_\+pointer}} = typename std\+::add\+\_\+const$<$ T $>$\+::type $\ast$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}{const\+\_\+reference}} = typename std\+::add\+\_\+const$<$ T $>$\+::type \&
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}{element\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}{deleter\+\_\+type}} = typename std\+::decay$<$ Deleter $>$\+::type
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}{unique\+\_\+ptr\+\_\+type}} = std\+::unique\+\_\+ptr$<$ T, deleter\+\_\+type $>$
+\item 
+using \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}{is\+\_\+default\+\_\+manageable}} = \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$ T, deleter\+\_\+type $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}{unique\+\_\+impl\+\_\+ptr}} (std\+::nullptr\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}{unique\+\_\+impl\+\_\+ptr}} (pointer p, D \&\&d, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}{unique\+\_\+impl\+\_\+ptr}} (U $\ast$u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}\label{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}{unique\+\_\+impl\+\_\+ptr}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}\label{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}\label{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}} 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& {\bfseries operator=} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}{operator=}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}\label{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}} 
+reference {\bfseries operator=} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}{operator$\ast$}} ()
+\item 
+const\+\_\+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}{operator$\ast$}} () const
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}{operator-\/$>$}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}{operator-\/$>$}} () const noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}{get}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}{get}} () const noexcept
+\item 
+void \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}{swap}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&u) noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}{release}} () noexcept
+\item 
+unique\+\_\+ptr\+\_\+type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}{release\+\_\+unique}} () noexcept
+\item 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}{operator bool}} () const noexcept
+\item 
+std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}{get\+\_\+deleter}} () noexcept
+\item 
+const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}{get\+\_\+deleter}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}{unique\+\_\+impl\+\_\+ptr}} (std\+::nullptr\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}{unique\+\_\+impl\+\_\+ptr}} (pointer p, D \&\&d, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}{unique\+\_\+impl\+\_\+ptr}} (U $\ast$u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}\label{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}{unique\+\_\+impl\+\_\+ptr}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}\label{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}\label{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}} 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& {\bfseries operator=} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}{operator=}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}\label{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}} 
+reference {\bfseries operator=} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}{operator$\ast$}} ()
+\item 
+const\+\_\+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}{operator$\ast$}} () const
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}{operator-\/$>$}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}{operator-\/$>$}} () const noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}{get}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}{get}} () const noexcept
+\item 
+void \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}{swap}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&u) noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}{release}} () noexcept
+\item 
+unique\+\_\+ptr\+\_\+type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}{release\+\_\+unique}} () noexcept
+\item 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}{operator bool}} () const noexcept
+\item 
+std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}{get\+\_\+deleter}} () noexcept
+\item 
+const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}{get\+\_\+deleter}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}{unique\+\_\+impl\+\_\+ptr}} (std\+::nullptr\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}{unique\+\_\+impl\+\_\+ptr}} (pointer p, D \&\&d, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}{unique\+\_\+impl\+\_\+ptr}} (U $\ast$u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}\label{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}{unique\+\_\+impl\+\_\+ptr}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}\label{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}\label{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}} 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& {\bfseries operator=} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}{operator=}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}\label{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}} 
+reference {\bfseries operator=} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}{operator$\ast$}} ()
+\item 
+const\+\_\+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}{operator$\ast$}} () const
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}{operator-\/$>$}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}{operator-\/$>$}} () const noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}{get}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}{get}} () const noexcept
+\item 
+void \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}{swap}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&u) noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}{release}} () noexcept
+\item 
+unique\+\_\+ptr\+\_\+type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}{release\+\_\+unique}} () noexcept
+\item 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}{operator bool}} () const noexcept
+\item 
+std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}{get\+\_\+deleter}} () noexcept
+\item 
+const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}{get\+\_\+deleter}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}{unique\+\_\+impl\+\_\+ptr}} (std\+::nullptr\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}{unique\+\_\+impl\+\_\+ptr}} (pointer p, D \&\&d, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}{unique\+\_\+impl\+\_\+ptr}} (U $\ast$u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}\label{classspimpl_1_1unique__impl__ptr_ac75eb4bc3ad65926370e80714da0d374}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}{unique\+\_\+impl\+\_\+ptr}} (std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+{\footnotesize template$<$class U , class D $>$ }\\\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}{unique\+\_\+impl\+\_\+ptr}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&u, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type=\mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}\label{classspimpl_1_1unique__impl__ptr_a4176d7ea6dc3e9d1370faa6dbe9b21f1}} 
+{\bfseries unique\+\_\+impl\+\_\+ptr} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}\label{classspimpl_1_1unique__impl__ptr_af0efbc3f585c1430195b3c36b3370938}} 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& {\bfseries operator=} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&\&r) noexcept=default
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}{operator=}} (std\+::unique\+\_\+ptr$<$ U $>$ \&\&u) noexcept
+\item 
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}\label{classspimpl_1_1unique__impl__ptr_aa4359f6672881831471b4ea9b8eca64b}} 
+reference {\bfseries operator=} (const \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&)=delete
+\item 
+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}{operator$\ast$}} ()
+\item 
+const\+\_\+reference \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}{operator$\ast$}} () const
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}{operator-\/$>$}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}{operator-\/$>$}} () const noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}{get}} () noexcept
+\item 
+const\+\_\+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}{get}} () const noexcept
+\item 
+void \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}{swap}} (\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \&u) noexcept
+\item 
+pointer \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}{release}} () noexcept
+\item 
+unique\+\_\+ptr\+\_\+type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}{release\+\_\+unique}} () noexcept
+\item 
+\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}{operator bool}} () const noexcept
+\item 
+std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}{get\+\_\+deleter}} () noexcept
+\item 
+const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}{get\+\_\+deleter}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+unique\+\_\+ptr\+\_\+type \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr_a1ad6d2394bd6ce5a76ead4da0aa4ce75}{ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$class T, class Deleter = details\+::default\+\_\+deleter\+\_\+t$<$\+T$>$$>$\newline
+class spimpl\+::unique\+\_\+impl\+\_\+ptr$<$ T, Deleter $>$}
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00102}{102}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}\label{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_pointer@{const\_pointer}}
+\index{const\_pointer@{const\_pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using const\+\_\+pointer =  typename std\+::add\+\_\+const$<$T$>$\+::type $\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00110}{110}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}\label{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_pointer@{const\_pointer}}
+\index{const\_pointer@{const\_pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using const\+\_\+pointer =  typename std\+::add\+\_\+const$<$T$>$\+::type $\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00110}{110}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}\label{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_pointer@{const\_pointer}}
+\index{const\_pointer@{const\_pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using const\+\_\+pointer =  typename std\+::add\+\_\+const$<$T$>$\+::type $\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00110}{110}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}\label{classspimpl_1_1unique__impl__ptr_acb9e40a5e1e39ce877c4b84893ccecd5}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_pointer@{const\_pointer}}
+\index{const\_pointer@{const\_pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using const\+\_\+pointer =  typename std\+::add\+\_\+const$<$T$>$\+::type $\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00110}{110}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}\label{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_reference@{const\_reference}}
+\index{const\_reference@{const\_reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reference}{const\_reference}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using const\+\_\+reference =  typename std\+::add\+\_\+const$<$T$>$\+::type \&}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00112}{112}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}\label{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_reference@{const\_reference}}
+\index{const\_reference@{const\_reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reference}{const\_reference}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using const\+\_\+reference =  typename std\+::add\+\_\+const$<$T$>$\+::type \&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00112}{112}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}\label{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_reference@{const\_reference}}
+\index{const\_reference@{const\_reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reference}{const\_reference}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using const\+\_\+reference =  typename std\+::add\+\_\+const$<$T$>$\+::type \&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00112}{112}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}\label{classspimpl_1_1unique__impl__ptr_a754583b01c402cbad9271bd604888ef2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!const\_reference@{const\_reference}}
+\index{const\_reference@{const\_reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reference}{const\_reference}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using const\+\_\+reference =  typename std\+::add\+\_\+const$<$T$>$\+::type \&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00112}{112}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}\label{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!deleter\_type@{deleter\_type}}
+\index{deleter\_type@{deleter\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{deleter\_type}{deleter\_type}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using deleter\+\_\+type =  typename std\+::decay$<$Deleter$>$\+::type}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00114}{114}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}\label{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!deleter\_type@{deleter\_type}}
+\index{deleter\_type@{deleter\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{deleter\_type}{deleter\_type}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using deleter\+\_\+type =  typename std\+::decay$<$Deleter$>$\+::type}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00114}{114}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}\label{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!deleter\_type@{deleter\_type}}
+\index{deleter\_type@{deleter\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{deleter\_type}{deleter\_type}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using deleter\+\_\+type =  typename std\+::decay$<$Deleter$>$\+::type}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00114}{114}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}\label{classspimpl_1_1unique__impl__ptr_ade7133637ff1fe9f6ed7f8c26091160b}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!deleter\_type@{deleter\_type}}
+\index{deleter\_type@{deleter\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{deleter\_type}{deleter\_type}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using deleter\+\_\+type =  typename std\+::decay$<$Deleter$>$\+::type}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00114}{114}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}\label{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!element\_type@{element\_type}}
+\index{element\_type@{element\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{element\_type}{element\_type}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using element\+\_\+type =  T}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00113}{113}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}\label{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!element\_type@{element\_type}}
+\index{element\_type@{element\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{element\_type}{element\_type}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using element\+\_\+type =  T}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00113}{113}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}\label{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!element\_type@{element\_type}}
+\index{element\_type@{element\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{element\_type}{element\_type}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using element\+\_\+type =  T}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00113}{113}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}\label{classspimpl_1_1unique__impl__ptr_ab09edc4b568d547d04da66f947f5595a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!element\_type@{element\_type}}
+\index{element\_type@{element\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{element\_type}{element\_type}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using element\+\_\+type =  T}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00113}{113}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}\label{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!is\_default\_manageable@{is\_default\_manageable}}
+\index{is\_default\_manageable@{is\_default\_manageable}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{is\_default\_manageable}{is\_default\_manageable}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{is\+\_\+default\+\_\+manageable}} =  \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00116}{116}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}\label{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!is\_default\_manageable@{is\_default\_manageable}}
+\index{is\_default\_manageable@{is\_default\_manageable}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{is\_default\_manageable}{is\_default\_manageable}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{is\+\_\+default\+\_\+manageable}} =  \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00116}{116}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}\label{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!is\_default\_manageable@{is\_default\_manageable}}
+\index{is\_default\_manageable@{is\_default\_manageable}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{is\_default\_manageable}{is\_default\_manageable}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{is\+\_\+default\+\_\+manageable}} =  \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00116}{116}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}\label{classspimpl_1_1unique__impl__ptr_af3beff69f9d875abf93eb597c36be213}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!is\_default\_manageable@{is\_default\_manageable}}
+\index{is\_default\_manageable@{is\_default\_manageable}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{is\_default\_manageable}{is\_default\_manageable}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{is\+\_\+default\+\_\+manageable}} =  \mbox{\hyperlink{structspimpl_1_1details_1_1is__default__manageable}{details\+::is\+\_\+default\+\_\+manageable}}$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00116}{116}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}\label{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using pointer =  T$\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00109}{109}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}\label{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using pointer =  T$\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00109}{109}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}\label{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using pointer =  T$\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00109}{109}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}\label{classspimpl_1_1unique__impl__ptr_ab088798d28525c0befe3c707b95c5bc2}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using pointer =  T$\ast$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00109}{109}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}\label{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!reference@{reference}}
+\index{reference@{reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using reference =  T\&}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00111}{111}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}\label{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!reference@{reference}}
+\index{reference@{reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using reference =  T\&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00111}{111}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}\label{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!reference@{reference}}
+\index{reference@{reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using reference =  T\&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00111}{111}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}\label{classspimpl_1_1unique__impl__ptr_a0c5a1541ecf7ad17925583cf6abd2c65}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!reference@{reference}}
+\index{reference@{reference}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using reference =  T\&}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00111}{111}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}\label{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_ptr\_type@{unique\_ptr\_type}}
+\index{unique\_ptr\_type@{unique\_ptr\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_ptr\_type}{unique\_ptr\_type}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily using unique\+\_\+ptr\+\_\+type =  std\+::unique\+\_\+ptr$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00115}{115}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}\label{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_ptr\_type@{unique\_ptr\_type}}
+\index{unique\_ptr\_type@{unique\_ptr\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_ptr\_type}{unique\_ptr\_type}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily using unique\+\_\+ptr\+\_\+type =  std\+::unique\+\_\+ptr$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00115}{115}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}\label{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_ptr\_type@{unique\_ptr\_type}}
+\index{unique\_ptr\_type@{unique\_ptr\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_ptr\_type}{unique\_ptr\_type}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily using unique\+\_\+ptr\+\_\+type =  std\+::unique\+\_\+ptr$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00115}{115}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}\label{classspimpl_1_1unique__impl__ptr_a92dae7ba5b1c864f193d2380df1d9f14}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_ptr\_type@{unique\_ptr\_type}}
+\index{unique\_ptr\_type@{unique\_ptr\_type}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_ptr\_type}{unique\_ptr\_type}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily using unique\+\_\+ptr\+\_\+type =  std\+::unique\+\_\+ptr$<$T, deleter\+\_\+type$>$}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00115}{115}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}\label{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00118}{118}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}\label{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00121}{121}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}\label{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [3/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{pointer}]{p,  }\item[{D \&\&}]{d,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00125}{125}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}\label{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [4/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{U $\ast$}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00133}{133}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}\label{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [5/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00160}{160}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}\label{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [6/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00169}{169}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}\label{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [7/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00178}{178}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}\label{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [8/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00118}{118}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}\label{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [9/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00121}{121}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}\label{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [10/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{pointer}]{p,  }\item[{D \&\&}]{d,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00125}{125}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}\label{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [11/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{U $\ast$}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00133}{133}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}\label{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [12/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00160}{160}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}\label{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [13/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00169}{169}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}\label{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [14/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00178}{178}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}\label{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [15/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00118}{118}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}\label{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [16/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00121}{121}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}\label{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [17/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{pointer}]{p,  }\item[{D \&\&}]{d,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00125}{125}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}\label{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [18/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{U $\ast$}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00133}{133}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}\label{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [19/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00160}{160}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}\label{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [20/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00169}{169}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}\label{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [21/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00178}{178}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}\label{classspimpl_1_1unique__impl__ptr_a2c973584bb82576275497ea1bf58a927}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [22/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00118}{118}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}\label{classspimpl_1_1unique__impl__ptr_a4759330d185be4985f650b6a39f6e5c1}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [23/28]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00121}{121}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}\label{classspimpl_1_1unique__impl__ptr_a4e8b3ffc96c282ac5af719b0ad55a9d7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [24/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{pointer}]{p,  }\item[{D \&\&}]{d,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00125}{125}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}\label{classspimpl_1_1unique__impl__ptr_afc6b8471159ae067631cadbd521c412c}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [25/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{U $\ast$}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00133}{133}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}\label{classspimpl_1_1unique__impl__ptr_a7a8d6e55962a0ac9127e65e948721c7e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [26/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00160}{160}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}\label{classspimpl_1_1unique__impl__ptr_a91ae3a200a4a279b23f69e77581fae8f}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [27/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00169}{169}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}\label{classspimpl_1_1unique__impl__ptr_a0844db39ea57ea0602f77ade572035dd}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!unique\_impl\_ptr@{unique\_impl\_ptr}}
+\index{unique\_impl\_ptr@{unique\_impl\_ptr}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{unique\_impl\_ptr()}{unique\_impl\_ptr()}\hspace{0.1cm}{\footnotesize\ttfamily [28/28]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ U, D $>$ \&\&}]{u,  }\item[{typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&std\+::is\+\_\+convertible$<$ D, deleter\+\_\+type $>$\+::value, \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}} $>$\+::type}]{ = {\ttfamily \mbox{\hyperlink{structspimpl_1_1unique__impl__ptr_1_1dummy__t__}{dummy\+\_\+t\+\_\+}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00178}{178}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}\label{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00228}{228}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}\label{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00228}{228}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}\label{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00228}{228}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}\label{classspimpl_1_1unique__impl__ptr_aa1363f7d580e4353434f7ba0133570fc}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00228}{228}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}\label{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00227}{227}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}\label{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00227}{227}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}\label{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00227}{227}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}\label{classspimpl_1_1unique__impl__ptr_aa64250a6b2279e8519f213478dfe6274}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get@{get}}
+\index{get@{get}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily pointer get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00227}{227}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}\label{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00243}{243}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}\label{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00243}{243}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}\label{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00243}{243}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}\label{classspimpl_1_1unique__impl__ptr_ac1d16d713cf576616cc385972cc95b23}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily const std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00243}{243}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}\label{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00242}{242}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}\label{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00242}{242}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}\label{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00242}{242}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}\label{classspimpl_1_1unique__impl__ptr_a90fcc7637c1908fa79cd275cf5332203}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!get\_deleter@{get\_deleter}}
+\index{get\_deleter@{get\_deleter}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{get\_deleter()}{get\_deleter()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily std\+::remove\+\_\+reference$<$ deleter\+\_\+type $>$\+::type \& get\+\_\+deleter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00242}{242}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}\label{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00240}{240}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}\label{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00240}{240}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}\label{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00240}{240}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}\label{classspimpl_1_1unique__impl__ptr_a420e60e9788bfa3b52aa3aab72ea3a5e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00240}{240}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}\label{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00221}{221}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}\label{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00221}{221}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}\label{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00221}{221}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}\label{classspimpl_1_1unique__impl__ptr_a3dcf39edbd9ee12afd82c2e31567144e}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00221}{221}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}\label{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily const\+\_\+reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00222}{222}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}\label{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily const\+\_\+reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00222}{222}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}\label{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily const\+\_\+reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00222}{222}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}\label{classspimpl_1_1unique__impl__ptr_ace6722209b6c1960f21da9e8ee9d79ae}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily const\+\_\+reference operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00222}{222}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}\label{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00225}{225}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}\label{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00225}{225}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}\label{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00225}{225}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}\label{classspimpl_1_1unique__impl__ptr_a5cfa369f45da9854e85b76b7486b0036}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily const\+\_\+pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00225}{225}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}\label{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00224}{224}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}\label{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00224}{224}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}\label{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00224}{224}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}\label{classspimpl_1_1unique__impl__ptr_a05ac3cda12fa6e775499545e74da8b29}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily pointer operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00224}{224}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}\label{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type operator= (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00214}{214}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}\label{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type operator= (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00214}{214}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}\label{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type operator= (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00214}{214}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}\label{classspimpl_1_1unique__impl__ptr_ac8cc7e4a0035e163f50502e1b5115c5a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ U $\ast$, pointer $>$\+::value \&\&is\+\_\+default\+\_\+manageable\+::value, \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}} \& $>$\+::type operator= (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ U $>$ \&\&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00214}{214}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}\label{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release@{release}}
+\index{release@{release}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily pointer release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00236}{236}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}\label{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release@{release}}
+\index{release@{release}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily pointer release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00236}{236}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}\label{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release@{release}}
+\index{release@{release}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily pointer release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00236}{236}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}\label{classspimpl_1_1unique__impl__ptr_a44c1e70569724984e80b1861bf50e4b7}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release@{release}}
+\index{release@{release}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily pointer release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00236}{236}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}\label{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release\_unique@{release\_unique}}
+\index{release\_unique@{release\_unique}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release\_unique()}{release\_unique()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily unique\+\_\+ptr\+\_\+type release\+\_\+unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00238}{238}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}\label{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release\_unique@{release\_unique}}
+\index{release\_unique@{release\_unique}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release\_unique()}{release\_unique()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily unique\+\_\+ptr\+\_\+type release\+\_\+unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00238}{238}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}\label{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release\_unique@{release\_unique}}
+\index{release\_unique@{release\_unique}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release\_unique()}{release\_unique()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily unique\+\_\+ptr\+\_\+type release\+\_\+unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00238}{238}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}\label{classspimpl_1_1unique__impl__ptr_a8a60475259abadf75ee85bfb4fc7488a}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!release\_unique@{release\_unique}}
+\index{release\_unique@{release\_unique}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{release\_unique()}{release\_unique()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily unique\+\_\+ptr\+\_\+type release\+\_\+unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00238}{238}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}\label{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!swap@{swap}}
+\index{swap@{swap}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00230}{230}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}\label{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!swap@{swap}}
+\index{swap@{swap}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimpl_8hpp_source_l00230}{230}} del archivo \mbox{\hyperlink{spimpl_8hpp_source}{spimpl.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}\label{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!swap@{swap}}
+\index{swap@{swap}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplc_8hpp_source_l00230}{230}} del archivo \mbox{\hyperlink{spimplc_8hpp_source}{spimplc.\+hpp}}.
+
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}\label{classspimpl_1_1unique__impl__ptr_a4a4a6627399607c89293172a17733230}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!swap@{swap}}
+\index{swap@{swap}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{unique\+\_\+impl\+\_\+ptr}}$<$ T, Deleter $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{spimplmc_8hpp_source_l00230}{230}} del archivo \mbox{\hyperlink{spimplmc_8hpp_source}{spimplmc.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classspimpl_1_1unique__impl__ptr_a1ad6d2394bd6ce5a76ead4da0aa4ce75}\label{classspimpl_1_1unique__impl__ptr_a1ad6d2394bd6ce5a76ead4da0aa4ce75}} 
+\index{unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}!ptr\_@{ptr\_}}
+\index{ptr\_@{ptr\_}!unique\_impl\_ptr$<$ T, Deleter $>$@{unique\_impl\_ptr$<$ T, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{ptr\_}{ptr\_}}
+{\footnotesize\ttfamily unique\+\_\+ptr\+\_\+type ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{smimplm_8hpp_source_l00246}{246}} del archivo \mbox{\hyperlink{smimplm_8hpp_source}{smimplm.\+hpp}}.
+

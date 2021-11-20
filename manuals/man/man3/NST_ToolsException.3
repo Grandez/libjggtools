@@ -1,0 +1,52 @@
+.TH "ToolsException" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ToolsException
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Herencias domain_error\&.
+.PP
+Heredado por \fBToolsCastException\fP y \fBToolsValueException\fP\&.
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBToolsException\fP (const char *fmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "const char * \fBwhat\fP ()"
+.br
+.in -1c
+.SS "Métodos protegidos"
+
+.in +1c
+.ti -1c
+.RI "void \fBmountMessage\fP (const char *fmt, va_list list)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB9\fP del archivo \fBexceptions\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBToolsException\fP (const char * fmt,  \&.\&.\&.)"
+
+.PP
+Definición en la línea \fB14\fP del archivo \fBexceptions\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "void mountMessage (const char * fmt, va_list list)\fC [protected]\fP"
+
+.PP
+Definición en la línea \fB24\fP del archivo \fBexceptions\&.cpp\fP\&.
+.SS "const char * what ()"
+
+.PP
+Definición en la línea \fB20\fP del archivo \fBexceptions\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

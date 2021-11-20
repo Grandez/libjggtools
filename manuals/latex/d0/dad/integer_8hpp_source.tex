@@ -1,0 +1,33 @@
+\hypertarget{integer_8hpp_source}{}\doxysection{integer.\+hpp}
+\label{integer_8hpp_source}\index{code/include/integer.hpp@{code/include/integer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00006}00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00008}00008 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00009}\mbox{\hyperlink{classjggtools_1_1_integer}{00009}}    \textcolor{keyword}{class }\mbox{\hyperlink{classjggtools_1_1_integer}{Integer}} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00010}00010    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00011}00011       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00012}\mbox{\hyperlink{classjggtools_1_1_integer_a62b905a3a2a180fc2952af3300bc81d6}{00012}}       \mbox{\hyperlink{classjggtools_1_1_integer_a62b905a3a2a180fc2952af3300bc81d6}{Integer}}(\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} value) \{ \mbox{\hyperlink{classjggtools_1_1_integer_a62b905a3a2a180fc2952af3300bc81d6}{Integer}}(value.c\_str()); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00013}00013       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00014}00014       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}(\textcolor{keywordtype}{short} value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00015}00015       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00016}00016       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}(\textcolor{keywordtype}{long} value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00017}00017       \mbox{\hyperlink{classjggtools_1_1_integer}{Integer}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00018}\mbox{\hyperlink{classjggtools_1_1_integer_aeebc6a4c9b7bc00899f3ffd028fea256}{00018}}       \textcolor{keywordtype}{bool} \mbox{\hyperlink{classjggtools_1_1_integer_aeebc6a4c9b7bc00899f3ffd028fea256}{isShort}}   () \{ \textcolor{keywordflow}{return} mask \& 1; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00019}00019       \textcolor{keywordtype}{bool} isInt     () \{ \textcolor{keywordflow}{return} mask \& 2; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00020}\mbox{\hyperlink{classjggtools_1_1_integer_a03f1ef0bd405fefa72cbefb0d8ff71d2}{00020}}       \textcolor{keywordtype}{bool} \mbox{\hyperlink{classjggtools_1_1_integer_a03f1ef0bd405fefa72cbefb0d8ff71d2}{isLong}}    () \{ \textcolor{keywordflow}{return} mask \& 4; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00021}\mbox{\hyperlink{classjggtools_1_1_integer_a3f6460eba6d05ccf726ebe871c289dbf}{00021}}       \textcolor{keywordtype}{bool} \mbox{\hyperlink{classjggtools_1_1_integer_a3f6460eba6d05ccf726ebe871c289dbf}{isLongLong}}() \{ \textcolor{keywordflow}{return} mask \& 8; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00022}00022    \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00023}00023       \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00024}00024       \textcolor{keywordtype}{char} mask = 0x01;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00025}00025       \textcolor{keywordtype}{void} validateInteger(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00026}00026    \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00027}00027 \}}
+
+\end{DoxyCode}

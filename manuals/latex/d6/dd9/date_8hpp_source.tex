@@ -1,0 +1,38 @@
+\hypertarget{date_8hpp_source}{}\doxysection{date.\+hpp}
+\label{date_8hpp_source}\index{code/include/date.hpp@{code/include/date.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}datetimebase.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00010}00010 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00012}00012 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00013}\mbox{\hyperlink{classjggtools_1_1_date}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{classjggtools_1_1_date}{Date}} \{}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00014}00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00015}00015    \mbox{\hyperlink{classjggtools_1_1_date}{Date}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00016}00016    \textcolor{comment}{// Date(const Date\& src);}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00017}00017    \mbox{\hyperlink{classjggtools_1_1_date}{Date}}(\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} str     , \textcolor{keywordtype}{int} fmt = -\/1);}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00018}00018    \mbox{\hyperlink{classjggtools_1_1_date}{Date}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} fmt = -\/1);}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00019}00019    \mbox{\hyperlink{classjggtools_1_1_date}{\string~Date}}();}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00020}\mbox{\hyperlink{classjggtools_1_1_date_a7e77cba85979e17cfdd9f466f4585967}{00020}}    \textcolor{keyword}{struct }tm *\mbox{\hyperlink{classjggtools_1_1_date_a7e77cba85979e17cfdd9f466f4585967}{getTM}}();}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00021}\mbox{\hyperlink{classjggtools_1_1_date_a53172a43145522837b888b7d7f7117ea}{00021}}    \textcolor{keywordtype}{int} \mbox{\hyperlink{classjggtools_1_1_date_a53172a43145522837b888b7d7f7117ea}{getYear}}  ();}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00022}\mbox{\hyperlink{classjggtools_1_1_date_a7dc6a999739b4b5e9f7b37fc780707fb}{00022}}    \textcolor{keywordtype}{int} \mbox{\hyperlink{classjggtools_1_1_date_a7dc6a999739b4b5e9f7b37fc780707fb}{getMonth}} ();}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00023}\mbox{\hyperlink{classjggtools_1_1_date_ac9321b3a445ce663d24b8776baafd0f9}{00023}}    \textcolor{keywordtype}{int} \mbox{\hyperlink{classjggtools_1_1_date_ac9321b3a445ce663d24b8776baafd0f9}{getDay}}   ();}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00024}\mbox{\hyperlink{classjggtools_1_1_date_a7494bc12467e83b82325b7cdc5d291c4}{00024}}    \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}      \mbox{\hyperlink{classjggtools_1_1_date_a7494bc12467e83b82325b7cdc5d291c4}{toString}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt = \textcolor{stringliteral}{"{}\%F"{}});}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00025}\mbox{\hyperlink{classjggtools_1_1_date_a052a3aad5ec98da05acca60c88a1b0c7}{00025}}    \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \mbox{\hyperlink{classjggtools_1_1_date_a052a3aad5ec98da05acca60c88a1b0c7}{toChar}}   (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt = \textcolor{stringliteral}{"{}\%F"{}});}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00026}00026 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00027}00027    \textcolor{keyword}{class }DateImpl;}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00028}00028    unique\_ptr<DateImpl> impl\_;}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00029}00029 \textcolor{comment}{//   DateTimeBase dtb = DateTimeBase();}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00030}00030 \textcolor{comment}{//   struct tm *ptm = dtb.getTM();}}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00031}00031 \};}
+\DoxyCodeLine{\Hypertarget{date_8hpp_source_l00032}00032 \}}
+
+\end{DoxyCode}

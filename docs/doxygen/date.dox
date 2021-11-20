@@ -1,0 +1,86 @@
+/** 
+   \class jggtools::Date
+   \ingroup datetime
+   \brief Clase Date
+    
+  Abstrae el concepto de fecha
+    
+  **Metodos**
+  
+   int getMonth ();
+   
+   int getDay   ();
+   
+   sstring      toString (const char *fmt = "%F");
+   
+   const char * toChar   (const char *fmt = "%F");
+  
+  */
+
+/** @fn Date::Date();
+ *  \brief Default constructor for a Date
+ *
+ *  Initialize the instance to current date
+ *
+ */
+
+/** @fn Date::Date(Date&);
+ *  \brief Copy constructor
+ *
+ */
+
+/** @fn Date::Date(sstring str     , int fmt = -1);
+ *  \brief Constructor from an string
+ *  \param[in] str An string that will be parser according format
+ *  \param[in] fmt Format to parse the string
+ *          Format is obtained from current locale when fmt == -1
+ *          Otherwise time_base::dateorder will be used
+ *
+ */
+
+/** @fn Date::Date(cnst *char str     , int fmt = -1);
+ *  \brief Constructor from an char *
+ *  \param[in] str An array that will be parser according format
+ *  \param[in] fmt Format to parse the string
+ *          Format is obtained from current locale when fmt == -1
+ *          Otherwise time_base::dateorder will be used
+ *
+ */
+
+/** @fn int Date::getYear();
+ *  \brief Returns year associated with the object
+ *  \return Year
+ */
+
+/** @fn int Date::getMonth();
+ *  \brief Returns month associated with the object
+ *  \return Month
+ */
+
+/** @fn int Date::getDay();
+ *  \brief Returns Day associated with the object
+ *  \return Day
+ */
+
+/** @fn int struct tm *Date::getTM();
+ *  \brief Return a pointer to an struct tm when date pieces are associated with the object
+ *
+ *  Other fields at struct can be associated with current date time
+ *
+ *  \return a poinetr to struct tm
+ */
+
+/** @fn sstring Date::toString (const char *fmt = "%F");
+ *  \brief Return a representation of Date as String
+ *
+ *  \fmt[in] Format of string. By default: Current locale
+ *  \return An string with the date
+ */
+
+/** @fn const char * Date::toChar (const char *fmt = "%F");
+ *  \brief Return a char array representign the Date
+ *
+ *  \fmt[in] Format of string. By default: Current locale
+ *  \return A **new copy** of array
+ */
+ 

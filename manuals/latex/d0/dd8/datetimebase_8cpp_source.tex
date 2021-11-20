@@ -1,0 +1,95 @@
+\hypertarget{datetimebase_8cpp_source}{}\doxysection{datetimebase.\+cpp}
+\label{datetimebase_8cpp_source}\index{code/src/datetimebase.cpp@{code/src/datetimebase.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}exceptions.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}datetimebase.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#pragma warning( disable : 4996 )}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00015}00015 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00016}00016    DateTimeBase::DateTimeBase() \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00017}00017       time\_t now = time(0);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00018}00018       memcpy(\&mtm, localtime(\&now), \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} tm));}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00019}00019    \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00020}00020    DateTimeBase\& DateTimeBase::setTM(\textcolor{keyword}{struct} tm *ptm) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00021}00021       memcpy(\&mtm, ptm, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} tm));}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00022}00022       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00023}00023    \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00024}00024    \textcolor{keyword}{struct }tm* DateTimeBase::getTM() \{ \textcolor{keywordflow}{return} \&mtm; \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00025}00025    \textcolor{keywordtype}{void} DateTimeBase::validateDate(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} fmt) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00026}00026 \textcolor{comment}{//    time\_base::dateorder d;}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00027}00027       vector<int> res = sstring(str).tokenizeNumber(\textcolor{stringliteral}{"{}\string^[0-\/9]+[/-\/][0-\/9]+[/-\/][0-\/9]+\$"{}});}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00028}00028       \textcolor{keywordflow}{if} (res.size() != 3) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00029}00029       fillTmDate(str, fmt);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00030}00030       validateDateValues(str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00031}00031       \textcolor{comment}{// return \&mtm;}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00033}00033    \textcolor{keywordtype}{void} DateTimeBase::fillTmDate(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} fmt) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00034}00034        vector<int> res = sstring(str).tokenizeNumber((\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}[/-\/]"{}});}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00035}00035        time\_base::dateorder d;}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00036}00036        d = (fmt == -\/1) ? use\_facet<time\_get<char>>(locale()).date\_order() }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00037}00037                        : \textcolor{keyword}{static\_cast<}time\_base::dateorder\textcolor{keyword}{>}(fmt);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00039}00039        \textcolor{keywordflow}{switch} (d) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00040}00040            \textcolor{keywordflow}{case} time\_base::dmy: mtm.tm\_mday = res[0]; mtm.tm\_mon = res[1] -\/ 1; mtm.tm\_year = res[2] -\/ 1900; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00041}00041            \textcolor{keywordflow}{case} time\_base::mdy: mtm.tm\_mday = res[1]; mtm.tm\_mon = res[0] -\/ 1; mtm.tm\_year = res[2] -\/ 1900; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00042}00042            \textcolor{keywordflow}{case} time\_base::ymd: mtm.tm\_mday = res[2]; mtm.tm\_mon = res[1] -\/ 1; mtm.tm\_year = res[2] -\/ 1900; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00043}00043            \textcolor{keywordflow}{case} time\_base::ydm: mtm.tm\_mday = res[2]; mtm.tm\_mon = res[2] -\/ 1; mtm.tm\_year = res[0] -\/ 1900; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00044}00044            \textcolor{keywordflow}{default}:             mtm.tm\_mday = res[0]; mtm.tm\_mon = res[1] -\/ 1; mtm.tm\_year = res[2] -\/ 1900;}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00045}00045        \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00046}00046    \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00047}00047    \textcolor{keywordtype}{bool}  DateTimeBase::isLeap(\textcolor{keywordtype}{int} year) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00048}00048         \textcolor{keywordflow}{if} (year < 100) year += 1900; \textcolor{comment}{// Control full year or tm year}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00049}00049         \textcolor{keywordflow}{if} (year \% 4)  \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00050}00050         \textcolor{keywordflow}{return} (year \% 400) ? false : \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00052}00052    \textcolor{keywordtype}{void}  DateTimeBase::validateDateValues (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00053}00053         \textcolor{keywordtype}{int} days[] = \{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \};}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00054}00054         \textcolor{keywordflow}{if} ( mtm.tm\_year < 0)                        \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00055}00055         \textcolor{keywordflow}{if} ((mtm.tm\_mon  < 0) || (mtm.tm\_mon  > 11)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00056}00056         \textcolor{keywordflow}{if} ((mtm.tm\_mday < 1) || (mtm.tm\_mday > 31)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00057}00057         \textcolor{keywordflow}{if} ( mtm.tm\_mon != 2) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00058}00058              \textcolor{keywordflow}{if} (mtm.tm\_mday > days[mtm.tm\_mon])               \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00059}00059              \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isLeap(mtm.tm\_year) \&\& mtm.tm\_mday > 29) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_DATE, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00060}00060         \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00062}00062    \textcolor{keywordtype}{void} DateTimeBase::validateTime(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00063}00063 \textcolor{comment}{//    char strDate[11];}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00064}00064 \textcolor{comment}{//    time\_base::dateorder d;}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00065}00065       vector<int> toks= sstring(str).tokenizeNumber(\textcolor{stringliteral}{"{}\string^[0-\/9]+[:][0-\/9]+[:][0-\/9]+\$"{}});}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00066}00066       \textcolor{keywordflow}{if} (toks.size() != 3) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_TIME, str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00067}00067       fillTmTime(toks);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00068}00068       validateTimeValues(str);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00069}00069    \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00070}00070    \textcolor{keywordtype}{void} DateTimeBase::fillTmTime(vector<int> toks) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00071}00071            mtm.tm\_hour = toks[0];}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00072}00072            mtm.tm\_min  = toks[1];}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00073}00073            mtm.tm\_sec  = toks[2];}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00074}00074    \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00075}00075    \textcolor{keywordtype}{void} DateTimeBase::validateTimeValues(sstring str) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00076}00076        \textcolor{keywordflow}{if} ((mtm.tm\_hour < 0) || (mtm.tm\_hour > 23) ||}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00077}00077            (mtm.tm\_min  < 0) || (mtm.tm\_min  > 59) ||}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00078}00078            (mtm.tm\_sec  < 0) || (mtm.tm\_sec  > 59))}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00079}00079             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ToolsValueException(BAD\_TIME, str.c\_str());}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00080}00080       \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00082}00082     sstring DateTimeBase::format(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt) \{}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00083}00083        \textcolor{keywordtype}{char} data[27];}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00084}00084        strftime(data, 27, fmt, \&mtm);}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00085}00085        \textcolor{keywordflow}{return} sstring(data); }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{datetimebase_8cpp_source_l00089}00089 \}}
+
+\end{DoxyCode}

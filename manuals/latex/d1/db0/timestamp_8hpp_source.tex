@@ -1,0 +1,35 @@
+\hypertarget{timestamp_8hpp_source}{}\doxysection{timestamp.\+hpp}
+\label{timestamp_8hpp_source}\index{code/include/timestamp.hpp@{code/include/timestamp.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}jggtools.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}date.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}time.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}datetime.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00013}00013 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00015}00015 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00016}\mbox{\hyperlink{classjggtools_1_1_timestamp}{00016}}    \textcolor{keyword}{class }\mbox{\hyperlink{classjggtools_1_1_timestamp}{Timestamp}} : \textcolor{keyword}{public} \mbox{\hyperlink{classjggtools_1_1_date_time}{DateTime}} \{}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00017}00017    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00018}00018       \mbox{\hyperlink{classjggtools_1_1_timestamp}{Timestamp}}();}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00019}00019       \mbox{\hyperlink{classjggtools_1_1_timestamp}{Timestamp}}(\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}     str);}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00020}00020       \mbox{\hyperlink{classjggtools_1_1_timestamp}{Timestamp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str);}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00021}00021       \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} toString();}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00022}00022 \textcolor{comment}{//      Date   getDate();}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00023}00023 \textcolor{comment}{//      Time   getTime();}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00024}00024 \textcolor{comment}{//      struct tm *getTM();}}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00025}00025    \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00026}00026        \textcolor{keyword}{static} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} uSec;}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00027}00027    \};}
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{timestamp_8hpp_source_l00029}00029 \}}
+
+\end{DoxyCode}

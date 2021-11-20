@@ -1,0 +1,103 @@
+\hypertarget{classjggtools_1_1_date_time}{}\doxysection{Referencia de la Clase Date\+Time}
+\label{classjggtools_1_1_date_time}\index{DateTime@{DateTime}}
+
+
+Clase \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}}.  
+
+
+
+
+Diagrama de herencias de Date\+Time\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{d4/dd0/classjggtools_1_1_date_time__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjggtools_1_1_date_time_a3e93cd7baeb8b4448482a450df21ab20}{Date\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for a \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classjggtools_1_1_date_time_a6d51cb8597f5d077199dac68b33ed355}{Date\+Time}} (\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} str)
+\begin{DoxyCompactList}\small\item\em Constructor from an string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classjggtools_1_1_date_time_af7cc6bc3fb365e920d9dad3baaf75fef}\label{classjggtools_1_1_date_time_af7cc6bc3fb365e920d9dad3baaf75fef}} 
+{\bfseries Date\+Time} (const char $\ast$str)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \mbox{\hyperlink{classjggtools_1_1_date_time_aebfb4291101b96084b58e606ea057a22}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Return a representation of \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} as Y/m/D H\+:M\+:S. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classjggtools_1_1_date_time_a4a7e17a00771d068f6be4e6047b707cf}{to\+Char}} ()
+\begin{DoxyCompactList}\small\item\em Return a representation of \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} as Y/m/D H\+:M\+:S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}}. 
+
+Abstrae el concepto de fecha y hora \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} is an dat structure with one of following formats\+:
+
+
+\begin{DoxyItemize}
+\item \char`\"{}\%\+Y/\%m/\%d \%\+H\+:\%\+M\+:\%\+S\char`\"{}
+\item \char`\"{}\%\+Y/\%m/\%d-\/\%\+H\+:\%\+M\+:\%\+S\char`\"{}
+\item \char`\"{}\%\+Y-\/\%m-\/\%d-\/\%\+H\+:\%\+M\+:\%\+S\char`\"{} 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{datetime_8hpp_source_l00007}{7}} del archivo \mbox{\hyperlink{datetime_8hpp_source}{datetime.\+hpp}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classjggtools_1_1_date_time_a3e93cd7baeb8b4448482a450df21ab20}\label{classjggtools_1_1_date_time_a3e93cd7baeb8b4448482a450df21ab20}} 
+\index{DateTime@{DateTime}!DateTime@{DateTime}}
+\index{DateTime@{DateTime}!DateTime@{DateTime}}
+\doxysubsubsection{\texorpdfstring{DateTime()}{DateTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for a \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}}. 
+
+Initialize the instance to current date time \mbox{\Hypertarget{classjggtools_1_1_date_time_a6d51cb8597f5d077199dac68b33ed355}\label{classjggtools_1_1_date_time_a6d51cb8597f5d077199dac68b33ed355}} 
+\index{DateTime@{DateTime}!DateTime@{DateTime}}
+\index{DateTime@{DateTime}!DateTime@{DateTime}}
+\doxysubsubsection{\texorpdfstring{DateTime()}{DateTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}}]{str }\end{DoxyParamCaption})}
+
+
+
+Constructor from an string. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{ in}}  & {\em str} & An string according one of allowed formats \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classjggtools_1_1_date_time_a4a7e17a00771d068f6be4e6047b707cf}\label{classjggtools_1_1_date_time_a4a7e17a00771d068f6be4e6047b707cf}} 
+\index{DateTime@{DateTime}!toChar@{toChar}}
+\index{toChar@{toChar}!DateTime@{DateTime}}
+\doxysubsubsection{\texorpdfstring{toChar()}{toChar()}}
+{\footnotesize\ttfamily const char $\ast$ to\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return a representation of \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} as Y/m/D H\+:M\+:S. 
+
+\begin{DoxyReturn}{Devuelve}
+A {\bfseries{new copy}} as Y/m/D H\+:M\+:S 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classjggtools_1_1_date_time_aebfb4291101b96084b58e606ea057a22}\label{classjggtools_1_1_date_time_aebfb4291101b96084b58e606ea057a22}} 
+\index{DateTime@{DateTime}!toString@{toString}}
+\index{toString@{toString}!DateTime@{DateTime}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return a representation of \mbox{\hyperlink{classjggtools_1_1_date_time}{Date\+Time}} as Y/m/D H\+:M\+:S. 
+
+\begin{DoxyReturn}{Devuelve}
+An string as Y/m/D H\+:M\+:S 
+\end{DoxyReturn}

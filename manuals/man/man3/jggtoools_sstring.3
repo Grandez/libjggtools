@@ -1,0 +1,162 @@
+.TH "sstring" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sstring
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Herencias string\&.
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBsstring\fP (string str)"
+.br
+.ti -1c
+.RI "\fBsstring\fP (const \fBsstring\fP &obj)"
+.br
+.ti -1c
+.RI "\fBsstring\fP (const char *src)"
+.br
+.ti -1c
+.RI "\fBsstring\fP (char *src)"
+.br
+.ti -1c
+.RI "\fBsstring\fP (const string &str, size_type pos, size_type n)"
+.br
+.ti -1c
+.RI "\fBsstring\fP & \fBltrim\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP & \fBrtrim\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP & \fBtrim\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP & \fBtoUpper\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP & \fBtoLower\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP * \fBmakeLower\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP * \fBmakeUpper\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP * \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBtoChar\fP ()"
+.br
+.ti -1c
+.RI "char * \fBtoArr\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (const char *par)"
+.br
+.ti -1c
+.RI "bool \fBmakeBoolean\fP ()"
+.br
+.ti -1c
+.RI "vector< char * > \fBtokenize\fP (const char *pat)"
+.br
+.ti -1c
+.RI "vector< \fBsstring\fP > \fBtokenize\fP (string pat)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB10\fP del archivo \fBsstring\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBsstring\fP ()\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB13\fP del archivo \fBsstring\&.hpp\fP\&.
+.SS "\fBsstring\fP (string str)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB14\fP del archivo \fBsstring\&.hpp\fP\&.
+.SS "\fBsstring\fP (const \fBsstring\fP & obj)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB15\fP del archivo \fBsstring\&.hpp\fP\&.
+.SS "\fBsstring\fP (const char * src)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB16\fP del archivo \fBsstring\&.hpp\fP\&.
+.SS "\fBsstring\fP (char * src)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB17\fP del archivo \fBsstring\&.hpp\fP\&.
+.SS "\fBsstring\fP (const string & str, size_type pos, size_type n)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB18\fP del archivo \fBsstring\&.hpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "bool contains (const char * par)"
+
+.PP
+Definición en la línea \fB90\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & ltrim ()"
+
+.PP
+Definición en la línea \fB13\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "bool makeBoolean ()"
+
+.PP
+Definición en la línea \fB84\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP * makeLower ()"
+
+.PP
+Definición en la línea \fB55\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP * makeUpper ()"
+
+.PP
+Definición en la línea \fB60\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & rtrim ()"
+
+.PP
+Definición en la línea \fB19\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "char * toArr ()"
+
+.PP
+Definición en la línea \fB49\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "const char * toChar ()"
+
+.PP
+Definición en la línea \fB60\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "vector< char * > tokenize (const char * pat)"
+
+.PP
+Definición en la línea \fB63\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "vector< \fBsstring\fP > tokenize (string pat)"
+
+.PP
+Definición en la línea \fB69\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & toLower ()"
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP * toString ()"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & toUpper ()"
+
+.PP
+Definición en la línea \fB38\fP del archivo \fBsstring\&.cpp\fP\&.
+.SS "\fBsstring\fP & trim ()"
+
+.PP
+Definición en la línea \fB35\fP del archivo \fBsstring\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

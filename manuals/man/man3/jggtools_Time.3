@@ -1,0 +1,100 @@
+.TH "Time" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Time \- Clase \fBTime\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBTime\fP (const \fBTime\fP &src)"
+.br
+.ti -1c
+.RI "\fBTime\fP (string str)"
+.br
+.ti -1c
+.RI "\fBTime\fP (const char *str)"
+.br
+.ti -1c
+.RI "struct tm * \fBgetTM\fP ()"
+.br
+.RI "Return a pointer to an struct tm when time pieces are associated with the object\&. "
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP (const char *fmt='%X')"
+.br
+.RI "Return a representation of \fBTime\fP as H:M:S\&. "
+.ti -1c
+.RI "const char * \fBtoChar\fP (const char *fmt='%X')"
+.br
+.RI "Return a representation of \fBTime\fP as H:M:S\&. "
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Clase \fBTime\fP\&. 
+
+Abstraction of a time \fBTime\fP is represented as H:M:S 
+.PP
+Definición en la línea \fB14\fP del archivo \fBtime\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBTime\fP (const \fBTime\fP & src)"
+
+.PP
+Definición en la línea \fB16\fP del archivo \fBtime\&.cpp\fP\&.
+.SS "\fBTime\fP (string str)"
+
+.PP
+Definición en la línea \fB14\fP del archivo \fBtime\&.cpp\fP\&.
+.SS "\fBTime\fP (const char * str)"
+
+.PP
+Definición en la línea \fB15\fP del archivo \fBtime\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "int struct tm * getTM ()"
+
+.PP
+Return a pointer to an struct tm when time pieces are associated with the object\&. Other fields at struct can be associated with current date
+.PP
+\fBDevuelve\fP
+.RS 4
+a poinetr to struct tm 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB18\fP del archivo \fBtime\&.cpp\fP\&.
+.SS "const char * toChar (const char * fmt = \fC'%X'\fP)"
+
+.PP
+Return a representation of \fBTime\fP as H:M:S\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+A \fBnew copy\fP as H:M:S 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB20\fP del archivo \fBtime\&.cpp\fP\&.
+.SS "\fBsstring\fP toString (const char * fmt = \fC'%X'\fP)"
+
+.PP
+Return a representation of \fBTime\fP as H:M:S\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+An string as H:M:S 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB19\fP del archivo \fBtime\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

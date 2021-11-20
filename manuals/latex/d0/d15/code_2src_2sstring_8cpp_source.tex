@@ -1,0 +1,126 @@
+\hypertarget{code_2src_2sstring_8cpp_source}{}\doxysection{sstring.\+cpp}
+\label{code_2src_2sstring_8cpp_source}\index{code/src/sstring.cpp@{code/src/sstring.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <filesystem>}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#pragma warning( disable : 4996 )}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00012}00012 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00013}00013    sstring\&     sstring::ltrim() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00014}00014         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00015}00015         \textcolor{keywordflow}{while} (at(i) == \textcolor{charliteral}{' '} || at(i) == \textcolor{charliteral}{'\(\backslash\)t'} || at(i) == \textcolor{charliteral}{'\(\backslash\)r'}) i++;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00016}00016         assign(substr(i));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00017}00017         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00018}00018      \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00019}00019    sstring\&     sstring::rtrim() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00020}00020         \textcolor{keywordtype}{size\_t} i;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00021}00021         \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00022}00022         \textcolor{keywordflow}{for} (i = this-\/>length() -\/ 1; i > -\/1; i-\/-\/) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00023}00023              \textcolor{keywordflow}{switch}(at(i)) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00024}00024                 \textcolor{keywordflow}{case} \textcolor{charliteral}{' '}:}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00025}00025                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'}: }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00026}00026                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'}:}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00027}00027                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00028}00028                 \textcolor{keywordflow}{default}: done = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00029}00029              \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00030}00030              \textcolor{keywordflow}{if} (done) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00031}00031         \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00032}00032         assign(substr(0, i));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00033}00033         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};     }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00034}00034    \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00035}00035    sstring\&     sstring::trim() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00036}00036          \textcolor{keywordflow}{return} ltrim().rtrim();}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00037}00037      \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00038}00038    sstring\&     sstring::toUpper() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00039}00039       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < length(); i++) at(i) = toupper(at(i));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00040}00040       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00041}00041    \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00042}00042    sstring\&     sstring::toLower() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00043}00043       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < length(); i++) at(i) = tolower(at(i));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00044}00044       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00045}00045    \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00046}00046    sstring*     sstring::toString() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00047}00047          \textcolor{keywordflow}{return} \textcolor{keyword}{new} sstring(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00049}00049    \textcolor{keywordtype}{char}*        sstring::toArr() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00050}00050       \textcolor{keywordtype}{char} *res = 0x0;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00051}00051       res = (\textcolor{keywordtype}{char} *) malloc(length() + 1);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00052}00052       \textcolor{keywordflow}{if} (res == 0x0) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00053}00053           errno = ENOMEM;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00054}00054           \textcolor{keywordflow}{return} 0x0;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00055}00055       \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00056}00056       memcpy(res, c\_str(), length());}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00057}00057       res[length()] = 0x0; }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00058}00058       \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00060}00060    \textcolor{keyword}{const} \textcolor{keywordtype}{char}*  sstring::toChar() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00061}00061          \textcolor{keywordflow}{return} c\_str();}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00063}00063    vector<char *>  sstring::tokenize(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pat) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00064}00064       vector<sstring> toks = tokenize(\textcolor{keywordtype}{string}(pat));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00065}00065       vector<char *> res(toks.size());}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00066}00066       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < toks.size(); i++) res.at(i) = strdup(toks[i].c\_str());}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00067}00067       \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00069}00069    vector<sstring> sstring::tokenize(\textcolor{keywordtype}{string} pat) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00070}00070          regex reg(pat);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00071}00071          sregex\_token\_iterator iter(begin(), end(), reg, -\/1);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00072}00072          sregex\_token\_iterator end;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00073}00073          vector<string> vec(iter, end);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00074}00074          vector<sstring> res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00075}00075          \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < vec.size(); i++) res.push\_back(sstring(vec[i]));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00076}00076          \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00078}00078    vector<int>     sstring::tokenizeNumber(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pat) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00079}00079         vector<int> res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00080}00080         vector<char *> vec = tokenize(pat);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00081}00081         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{string} s : vec) res.push\_back(stoi(s));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00082}00082         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00084}00084    \textcolor{keywordtype}{bool} sstring::makeBoolean() \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00085}00085         \textcolor{keywordflow}{if} (this-\/>length() == 0x0) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00086}00086         \textcolor{keywordtype}{char} c = this-\/>at(0);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00087}00087         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'0'} || c == \textcolor{charliteral}{'n'} || c == \textcolor{charliteral}{'N'} || c == \textcolor{charliteral}{'f'} || c == \textcolor{charliteral}{'F'}) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00088}00088         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00090}00090    \textcolor{keywordtype}{bool} sstring::contains (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pat) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00091}00091         \textcolor{keywordflow}{return} (this-\/>toChar(), pat);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00093}00093   sstring    sstring::paste(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *sep, ...) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00094}00094       sstring str = sstring(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00095}00095       va\_list args;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00096}00096       va\_start(args, sep);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00097}00097       \textcolor{keywordtype}{char} *next = va\_arg(args, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00098}00098       }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00099}00099       \textcolor{keywordflow}{while} (next) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00100}00100          str.append(sep).append(next);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00101}00101          next = va\_arg(args, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00102}00102       \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00103}00103       va\_end(args);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00104}00104       \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00105}00105   \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00106}00106   sstring concat(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *sep, ...) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00107}00107       sstring str;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00108}00108       va\_list args;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00109}00109       va\_start(args, sep);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00110}00110       }
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00111}00111       str = sstring(va\_arg(args, \textcolor{keywordtype}{char} *));}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00112}00112       \textcolor{keywordtype}{char} *next = va\_arg(args, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00113}00113       \textcolor{keywordflow}{while} (next) \{}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00114}00114          str.append(sep).append(next);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00115}00115          next = va\_arg(args, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00116}00116       \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00117}00117       va\_end(args);}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00118}00118       \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00119}00119   \}}
+\DoxyCodeLine{\Hypertarget{code_2src_2sstring_8cpp_source_l00120}00120 \}}
+
+\end{DoxyCode}

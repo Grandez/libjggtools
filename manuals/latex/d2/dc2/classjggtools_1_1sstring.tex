@@ -1,0 +1,181 @@
+\hypertarget{classjggtools_1_1sstring}{}\doxysection{Referencia de la Clase sstring}
+\label{classjggtools_1_1sstring}\index{sstring@{sstring}}
+
+
+Subclsase de string con metoos auxiliares.  
+
+
+
+
+Diagrama de herencias de sstring\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{d6/d29/classjggtools_1_1sstring__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para sstring\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{d8/d88/classjggtools_1_1sstring__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring_a73e33e0c0f4c603a772b8e64cdfd37ee}{sstring}} (string str)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring_a0e1f88fb929d4356b9064fef28837c09}{sstring}} (const \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \&obj)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring_a2af3fe69b1dab9d15e54d87d8442e676}{sstring}} (const char $\ast$src)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring_a6791f7aa2b099df194913c67cd4ebb74}{sstring}} (char $\ast$src)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring_a340c44248c1a9c0dfd6b826e831f38f6}{sstring}} (const string \&str, size\+\_\+type pos, size\+\_\+type n)
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a67ddd83b9a7236a6d302e94f11e2e777}\label{classjggtools_1_1sstring_a67ddd83b9a7236a6d302e94f11e2e777}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \& {\bfseries ltrim} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a2bf19d867829214c96d4350e32a9707f}\label{classjggtools_1_1sstring_a2bf19d867829214c96d4350e32a9707f}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \& {\bfseries rtrim} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_aeb7dea33c4c476e9836f555930b408b2}\label{classjggtools_1_1sstring_aeb7dea33c4c476e9836f555930b408b2}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \& {\bfseries trim} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a59f166e377e0ff4649d984147434f31a}\label{classjggtools_1_1sstring_a59f166e377e0ff4649d984147434f31a}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \& {\bfseries to\+Upper} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a3038f34056db5e025868ca284ccdc5ac}\label{classjggtools_1_1sstring_a3038f34056db5e025868ca284ccdc5ac}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \& {\bfseries to\+Lower} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a4cbc9798343edee1bb19b6b50b5b254c}\label{classjggtools_1_1sstring_a4cbc9798343edee1bb19b6b50b5b254c}} 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} $\ast$ {\bfseries to\+String} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a4a7e17a00771d068f6be4e6047b707cf}\label{classjggtools_1_1sstring_a4a7e17a00771d068f6be4e6047b707cf}} 
+const char $\ast$ {\bfseries to\+Char} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a46d43cd7c2063631f3d4f66f2ad5761a}\label{classjggtools_1_1sstring_a46d43cd7c2063631f3d4f66f2ad5761a}} 
+char $\ast$ {\bfseries to\+Arr} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a3770ad0ccdeaa04679c832dc293f8c57}\label{classjggtools_1_1sstring_a3770ad0ccdeaa04679c832dc293f8c57}} 
+bool {\bfseries contains} (const char $\ast$par)
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_af323f698d55938e130ef4320912c87e7}\label{classjggtools_1_1sstring_af323f698d55938e130ef4320912c87e7}} 
+bool {\bfseries make\+Boolean} ()
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a56cee27d0f780220b08c81c8accda8dd}\label{classjggtools_1_1sstring_a56cee27d0f780220b08c81c8accda8dd}} 
+vector$<$ char $\ast$ $>$ {\bfseries tokenize} (const char $\ast$pat)
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_a6f2164986d794697327fc03ae985805f}\label{classjggtools_1_1sstring_a6f2164986d794697327fc03ae985805f}} 
+vector$<$ \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} $>$ {\bfseries tokenize} (string pat)
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{classjggtools_1_1sstring_a8e6943cd0b1009528d0021d7a25ee0ad}{tokenize\+Number}} (const char $\ast$pat)
+\item 
+\mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \mbox{\hyperlink{classjggtools_1_1sstring_a081d3fa4aa8c76de5f4ff89fd26dd9dd}{paste}} (const char $\ast$sep,...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjggtools_1_1sstring_ac029b7ab99bc54cbd1df71c7e859be0a}\label{classjggtools_1_1sstring_ac029b7ab99bc54cbd1df71c7e859be0a}} 
+static \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} {\bfseries concat} (const char $\ast$sep,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Subclsase de string con metoos auxiliares. 
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}
+
+Extiende la clase String con utilidades para su manejo 
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00010}{10}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classjggtools_1_1sstring_a3e1c33a7a854775d17539320e45a4135}\label{classjggtools_1_1sstring_a3e1c33a7a854775d17539320e45a4135}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00013}{13}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a73e33e0c0f4c603a772b8e64cdfd37ee}\label{classjggtools_1_1sstring_a73e33e0c0f4c603a772b8e64cdfd37ee}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00014}{14}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a0e1f88fb929d4356b9064fef28837c09}\label{classjggtools_1_1sstring_a0e1f88fb929d4356b9064fef28837c09}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00015}{15}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a2af3fe69b1dab9d15e54d87d8442e676}\label{classjggtools_1_1sstring_a2af3fe69b1dab9d15e54d87d8442e676}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00016}{16}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a6791f7aa2b099df194913c67cd4ebb74}\label{classjggtools_1_1sstring_a6791f7aa2b099df194913c67cd4ebb74}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}\item[{char $\ast$}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00017}{17}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a340c44248c1a9c0dfd6b826e831f38f6}\label{classjggtools_1_1sstring_a340c44248c1a9c0dfd6b826e831f38f6}} 
+\index{sstring@{sstring}!sstring@{sstring}}
+\index{sstring@{sstring}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{sstring()}{sstring()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} (\begin{DoxyParamCaption}\item[{const string \&}]{str,  }\item[{size\+\_\+type}]{pos,  }\item[{size\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2include_2sstring_8hpp_source_l00018}{18}} del archivo \mbox{\hyperlink{code_2include_2sstring_8hpp_source}{sstring.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classjggtools_1_1sstring_a081d3fa4aa8c76de5f4ff89fd26dd9dd}\label{classjggtools_1_1sstring_a081d3fa4aa8c76de5f4ff89fd26dd9dd}} 
+\index{sstring@{sstring}!paste@{paste}}
+\index{paste@{paste}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{paste()}{paste()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}} paste (\begin{DoxyParamCaption}\item[{const char $\ast$}]{sep,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2src_2sstring_8cpp_source_l00093}{93}} del archivo \mbox{\hyperlink{code_2src_2sstring_8cpp_source}{sstring.\+cpp}}.
+
+\mbox{\Hypertarget{classjggtools_1_1sstring_a8e6943cd0b1009528d0021d7a25ee0ad}\label{classjggtools_1_1sstring_a8e6943cd0b1009528d0021d7a25ee0ad}} 
+\index{sstring@{sstring}!tokenizeNumber@{tokenizeNumber}}
+\index{tokenizeNumber@{tokenizeNumber}!sstring@{sstring}}
+\doxysubsubsection{\texorpdfstring{tokenizeNumber()}{tokenizeNumber()}}
+{\footnotesize\ttfamily vector$<$ int $>$ tokenize\+Number (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pat }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{code_2src_2sstring_8cpp_source_l00078}{78}} del archivo \mbox{\hyperlink{code_2src_2sstring_8cpp_source}{sstring.\+cpp}}.
+

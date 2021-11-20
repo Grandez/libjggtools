@@ -1,0 +1,95 @@
+.TH "DateTime" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DateTime \- Clase \fBDateTime\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Heredado por \fBTimestamp\fP\&.
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBDateTime\fP ()"
+.br
+.RI "Default constructor for a \fBDateTime\fP\&. "
+.ti -1c
+.RI "\fBDateTime\fP (\fBsstring\fP str)"
+.br
+.RI "Constructor from an string\&. "
+.ti -1c
+.RI "\fBDateTime\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP ()"
+.br
+.RI "Return a representation of \fBDateTime\fP as Y/m/D H:M:S\&. "
+.ti -1c
+.RI "const char * \fBtoChar\fP ()"
+.br
+.RI "Return a representation of \fBDateTime\fP as Y/m/D H:M:S\&. "
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Clase \fBDateTime\fP\&. 
+
+Abstrae el concepto de fecha y hora \fBDateTime\fP is an dat structure with one of following formats:
+.PP
+.IP "\(bu" 2
+'%Y/%m/%d %H:%M:%S'
+.IP "\(bu" 2
+'%Y/%m/%d-%H:%M:%S'
+.IP "\(bu" 2
+'%Y-%m-%d-%H:%M:%S' 
+.PP
+
+.PP
+Definición en la línea \fB7\fP del archivo \fBdatetime\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBDateTime\fP ()"
+
+.PP
+Default constructor for a \fBDateTime\fP\&. Initialize the instance to current date time 
+.SS "\fBDateTime\fP (\fBsstring\fP str)"
+
+.PP
+Constructor from an string\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIstr\fP An string according one of allowed formats 
+.RE
+.PP
+
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "const char * toChar ()"
+
+.PP
+Return a representation of \fBDateTime\fP as Y/m/D H:M:S\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+A \fBnew copy\fP as Y/m/D H:M:S 
+.RE
+.PP
+
+.SS "\fBsstring\fP toString ()"
+
+.PP
+Return a representation of \fBDateTime\fP as Y/m/D H:M:S\&. 
+.PP
+\fBDevuelve\fP
+.RS 4
+An string as Y/m/D H:M:S 
+.RE
+.PP
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

@@ -1,0 +1,69 @@
+.TH "DateTimeBase" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DateTimeBase
+.SH SYNOPSIS
+.br
+.PP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "struct tm * \fBgetTM\fP ()"
+.br
+.ti -1c
+.RI "void \fBvalidateDate\fP (const char *str, int fmt=\-1)"
+.br
+.ti -1c
+.RI "void \fBvalidateTime\fP (const char *str)"
+.br
+.ti -1c
+.RI "bool \fBisLeap\fP (int year)"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBformat\fP (const char *fmt)"
+.br
+.ti -1c
+.RI "\fBDateTimeBase\fP & \fBsetTM\fP (struct tm *ptm)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB7\fP del archivo \fBdatetimebase\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBDateTimeBase\fP ()"
+
+.PP
+Definición en la línea \fB16\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "\fBsstring\fP format (const char * fmt)"
+
+.PP
+Definición en la línea \fB82\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SS "struct tm * getTM ()"
+
+.PP
+Definición en la línea \fB24\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SS "bool isLeap (int year)"
+
+.PP
+Definición en la línea \fB47\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SS "\fBDateTimeBase\fP & setTM (struct tm * ptm)"
+
+.PP
+Definición en la línea \fB20\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SS "void validateDate (const char * str, int fmt = \fC\-1\fP)"
+
+.PP
+Definición en la línea \fB25\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+.SS "void validateTime (const char * str)"
+
+.PP
+Definición en la línea \fB62\fP del archivo \fBdatetimebase\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

@@ -1,0 +1,86 @@
+.TH "Date" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Date
+.SH SYNOPSIS
+.br
+.PP
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "class \fBDateImpl\fP"
+.br
+.in -1c
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP (\fBsstring\fP str, int fmt=\-1)"
+.br
+.ti -1c
+.RI "\fBDate\fP (const char *str, int fmt=\-1)"
+.br
+.ti -1c
+.RI "struct tm * \fBgetTM\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetYear\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetMonth\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetDay\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP (const char *fmt='%F')"
+.br
+.ti -1c
+.RI "const char * \fBtoChar\fP (const char *fmt='%F')"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB13\fP del archivo \fBdate\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBDate\fP (\fBsstring\fP str, int fmt = \fC\-1\fP)"
+
+.PP
+Definición en la línea \fB38\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "\fBDate\fP (const char * str, int fmt = \fC\-1\fP)"
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBdate\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "int getDay ()"
+
+.PP
+Definición en la línea \fB45\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "int getMonth ()"
+
+.PP
+Definición en la línea \fB44\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "struct tm * getTM ()"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "int getYear ()"
+
+.PP
+Definición en la línea \fB43\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "const char * toChar (const char * fmt = \fC'%F'\fP)"
+
+.PP
+Definición en la línea \fB48\fP del archivo \fBdate\&.cpp\fP\&.
+.SS "\fBsstring\fP toString (const char * fmt = \fC'%F'\fP)"
+
+.PP
+Definición en la línea \fB47\fP del archivo \fBdate\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

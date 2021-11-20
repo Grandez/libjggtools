@@ -1,0 +1,252 @@
+.TH "Decimal" 3 "Sábado, 20 de Noviembre de 2021" "Version 0.2.3" "Tools  for C/C++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Decimal \- \fBDecimal\fP numbers\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBDecimal\fP (\fBsstring\fP value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (const char *value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (float value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (double value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (long double value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (int value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (long value)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP (long long value)"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "char * \fBtoChar\fP ()"
+.br
+.ti -1c
+.RI "\fBsstring\fP \fBtoStringRounded\fP (int scale=0)"
+.br
+.ti -1c
+.RI "char * \fBtoCharRounded\fP (int scale=0)"
+.br
+.ti -1c
+.RI "float \fBtoFloat\fP ()"
+.br
+.ti -1c
+.RI "double \fBtoDouble\fP ()"
+.br
+.ti -1c
+.RI "long double \fBtoLongDouble\fP ()"
+.br
+.ti -1c
+.RI "long \fBtoFloor\fP ()"
+.br
+.ti -1c
+.RI "long \fBtoCeil\fP ()"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBround\fP (int scale=0)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator+\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator\-\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator*\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator/\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator+=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator\-=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator*=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "\fBDecimal\fP \fBoperator/=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBDecimal\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBDecimal\fP &)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+\fBDecimal\fP numbers\&. 
+
+A \fBDecimal\fP number is \fBNOT\fP a float\&. Is a number with an integer part and an fractional/decimal part 
+.PP
+Definición en la línea \fB9\fP del archivo \fBdecimal\&.hpp\fP\&.
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBDecimal\fP (\fBsstring\fP value)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB12\fP del archivo \fBdecimal\&.hpp\fP\&.
+.SS "\fBDecimal\fP (const char * value)"
+
+.PP
+Definición en la línea \fB14\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (float value)"
+
+.PP
+Definición en la línea \fB30\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (double value)"
+
+.PP
+Definición en la línea \fB34\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (long double value)"
+
+.PP
+Definición en la línea \fB38\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (int value)"
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (long value)"
+
+.PP
+Definición en la línea \fB44\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP (long long value)"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "bool operator!= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB135\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator* (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB116\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator*= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB117\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator+ (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB102\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator+= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB103\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator\- (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB109\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator\-= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB110\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator/ (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB123\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP operator/= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB124\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "bool operator< (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB140\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "bool operator<= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB145\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "bool operator== (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB130\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "bool operator> (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB150\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "bool operator>= (const \fBDecimal\fP & b)"
+
+.PP
+Definición en la línea \fB155\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBDecimal\fP round (int scale = \fC0\fP)"
+
+.PP
+Definición en la línea \fB93\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "long toCeil ()"
+
+.PP
+Definición en la línea \fB90\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "char * toChar ()"
+
+.PP
+Definición en la línea \fB64\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "char * toCharRounded (int scale = \fC0\fP)"
+
+.PP
+Definición en la línea \fB71\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "double toDouble ()"
+
+.PP
+Definición en la línea \fB78\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "float toFloat ()"
+
+.PP
+Definición en la línea \fB74\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "long toFloor ()"
+
+.PP
+Definición en la línea \fB86\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "long double toLongDouble ()"
+
+.PP
+Definición en la línea \fB82\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBsstring\fP toString ()"
+
+.PP
+Definición en la línea \fB53\fP del archivo \fBdecimal\&.cpp\fP\&.
+.SS "\fBsstring\fP toStringRounded (int scale = \fC0\fP)"
+
+.PP
+Definición en la línea \fB67\fP del archivo \fBdecimal\&.cpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Tools for C/C++ del código fuente\&.

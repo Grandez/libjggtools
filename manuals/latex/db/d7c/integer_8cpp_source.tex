@@ -1,0 +1,40 @@
+\hypertarget{integer_8cpp_source}{}\doxysection{integer.\+cpp}
+\label{integer_8cpp_source}\index{code/src/integer.cpp@{code/src/integer.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}config.h"{}} }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}exceptions.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}integer.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#pragma warning( disable : 4996 )}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00011}00011 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00013}00013 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00014}\mbox{\hyperlink{classjggtools_1_1_integer_ab4d4a0f9d4489e8e3dcf854511f58f14}{00014}}    Integer::Integer(\textcolor{keywordtype}{short}       value)  \{ validateInteger((\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00015}\mbox{\hyperlink{classjggtools_1_1_integer_a4baae9bd4a6e3754f26dd65cf2f7453c}{00015}}    Integer::Integer(\textcolor{keywordtype}{int}         value)  \{ validateInteger((\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00016}\mbox{\hyperlink{classjggtools_1_1_integer_a3e9a67b674ede4f696432be3fc5f99ff}{00016}}    Integer::Integer(\textcolor{keywordtype}{long}        value)  \{ validateInteger((\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00017}\mbox{\hyperlink{classjggtools_1_1_integer_a0285ed5ae8cec5e5519ef3fc75429031}{00017}}    Integer::Integer(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}   value)  \{ validateInteger((\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00018}\mbox{\hyperlink{classjggtools_1_1_integer_a8e79ba89dfbb58548d2c39e27f2e5572}{00018}}    Integer::Integer(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value)  \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00019}00019         regex pat\{\textcolor{stringliteral}{"{}\string^[+-\/]?[\string^0-\/9]+\$"{}}\};}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00020}00020         \textcolor{keywordtype}{bool} match = regex\_search(value, pat);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00021}00021         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{classjggtools_1_1_tools_value_exception}{ToolsValueException}}(BAD\_NATURAL, value);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00022}00022         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} res = 0;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00023}00023         \textcolor{keywordtype}{int} i = (value[0] == \textcolor{charliteral}{'+'} || value[0] == \textcolor{charliteral}{'-\/'}) ? 1 : 0;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00024}00024         \textcolor{keywordflow}{for} (i; i < strlen(value); i++) res = (res * 10) + value[i];}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00025}00025         \textcolor{keywordflow}{if} (value[0] == \textcolor{charliteral}{'-\/'}) res *= -\/1;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00026}00026         validateInteger(res);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00027}00027    \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00029}00029    \textcolor{keywordtype}{void} Integer::validateInteger(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value)  \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00030}00030       \textcolor{keywordflow}{if} (value > LONG\_MAX || value < LONG\_MIN) mask |= 0x08;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00031}00031       \textcolor{keywordflow}{if} (value > INT\_MAX  || value < LONG\_MIN) mask |= 0x04;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00032}00032       \textcolor{keywordflow}{if} (value > SHRT\_MAX || value < SHRT\_MIN) mask |= 0x02;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00033}00033    \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00034}00034 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\hypertarget{natural_8cpp_source}{}\doxysection{natural.\+cpp}
+\label{natural_8cpp_source}\index{code/src/natural.cpp@{code/src/natural.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}config.h"{}} }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}exceptions.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}natural.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#pragma warning( disable : 4996 )}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00011}00011 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00013}00013 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00014}\mbox{\hyperlink{classjggtools_1_1_natural_adb9ab97e5fcfc3506c31889eb58408a2}{00014}}    Natural::Natural(\textcolor{keywordtype}{short}       value)  \{ validateNatural((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00015}\mbox{\hyperlink{classjggtools_1_1_natural_a44046ef16d22b273c7f0ca8608439e8a}{00015}}    Natural::Natural(\textcolor{keywordtype}{int}         value)  \{ validateNatural((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00016}\mbox{\hyperlink{classjggtools_1_1_natural_aed0fd2bb59dcce2feb6f65fbb1071781}{00016}}    Natural::Natural(\textcolor{keywordtype}{long}        value)  \{ validateNatural((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00017}\mbox{\hyperlink{classjggtools_1_1_natural_a0b646b656965fc57590a302da8d2beec}{00017}}    Natural::Natural(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}   value)  \{ validateNatural((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}) value); \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00018}\mbox{\hyperlink{classjggtools_1_1_natural_a50a6164f5b867cdbfc62f31acdf12b5f}{00018}}    Natural::Natural(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* value)  \{ }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00019}00019         regex pat\{\textcolor{stringliteral}{"{}\string^[\string^0-\/9]+\$"{}}\};}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00020}00020         \textcolor{keywordtype}{bool} match = regex\_search(value, pat);}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00021}00021         \textcolor{keywordflow}{if} (!match) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{classjggtools_1_1_tools_value_exception}{ToolsValueException}}(BAD\_NATURAL, value);}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00022}00022         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} res = 0;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00023}00023         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < strlen(value); i++) res = (res * 10) + value[i];}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00024}00024         validateNatural(res);}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00025}00025    \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00026}00026    \textcolor{keywordtype}{void} Natural::validateNatural(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} value)  \{}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00027}00027       \textcolor{keywordflow}{if} (value < 0) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \mbox{\hyperlink{classjggtools_1_1_tools_value_exception}{ToolsValueException}}(BAD\_NATURAL, to\_string(value).c\_str());}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00028}00028       \textcolor{keywordflow}{if} (value > ULONG\_MAX) mask |= 0x08;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00029}00029       \textcolor{keywordflow}{if} (value > UINT\_MAX)  mask |= 0x04;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00030}00030       \textcolor{keywordflow}{if} (value > USHRT\_MAX) mask |= 0x02;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00031}00031    \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00032}00032    sstring Natural::toString() \{}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00033}00033        \textcolor{keywordflow}{return} to\_string(value);}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00034}00034    \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00035}00035    \textcolor{keywordtype}{char} * Natural::toChar() \{}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00036}00036        \textcolor{keywordflow}{return} strdup(to\_string(value).c\_str());;}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00037}00037    \}}
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{natural_8cpp_source_l00039}00039 \}}
+
+\end{DoxyCode}

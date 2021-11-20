@@ -1,0 +1,7 @@
+/** 
+   \class jggtools::Decimal
+   \ingroup number
+   \brief Decimal numbers
+   
+   A Decimal number is **NOT** a float. Is a number with an integer part and an fractional/decimal part
+*/

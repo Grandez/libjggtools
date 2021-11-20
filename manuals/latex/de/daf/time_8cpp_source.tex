@@ -1,0 +1,27 @@
+\hypertarget{time_8cpp_source}{}\doxysection{time.\+cpp}
+\label{time_8cpp_source}\index{code/src/time.cpp@{code/src/time.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}time.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#pragma warning( disable : 4996 )}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}config.h"{}}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}sstring.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}time.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00013}00013 \textcolor{keyword}{namespace }NST \{}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00014}00014    Time::Time(\textcolor{keywordtype}{string} str)      \{ Time(str.c\_str());     \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00015}00015    Time::Time(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *str) \{ dtb.validateTime(str); \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00016}00016    Time::Time(\textcolor{keyword}{const} Time\& src) \{ dtb = src.dtb;         \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00018}\mbox{\hyperlink{classjggtools_1_1_time_a7e77cba85979e17cfdd9f466f4585967}{00018}}    \textcolor{keyword}{struct }tm*  Time::getTM   ()                \{ \textcolor{keywordflow}{return} dtb.getTM(); \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00019}\mbox{\hyperlink{classjggtools_1_1_time_af147b7b4a7b34134807f2be4e3824536}{00019}}    \mbox{\hyperlink{classjggtools_1_1sstring}{sstring}}     Time::toString(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt) \{ \textcolor{keywordflow}{return} dtb.format(fmt);         \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00020}\mbox{\hyperlink{classjggtools_1_1_time_abfa6f47ef68d634b0fef7604a4fd3ae7}{00020}}    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* Time::toChar  (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt) \{ \textcolor{keywordflow}{return} dtb.format(fmt).c\_str(); \}}
+\DoxyCodeLine{\Hypertarget{time_8cpp_source_l00021}00021 \}}
+
+\end{DoxyCode}

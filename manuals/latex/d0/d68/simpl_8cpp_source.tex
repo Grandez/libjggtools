@@ -1,0 +1,33 @@
+\hypertarget{simpl_8cpp_source}{}\doxysection{simpl.\+cpp}
+\label{simpl_8cpp_source}\index{old/simpl.cpp@{old/simpl.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}type\_traits"{}}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00003}00003 \textcolor{keyword}{namespace }spimpl \{}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00004}00004     \textcolor{keyword}{namespace }details \{}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00005}00005         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00006}00006         \textcolor{keywordtype}{void} default\_delete(T *p) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00007}00007             \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(T) > 0, \textcolor{stringliteral}{"{}default\_delete cannot delete incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00008}00008             \textcolor{keyword}{static\_assert}(!std::is\_void<T>::value, \textcolor{stringliteral}{"{}default\_delete cannot delete incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00009}00009             \textcolor{keyword}{delete} p;}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00010}00010         \}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00012}00012     }
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00013}00013     \textcolor{comment}{// Pointer to unique implementation}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00014}00014     \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} Deleter = \textcolor{keywordtype}{void}(*)(T*)>}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00015}00015     \textcolor{keyword}{using} unique\_impl\_ptr = std::unique\_ptr<T, Deleter>;}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00017}00017     \textcolor{comment}{// Constructs an object of type T and wraps it and related default deleter in `unique\_impl\_ptr`}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00018}00018     \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class}... Args>}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00019}00019     \textcolor{keyword}{inline} unique\_impl\_ptr<T> make\_unique\_impl(Args\&\&... args) \{}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00020}00020         \textcolor{keyword}{static\_assert}(!std::is\_array<T>::value, \textcolor{stringliteral}{"{}unique\_impl\_ptr does not support arrays"{}});}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00022}00022         \textcolor{keywordflow}{return} unique\_impl\_ptr<T>(}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00023}00023             \textcolor{keyword}{new} T(std::forward<Args>(args)...),}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00024}00024             \&details::default\_delete<T>);}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{simpl_8cpp_source_l00027}00027 }
+
+\end{DoxyCode}

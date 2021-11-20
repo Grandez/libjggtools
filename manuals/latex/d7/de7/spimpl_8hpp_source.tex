@@ -1,0 +1,599 @@
+\hypertarget{spimpl_8hpp_source}{}\doxysection{spimpl.\+hpp}
+\label{spimpl_8hpp_source}\index{code/include/spimpl.hpp@{code/include/spimpl.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00002}00002 \textcolor{comment}{*   Smart Pointer to IMPL}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00003}00003 \textcolor{comment}{    ====================================================================}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00004}00004 \textcolor{comment}{    A Smart Pointer to IMPLementation (i.e. Smart PIMPL or just SPIMPL).}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00005}00005 \textcolor{comment}{    ====================================================================}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00007}00007 \textcolor{comment}{    Version: 1.2}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00009}00009 \textcolor{comment}{    Latest version:}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00010}00010 \textcolor{comment}{        https://github.com/oliora/samples/blob/master/spimpl.h}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00011}00011 \textcolor{comment}{    Rationale and description:}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00012}00012 \textcolor{comment}{        http://oliora.github.io/2015/12/29/pimpl-\/and-\/rule-\/of-\/zero.html}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00014}00014 \textcolor{comment}{    Copyright (c) 2015 Andrey Upadyshev (oliora@gmail.com)}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00015}00015 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00016}00016 \textcolor{comment}{    Distributed under the Boost Software License, Version 1.0.}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00017}00017 \textcolor{comment}{    See http://www.boost.org/LICENSE\_1\_0.txt}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00018}00018 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00019}00019 \textcolor{comment}{    Changes history}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00020}00020 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00021}00021 \textcolor{comment}{    v1.2:}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00022}00022 \textcolor{comment}{        -\/ const correctness}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00023}00023 \textcolor{comment}{    v1.1:}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00024}00024 \textcolor{comment}{        -\/ auto\_ptr support is disabled by default for C++17 compatibility}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00025}00025 \textcolor{comment}{    v1.0:}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00026}00026 \textcolor{comment}{        -\/ Released}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00027}00027 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef \_\_SPIMPL\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define \_\_SPIMPL\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#if defined \_MSC\_VER \&\& \_MSC\_VER < 1900  }\textcolor{comment}{// MS Visual Studio before VS2015}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#define SPIMPL\_NO\_CPP11\_NOEXCEPT}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#define SPIMPL\_NO\_CPP11\_CONSTEXPR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#define SPIMPL\_NO\_CPP11\_DEFAULT\_MOVE\_SPEC\_FUNC}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#if ! defined SPIMPL\_NO\_CPP11\_NOEXCEPT}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#define SPIMPL\_NOEXCEPT noexcept}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#define SPIMPL\_NOEXCEPT}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#if ! defined SPIMPL\_NO\_CPP11\_CONSTEXPR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#define SPIMPL\_CONSTEXPR constexpr}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00051}00051 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#define SPIMPL\_CONSTEXPR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00055}00055 \textcolor{comment}{// define SPIMPL\_HAS\_AUTO\_PTR to enable constructor and assignment operator that accept std::auto\_ptr}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00056}00056 \textcolor{comment}{// TODO: auto detect std::auto\_ptr support}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00059}00059 \textcolor{keyword}{namespace }spimpl  \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00060}00060     \textcolor{keyword}{namespace }details \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00061}00061         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00062}00062         T *default\_copy(T *src)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00063}00063         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00064}00064             \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(T) > 0, \textcolor{stringliteral}{"{}default\_copy cannot copy incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00065}00065             \textcolor{keyword}{static\_assert}(!std::is\_void<T>::value, \textcolor{stringliteral}{"{}default\_copy cannot copy incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00066}00066             \textcolor{keywordflow}{return} \textcolor{keyword}{new} T(*src);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00067}00067         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00069}00069         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00070}00070         \textcolor{keywordtype}{void} default\_delete(T *p) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00071}00071         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00072}00072             \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(T) > 0, \textcolor{stringliteral}{"{}default\_delete cannot delete incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00073}00073             \textcolor{keyword}{static\_assert}(!std::is\_void<T>::value, \textcolor{stringliteral}{"{}default\_delete cannot delete incomplete type"{}});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00074}00074             \textcolor{keyword}{delete} p;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00077}00077         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00078}00078         \textcolor{keyword}{struct }default\_deleter \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00079}00079             \textcolor{keyword}{using} type = void (*)(T*);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00080}00080         \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00082}00082         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00083}00083         \textcolor{keyword}{using} default\_deleter\_t = \textcolor{keyword}{typename} default\_deleter<T>::type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00085}00085         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00086}00086         \textcolor{keyword}{struct }default\_copier \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00087}00087             \textcolor{keyword}{using} type = T* (*)(T*);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00088}00088         \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00090}00090         \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00091}00091         \textcolor{keyword}{using} default\_copier\_t = \textcolor{keyword}{typename} default\_copier<T>::type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00093}00093         \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C = details::default\_copier\_t<T>>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00094}00094         \textcolor{keyword}{struct }is\_default\_manageable: \textcolor{keyword}{public} std::integral\_constant<bool,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00095}00095             std::is\_same<D, default\_deleter\_t<T>>::value \&\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00096}00096             std::is\_same<C, default\_copier\_t<T>>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00097}00097         > \{\};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00101}00101     \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} Deleter = details::default\_deleter\_t<T>>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00102}00102     \textcolor{keyword}{class }unique\_impl\_ptr}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00103}00103     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00104}00104         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00105}00105         \textcolor{keyword}{static\_assert}(!std::is\_array<T>::value, \textcolor{stringliteral}{"{}unique\_impl\_ptr specialization for arrays is not implemented"{}});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00106}00106         \textcolor{keyword}{struct }dummy\_t\_ \{\textcolor{keywordtype}{int} dummy\_\_;\};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00108}00108     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00109}00109         \textcolor{keyword}{using} pointer = T*;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00110}00110         \textcolor{keyword}{using} const\_pointer = \textcolor{keyword}{typename} std::add\_const<T>::type *;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00111}00111         \textcolor{keyword}{using} reference = T\&;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00112}00112         \textcolor{keyword}{using} const\_reference = \textcolor{keyword}{typename} std::add\_const<T>::type \&;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00113}00113         \textcolor{keyword}{using} element\_type = T;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00114}00114         \textcolor{keyword}{using} deleter\_type = \textcolor{keyword}{typename} std::decay<Deleter>::type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00115}00115         \textcolor{keyword}{using} unique\_ptr\_type = std::unique\_ptr<T, deleter\_type>;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00116}00116         \textcolor{keyword}{using} is\_default\_manageable = details::is\_default\_manageable<T, deleter\_type>;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00118}00118         SPIMPL\_CONSTEXPR unique\_impl\_ptr() SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00119}00119         : ptr\_(\textcolor{keywordtype}{nullptr}, deleter\_type\{\}) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00121}00121         SPIMPL\_CONSTEXPR unique\_impl\_ptr(std::nullptr\_t) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00122}00122         : unique\_impl\_ptr() \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00124}00124         \textcolor{keyword}{template}<\textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00125}00125         unique\_impl\_ptr(pointer p, D\&\& d,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00126}00126                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00127}00127                     std::is\_convertible<D, deleter\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00128}00128                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00129}00129                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00130}00130         : ptr\_(std::move(p), std::forward<D>(d)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00132}00132         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00133}00133         unique\_impl\_ptr(U *u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00134}00134                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00135}00135                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00136}00136                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00137}00137                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00138}00138                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00139}00139         : unique\_impl\_ptr(u, \&details::default\_delete<T>, \&details::default\_copy<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00141}00141 \textcolor{preprocessor}{\#ifndef SPIMPL\_NO\_CPP11\_DEFAULT\_MOVE\_SPEC\_FUNC}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00142}00142         unique\_impl\_ptr(unique\_impl\_ptr\&\& r) SPIMPL\_NOEXCEPT = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00143}00143 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00144}00144         unique\_impl\_ptr(unique\_impl\_ptr\&\& r) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00145}00145         : ptr\_(std::move(r.ptr\_)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00146}00146 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00148}00148 \textcolor{preprocessor}{\#ifdef SPIMPL\_HAS\_AUTO\_PTR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00149}00149         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00150}00150         unique\_impl\_ptr(std::auto\_ptr<U>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00151}00151                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00152}00152                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00153}00153                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00154}00154                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00155}00155                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00156}00156         : ptr\_(u.release(), \&details::default\_delete<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00157}00157 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00159}00159         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00160}00160         unique\_impl\_ptr(std::unique\_ptr<U>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00161}00161                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00162}00162                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00163}00163                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00164}00164                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00165}00165                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00166}00166         : ptr\_(u.release(), \&details::default\_delete<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00168}00168         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00169}00169         unique\_impl\_ptr(std::unique\_ptr<U, D>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00170}00170                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00171}00171                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00172}00172                         \&\& std::is\_convertible<D, deleter\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00173}00173                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00174}00174                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00175}00175         : ptr\_(std::move(u)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00177}00177         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00178}00178         unique\_impl\_ptr(unique\_impl\_ptr<U, D>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00179}00179                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00180}00180                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00181}00181                         \&\& std::is\_convertible<D, deleter\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00182}00182                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00183}00183                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00184}00184         : ptr\_(std::move(u.ptr\_)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00186}00186         unique\_impl\_ptr(\textcolor{keyword}{const} unique\_impl\_ptr<T, Deleter>\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00188}00188 \textcolor{preprocessor}{\#ifndef SPIMPL\_NO\_CPP11\_DEFAULT\_MOVE\_SPEC\_FUNC}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00189}00189         unique\_impl\_ptr\& operator= (unique\_impl\_ptr\&\& r) SPIMPL\_NOEXCEPT = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00190}00190 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00191}00191         unique\_impl\_ptr\& operator= (unique\_impl\_ptr\&\& r) SPIMPL\_NOEXCEPT \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00192}00192             ptr\_ = std::move(r.ptr\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00193}00193             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00194}00194         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00195}00195 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00197}00197 \textcolor{preprocessor}{\#ifdef SPIMPL\_HAS\_AUTO\_PTR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00198}00198         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00199}00199         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00200}00200             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00201}00201                 \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00202}00202             unique\_impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00203}00203         >::type operator= (std::auto\_ptr<U>\&\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00204}00204         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00205}00205             \textcolor{keywordflow}{return} operator=(unique\_impl\_ptr(std::move(u)));}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00206}00206         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00207}00207 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00209}00209         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00210}00210         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00211}00211             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00212}00212                 \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00213}00213             unique\_impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00214}00214         >::type operator= (std::unique\_ptr<U>\&\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00215}00215         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00216}00216             \textcolor{keywordflow}{return} operator=(unique\_impl\_ptr(std::move(u)));}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00217}00217         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00219}00219         reference operator=(\textcolor{keyword}{const} unique\_impl\_ptr<T, Deleter>\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00221}00221         reference operator*() \{ \textcolor{keywordflow}{return} *ptr\_; \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00222}00222         const\_reference operator*()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} *ptr\_; \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00224}00224         pointer operator-\/>() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} get(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00225}00225         const\_pointer operator-\/>() const SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} get(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00227}00227         pointer get() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} ptr\_.get(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00228}00228         const\_pointer get() const SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} ptr\_.get(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00230}00230         \textcolor{keywordtype}{void} swap(unique\_impl\_ptr\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00231}00231         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00232}00232             \textcolor{keyword}{using} std::swap;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00233}00233             ptr\_.swap(u.ptr\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00234}00234         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00236}00236         pointer release() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} ptr\_.release(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00238}00238         unique\_ptr\_type release\_unique() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} std::move(ptr\_); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00240}00240         \textcolor{keyword}{explicit} \textcolor{keyword}{operator} bool() const SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(ptr\_); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00242}00242         \textcolor{keyword}{typename} std::remove\_reference<deleter\_type>::type\& get\_deleter() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} ptr\_.get\_deleter(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00243}00243         \textcolor{keyword}{const} \textcolor{keyword}{typename} std::remove\_reference<deleter\_type>::type\& get\_deleter() const SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} ptr\_.get\_deleter(); \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00245}00245     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00246}00246         unique\_ptr\_type ptr\_;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00247}00247     \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00250}00250     \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00251}00251     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} swap(unique\_impl\_ptr<T, D>\& l, unique\_impl\_ptr<T, D>\& r) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00252}00252     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00253}00253         l.swap(r);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00254}00254     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00257}00257     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00258}00258     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00259}00259     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00260}00260         \textcolor{keywordflow}{return} l.get() == r.get();}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00261}00261     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00263}00263     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} C1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00264}00264     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00265}00265     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00266}00266         \textcolor{keywordflow}{return} !(l == r);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00267}00267     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00269}00269     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00270}00270     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator< (\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00271}00271     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00272}00272         \textcolor{keyword}{using} P1 = \textcolor{keyword}{typename} unique\_impl\_ptr<T1, D1>::pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00273}00273         \textcolor{keyword}{using} P2 = \textcolor{keyword}{typename} unique\_impl\_ptr<T2, D2>::pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00274}00274         \textcolor{keyword}{using} CT = \textcolor{keyword}{typename} std::common\_type<P1, P2>::type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00275}00275         \textcolor{keywordflow}{return} std::less<CT>()(l.get(), r.get());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00276}00276     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00278}00278     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00279}00279     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator> (\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00280}00280     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00281}00281         \textcolor{keywordflow}{return} r < l;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00282}00282     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00284}00284     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00285}00285     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator<=(\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00286}00286     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00287}00287         \textcolor{keywordflow}{return} !(r < l);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00288}00288     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00290}00290     \textcolor{keyword}{template} <\textcolor{keyword}{class} T1, \textcolor{keyword}{class} D1, \textcolor{keyword}{class} T2, \textcolor{keyword}{class} D2>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00291}00291     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator>=(\textcolor{keyword}{const} unique\_impl\_ptr<T1, D1>\& l, \textcolor{keyword}{const} unique\_impl\_ptr<T2, D2>\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00292}00292     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00293}00293         \textcolor{keywordflow}{return} !(l < r);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00294}00294     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00296}00296     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00297}00297     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p, std::nullptr\_t) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00298}00298     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00299}00299         \textcolor{keywordflow}{return} !p;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00300}00300     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00301}00301 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00302}00302     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00303}00303     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator==(std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00304}00304     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00305}00305         \textcolor{keywordflow}{return} !p;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00306}00306     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00308}00308     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00309}00309     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p, std::nullptr\_t) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00310}00310     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00311}00311         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00312}00312     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00314}00314     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00315}00315     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator!=(std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00316}00316     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00317}00317         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00318}00318     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00320}00320     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00321}00321     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator< (\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& l, std::nullptr\_t)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00322}00322     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00323}00323         \textcolor{keyword}{using} P = \textcolor{keyword}{typename} unique\_impl\_ptr<T, D>::pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00324}00324         \textcolor{keywordflow}{return} std::less<P>()(l.get(), \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00325}00325     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00326}00326 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00327}00327     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00328}00328     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator< (std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00329}00329     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00330}00330         \textcolor{keyword}{using} P = \textcolor{keyword}{typename} unique\_impl\_ptr<T, D>::pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00331}00331         \textcolor{keywordflow}{return} std::less<P>()(\textcolor{keyword}{nullptr}, p.get());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00332}00332     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00333}00333 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00334}00334     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00335}00335     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator> (\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p, std::nullptr\_t)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00336}00336     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00337}00337         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr} < p;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00338}00338     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00340}00340     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00341}00341     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator> (std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00342}00342     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00343}00343         \textcolor{keywordflow}{return} p < \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00344}00344     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00345}00345 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00346}00346     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00347}00347     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator<=(\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p, std::nullptr\_t)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00348}00348     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00349}00349         \textcolor{keywordflow}{return} !(\textcolor{keyword}{nullptr} < p);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00350}00350     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00352}00352     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00353}00353     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator<=(std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00354}00354     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00355}00355         \textcolor{keywordflow}{return} !(p < \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00356}00356     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00358}00358     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00359}00359     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator>=(\textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p, std::nullptr\_t)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00360}00360     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00361}00361         \textcolor{keywordflow}{return} !(p < \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00362}00362     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00363}00363 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00364}00364     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00365}00365     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} operator>=(std::nullptr\_t, \textcolor{keyword}{const} unique\_impl\_ptr<T, D>\& p)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00366}00366     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00367}00367         \textcolor{keywordflow}{return} !(\textcolor{keyword}{nullptr} < p);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00368}00368     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00370}00370 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00371}00371     \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class}... Args>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00372}00372     \textcolor{keyword}{inline} unique\_impl\_ptr<T> make\_unique\_impl(Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00373}00373     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00374}00374         \textcolor{keywordflow}{return} unique\_impl\_ptr<T>(\textcolor{keyword}{new} T(std::forward<Args>(args)...), \&details::default\_delete<T>);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00375}00375     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00377}00377 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00378}00378     \textcolor{comment}{// Helpers to manage unique impl, stored in std::unique\_ptr}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00379}00379     \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} Deleter = details::default\_deleter\_t<T>, \textcolor{keyword}{class} Copier = details::default\_copier\_t<T>>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00380}00380     \textcolor{keyword}{class }impl\_ptr : \textcolor{keyword}{public} unique\_impl\_ptr<T, Deleter>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00381}00381     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00382}00382         \textcolor{keyword}{using} base\_type = unique\_impl\_ptr<T, Deleter>;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00383}00383         \textcolor{keyword}{using} dummy\_t\_ = \textcolor{keyword}{typename} base\_type::dummy\_t\_;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00384}00384     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00385}00385         \textcolor{keyword}{using} pointer = \textcolor{keyword}{typename} base\_type::pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00386}00386         \textcolor{keyword}{using} const\_pointer = \textcolor{keyword}{typename} base\_type::const\_pointer;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00387}00387         \textcolor{keyword}{using} reference = \textcolor{keyword}{typename} base\_type::reference;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00388}00388         \textcolor{keyword}{using} const\_reference = \textcolor{keyword}{typename} base\_type::const\_reference;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00389}00389         \textcolor{keyword}{using} element\_type = \textcolor{keyword}{typename} base\_type::element\_type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00390}00390         \textcolor{keyword}{using} deleter\_type = \textcolor{keyword}{typename} base\_type::deleter\_type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00391}00391         \textcolor{keyword}{using} unique\_ptr\_type = \textcolor{keyword}{typename} base\_type::unique\_ptr\_type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00392}00392         \textcolor{keyword}{using} copier\_type = \textcolor{keyword}{typename} std::decay<Copier>::type;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00393}00393         \textcolor{keyword}{using} is\_default\_manageable = details::is\_default\_manageable<T, deleter\_type, copier\_type>;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00394}00394 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00395}00395         SPIMPL\_CONSTEXPR impl\_ptr() SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00396}00396         : base\_type(\textcolor{keywordtype}{nullptr}, deleter\_type\{\}), copier\_(copier\_type\{\}) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00397}00397 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00398}00398         SPIMPL\_CONSTEXPR impl\_ptr(std::nullptr\_t) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00399}00399         : impl\_ptr() \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00400}00400 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00401}00401         \textcolor{keyword}{template}<\textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00402}00402         impl\_ptr(pointer p, D\&\& d, C\&\& c,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00403}00403                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00404}00404                     std::is\_convertible<D, deleter\_type>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00405}00405                         \&\& std::is\_convertible<C, copier\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00406}00406                     \textcolor{keyword}{typename} base\_type::dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00407}00407                  >::type = \textcolor{keyword}{typename} base\_type::dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00408}00408         : base\_type(std::move(p), std::forward<D>(d)), copier\_(std::forward<C>(c)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00409}00409 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00410}00410         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00411}00411         impl\_ptr(U *u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00412}00412                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00413}00413                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00414}00414                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00415}00415                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00416}00416                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00417}00417         : impl\_ptr(u, \&details::default\_delete<T>, \&details::default\_copy<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00418}00418 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00419}00419         impl\_ptr(\textcolor{keyword}{const} impl\_ptr\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00420}00420         : impl\_ptr(r.clone()) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00421}00421 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00422}00422 \textcolor{preprocessor}{\#ifndef SPIMPL\_NO\_CPP11\_DEFAULT\_MOVE\_SPEC\_FUNC}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00423}00423         impl\_ptr(impl\_ptr\&\& r) SPIMPL\_NOEXCEPT = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00424}00424 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00425}00425         impl\_ptr(impl\_ptr\&\& r) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00426}00426         : base\_type(std::move(r.ptr\_)), copier\_(std::move(r.copier\_)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00427}00427 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00428}00428 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00429}00429 \textcolor{preprocessor}{\#ifdef SPIMPL\_HAS\_AUTO\_PTR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00430}00430         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00431}00431         impl\_ptr(std::auto\_ptr<U>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00432}00432                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00433}00433                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00434}00434                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00435}00435                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00436}00436                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00437}00437         : base\_type(u.release(), \&details::default\_delete<T>), copier\_(\&details::default\_copy<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00438}00438 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00439}00439 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00440}00440         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00441}00441         impl\_ptr(std::unique\_ptr<U>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00442}00442                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00443}00443                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00444}00444                         \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00445}00445                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00446}00446                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00447}00447         : base\_type(u.release(), \&details::default\_delete<T>) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00448}00448 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00449}00449         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00450}00450         impl\_ptr(std::unique\_ptr<U, D>\&\& u, C\&\& c,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00451}00451                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00452}00452                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00453}00453                         \&\& std::is\_convertible<D, deleter\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00454}00454                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00455}00455                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00456}00456         : base\_type(std::move(u)), copier\_(std::forward<C>(c)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00457}00457 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00458}00458         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00459}00459         impl\_ptr(impl\_ptr<U, D, C>\&\& u,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00460}00460                  \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00461}00461                     std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00462}00462                         \&\& std::is\_convertible<D, deleter\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00463}00463                     dummy\_t\_}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00464}00464                  >::type = dummy\_t\_()) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00465}00465         : base\_type(std::move(u.ptr\_)), copier\_(std::move(u.copier\_)) \{\}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00466}00466 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00467}00467         impl\_ptr\& operator= (\textcolor{keyword}{const} impl\_ptr\& r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00468}00468         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00469}00469             \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&r)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00470}00470                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00471}00471 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00472}00472             \textcolor{keywordflow}{return} operator=(r.clone());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00473}00473         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00474}00474 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00475}00475 \textcolor{preprocessor}{\#ifndef SPIMPL\_NO\_CPP11\_DEFAULT\_MOVE\_SPEC\_FUNC}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00476}00476         impl\_ptr\& operator= (impl\_ptr\&\& r) SPIMPL\_NOEXCEPT = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00477}00477 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00478}00478         impl\_ptr\& operator= (impl\_ptr\&\& r) SPIMPL\_NOEXCEPT \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00479}00479             base\_type::ptr\_ = std::move(r.ptr\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00480}00480             copier\_ = std::move(r.copier\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00481}00481             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00482}00482         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00483}00483 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00484}00484 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00485}00485         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00486}00486         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00487}00487             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00488}00488                 \&\& std::is\_convertible<D, deleter\_type>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00489}00489                 \&\& std::is\_convertible<C, copier\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00490}00490             impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00491}00491         >::type operator= (\textcolor{keyword}{const} impl\_ptr<U, D, C>\& u)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00492}00492         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00493}00493             \textcolor{keywordflow}{return} operator=(u.clone());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00494}00494         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00495}00495 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00496}00496         \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00497}00497 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00498}00498 \textcolor{preprocessor}{\#ifdef SPIMPL\_HAS\_AUTO\_PTR}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00499}00499         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00500}00500         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00501}00501             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00502}00502                 \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00503}00503             impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00504}00504         >::type operator= (std::auto\_ptr<U>\&\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00505}00505         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00506}00506             \textcolor{keywordflow}{return} operator=(impl\_ptr(std::move(u)));}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00507}00507         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00508}00508 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00509}00509 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00510}00510         \textcolor{keyword}{template}<\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00511}00511         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00512}00512             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00513}00513                 \&\& is\_default\_manageable::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00514}00514             impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00515}00515         >::type operator= (std::unique\_ptr<U>\&\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00516}00516         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00517}00517             \textcolor{keywordflow}{return} operator=(impl\_ptr(std::move(u)));}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00518}00518         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00519}00519 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00520}00520         \textcolor{keyword}{template}<\textcolor{keyword}{class} U, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00521}00521         \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00522}00522             std::is\_convertible<U*, pointer>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00523}00523                 \&\& std::is\_convertible<D, deleter\_type>::value}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00524}00524                 \&\& std::is\_convertible<C, copier\_type>::value,}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00525}00525             impl\_ptr\&}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00526}00526         >::type operator= (impl\_ptr<U, D, C>\&\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00527}00527         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00528}00528             base\_type::ptr\_ = std::move(u.ptr\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00529}00529             copier\_ = std::move(u.copier\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00530}00530             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00531}00531         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00532}00532 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00533}00533         \textcolor{keywordtype}{void} swap(impl\_ptr\& u) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00534}00534         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00535}00535             \textcolor{keyword}{using} std::swap;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00536}00536             base\_type::ptr\_.swap(u.ptr\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00537}00537             swap(copier\_, u.copier\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00538}00538         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00539}00539 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00540}00540         impl\_ptr clone()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00541}00541 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00542}00542             \textcolor{keywordflow}{return} impl\_ptr(}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00543}00543                 base\_type::ptr\_ ? copier\_(base\_type::ptr\_.get()) : \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00544}00544                 base\_type::ptr\_.get\_deleter(),}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00545}00545                 copier\_);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00546}00546         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00547}00547 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00548}00548         \textcolor{keyword}{const} \textcolor{keyword}{typename} std::remove\_reference<copier\_type>::type\& get\_copier() const SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} copier\_; \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00549}00549         \textcolor{keyword}{typename} std::remove\_reference<copier\_type>::type\& get\_copier() SPIMPL\_NOEXCEPT \{ \textcolor{keywordflow}{return} copier\_; \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00550}00550     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00551}00551         copier\_type copier\_;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00552}00552     \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00553}00553 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00554}00554     \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class}... Args>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00555}00555     \textcolor{keyword}{inline} impl\_ptr<T> make\_impl(Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00556}00556     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00557}00557         \textcolor{keywordflow}{return} impl\_ptr<T>(\textcolor{keyword}{new} T(std::forward<Args>(args)...), \&details::default\_delete<T>, \&details::default\_copy<T>);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00558}00558     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00559}00559 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00560}00560     \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00561}00561     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} swap(impl\_ptr<T, D, C>\& l,impl\_ptr<T, D, C>\& r) SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00562}00562     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00563}00563         l.swap(r);}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00564}00564     \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00565}00565 \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00566}00566 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00567}00567 \textcolor{keyword}{namespace }std \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00568}00568     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00569}00569     \textcolor{keyword}{struct }hash<spimpl ::unique\_impl\_ptr<T, D>>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00570}00570     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00571}00571         \textcolor{keyword}{using} argument\_type = \mbox{\hyperlink{classspimpl_1_1unique__impl__ptr}{spimpl::unique\_impl\_ptr<T, D>}} ;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00572}00572         \textcolor{keyword}{using} result\_type = size\_t;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00573}00573 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00574}00574         result\_type operator()(\textcolor{keyword}{const} argument\_type\& p) \textcolor{keyword}{const} SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00575}00575         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00576}00576             \textcolor{keywordflow}{return} hash<typename argument\_type::pointer>()(p.get());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00577}00577         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00578}00578     \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00579}00579 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00580}00580     \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} D, \textcolor{keyword}{class} C>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00581}00581     \textcolor{keyword}{struct }hash<spimpl ::impl\_ptr<T, D, C>>}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00582}00582     \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00583}00583         \textcolor{keyword}{using} argument\_type = \mbox{\hyperlink{classspimpl_1_1impl__ptr}{spimpl::impl\_ptr<T, D, C>}} ;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00584}00584         \textcolor{keyword}{using} result\_type = size\_t;}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00585}00585 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00586}00586         result\_type operator()(\textcolor{keyword}{const} argument\_type\& p) \textcolor{keyword}{const} SPIMPL\_NOEXCEPT}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00587}00587         \{}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00588}00588             \textcolor{keywordflow}{return} hash<typename argument\_type::pointer>()(p.get());}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00589}00589         \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00590}00590     \};}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00591}00591 \}}
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00592}00592 }
+\DoxyCodeLine{\Hypertarget{spimpl_8hpp_source_l00593}00593 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SPIMPL\_H\_}}
+
+\end{DoxyCode}
